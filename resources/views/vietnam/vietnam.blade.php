@@ -11,44 +11,53 @@
     <title>Viet Nam</title>
 </head>
 <body>
-    <section id="nav-bar">
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#"><img src=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<!------------->
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">
+            <img src="img/frog.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+         data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#about">ABOUT US</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">HOW DOES IT WORK</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">OUR TEAM</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#price">PRICE PLAN</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#testimonials">REVIEWS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">CONTACT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="loginPage/index.html">LOGIN</a>
-              </li>
+        </button>
+        <div class="me-5 justify-content-end collapse navbar-collapse" id="navbarResponsive">
+            <div class="yellowInRight">
+            <ul class="navbar-nav ml=auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
             </ul>
+            </div>
             <div class="nav-item1">
                 <a class="btn btn-success" href="loginPage/index.html" role="button">GET START</a>
             </div>
-           
-          </div>
+        </div>
+    </div>
+</nav>
+          
+        </div>
         </nav>
-       </section>
       <!--------->
-    
+    <section id="slider">
+        <div class="slider container-fluid text-center">
+            <h1>Viet Nam</h1>
+            <div class="yellowInRight">
+                <h2>Trang chu</h2></div>
+            <p>Viet Nam</p>
+        </div>
+    </section>
 </body>
 </html>
