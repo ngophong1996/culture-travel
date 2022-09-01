@@ -9,6 +9,44 @@
     <title>Viet Nam</title>
 </head>
 <body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#"><img src=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">HOW DOES IT WORK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">OUR TEAM</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#price">PRICE PLAN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonials">REVIEWS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">CONTACT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="loginPage/index.html">LOGIN</a>
+              </li>
+            </ul>
+            <div class="nav-item1">
+                <a class="btn btn-success" href="loginPage/index.html" role="button">GET START</a>
+            </div>
+           
+          </div>
+        </nav>
+       </section>
+      <!--------->
     
 </body>
 </html>
