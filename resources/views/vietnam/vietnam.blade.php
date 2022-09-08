@@ -47,9 +47,7 @@
         </div>
     </div>
 </nav>
-          
-        </div>
-        </nav>
+        
       <!--------->
     <section id="slider">
         <div class="slider container-fluid text-center">
