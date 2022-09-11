@@ -13,11 +13,15 @@ use App\Http\Controllers\VietnamController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/home', function() {
+    return view('home');
 });
 Route::resource('vietnam', VietnamController::class
 );
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
