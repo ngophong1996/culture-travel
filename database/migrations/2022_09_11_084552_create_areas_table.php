@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
-            $table->int('country_id');
-            $table->
             $table->timestamps();
         });
     }

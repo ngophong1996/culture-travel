@@ -136,9 +136,9 @@ code {
 }
 
 [d] {
-	fill: #333;
+
 	transition: .7s;
-	cursor: pointer
+	
 }
 [d]:hover { fill: #f90 }
 path .content {
