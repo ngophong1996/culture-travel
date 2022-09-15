@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController; 
+use App\Http\Controllers\ListingController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +25,13 @@ Route::get('admin/login', function(){
 });
 Route::post('admin/login', [AdminController::class, 'loginPost'])->name('admin.loginPost');
 Route::get('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
-Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('admin');
-Route::get('admin/static', [AdminController::class, 'static'])->name('admin.static')->middleware('admin');
+
+Route::middleware(['admin'])->group(function (){
+    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('admin/static', [AdminController::class, 'static'])->name('admin.static');
+    Route::get('admin/listing/{model}', [ListingController::class, 'index'])->name('listing.index');
+});
+
 
 
 

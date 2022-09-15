@@ -3,7 +3,7 @@ body {
   line-height: 1.8;
   font-size: 16px;
   background: #fff;
-  color: #ffffff !important;
+  color: #FDFDFD !important;
   font-weight: 300;
   overflow-x: hidden;
 }
@@ -101,14 +101,14 @@ p, ul, ol {
   
 }
 #about .aboutRight{
-  background-color: #F1EEE9 !important;
+  background-color: #f7f2e9 !important;
   padding: 90px 0px 80px 95px;
 }
 #about .aboutRight p{
   color: #2A2828 !important;
 }
 #about .midImage{
-  background-color: #F1EEE9 !important;
+  background-color: #f7f2e9 !important;
   width: 100%;
   height: 54vh;
   
@@ -123,7 +123,7 @@ p, ul, ol {
   width: 87%;
   height: 100%;
 }
-/*-------------------------*/
+/*--------------Map-----------*/
 .map_inner{
   height: 75vh;
 }
@@ -156,6 +156,17 @@ path .content {
 path:hover .content{
   visibility: visible;
   opacity: 1;
+}
+
+#areaMap .infoCol1{
+  background-color: #0F0F0F ;
+}
+#areaMap .infoCol2{
+  background-color: #FFCC00  ;
+}
+#areaMap {
+  margin-left: auto ;
+  margin-right: auto;
 }
 
 

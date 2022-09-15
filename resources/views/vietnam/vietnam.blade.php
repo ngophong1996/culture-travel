@@ -25,7 +25,7 @@
 x
 
 	<style type="text/css">
-	.mapael .mapTooltip {
+		.mapael .mapTooltip {
             position: absolute;
             background-color: #fff;
             moz-opacity: 0.70;
@@ -42,10 +42,11 @@ x
         /* For all zoom buttons */
         .mapael .zoomButton {
             background-color: #fff;
-            border: 1px solid #ccc;
+            border: 2px solid #ccc;
             color: #000;
-            width: 15px;
-            height: 15px;
+            width: 25px;
+            height: 25px;
+			margin-bottom: 20px;
             line-height: 15px;
             text-align: center;
             border-radius: 3px;
@@ -53,7 +54,7 @@ x
             position: absolute;
             top: 0;
             font-weight: bold;
-            left: 10px;
+            right: 30px;
 
             -webkit-user-select: none;
             -khtml-user-select : none;
@@ -69,18 +70,19 @@ x
 
         /* Then Zoom In button */
         .mapael .zoomIn {
-            top: 30px;
+            top: 40px;
         }
 
         /* Then Zoom Out button */
         .mapael .zoomOut {
-            top: 50px;
+            top: 70px;
         }
 
         .mapael .map {
             position: relative;
         }
     </style>
+	<!---------Mapeal------>
 	 <script type="text/javascript">
         $(function () {
             $(".mapcontainer").mapael({
@@ -91,8 +93,7 @@ x
                     },
                     defaultArea: {
                         attrs: {
-                            fill: "#5ba4ff",
-                            stroke: "#99c7ff",
+                            
                             cursor: "pointer"
                         },
                         attrsHover: {
@@ -212,19 +213,60 @@ Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đ
 
 <!-------StartMap------->
 <section id="areaMap">
-	<div class="container-fluid">
-		<div class="row text-center">
-			<div class="col-12 my-4">
+	<div class="container">
+		<div class="row">
+		<div class="col-md-6">
+			<div class="col-12 py-4" style="background-color: #FDFDFD;">
 				<p class="text-dark">Khám phá văn hoá qua</p>
 				<h1 class="text-dark">Bản đồ Việt Nam</h1>
 			</div>
-		<div class="col-md-5">
-			<div class="map_inner mt-3">
-				
-			
+			<div class="col-12 infoCol1 d-flex flex-column">
+				<style>
+					.infoCol1{
+						box-sizing: border-box;
+					}
+					#search-box{
+ 						background: #fff;
+  						border-radius: 30px;
+						width: 80%;
+						margin-left: auto;
+   						margin-right: auto;
+    					margin-top: 10px;
+						margin-bottom: 20px;
+					}
+					#search-box #search-text{
+						border: none;
+						outline: none;
+						background: none;
+						font-size: 20px;
+						width: 0;
+						padding: 0;
+						transition: all 0.25s ease-in-out;
+					}
+					#search-box:hover #search-text{
+						width: 450px;
+						padding: 10px 0px 10px 15px;
+					}
+					#search-box #search-btn{
+						background-color: #fff;
+						cursor: pointer;
+						border: none;
+						padding: 15px;
+						border-radius: 50%;
+						font-size: 15px;
+					}
+				</style>
+				<form action="" id="search-box">
+					<input type="text" name="" id="search-text" placeholder="Bạn muốn tìm địa điểm nào?">
+					<button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+				</form>
+				<div id="listArea">
+						Danh sach cac vugn mienn
+				</div>
 			</div>
+			<div class="col-12 infoCol2">tim kiem</div>
 		</div>
-		<div class="col-md-7 text-bg-success">
+		<div class="col-md-6" style="background-color: #f7f2e9">
 			<div class="mapcontainer">
 				<div class="map"><span>Alternative content for the map</span>
 		

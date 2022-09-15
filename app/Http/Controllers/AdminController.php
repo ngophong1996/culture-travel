@@ -25,7 +25,9 @@ class AdminController extends Controller
         return redirect('admin/login'); 
     }
     public function static(){
-            echo "day laaaaaa";
+        $adminUser = Auth::guard('admin')->user();
+        return view('admin.static',['user'=>$adminUser]);
+
     }
         
 }

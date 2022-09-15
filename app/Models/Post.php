@@ -1,16 +1,14 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Auth\Authenticatable;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use App\Models\Base;
 
-class Admin extends Base implements AuthenticatableContract
+class Post extends Base
 {
     use HasFactory;
-    use Authenticatable;
     public function listingConfigs(){
         $defaultListingConfigs = parent::defaultListingConfigs();
         $listingConfigs= array(
@@ -20,17 +18,28 @@ class Admin extends Base implements AuthenticatableContract
                 'type'=> 'text'
             ),
             array(
-                'field' => "name",
-                'name'=>'Tên quản trị viên',
+                'field' => "user_id",
+                'name'=>'ID người dùng',
                 'type'=> 'text'
             ),
             array(
-                'field' => "email",
-                'name'=>'Email',
+                'field' => "area",
+                'name'=>'Địa chỉ',
                 'type'=> 'text'
+            ),
+            array(
+                'field' => "title",
+                'name'=>'Tiêu đề',
+                'type'=> 'text'
+            ),
+            array(
+                'field' => "image",
+                'name'=>'Ảnh',
+                'type'=> 'image'
             )
+
        );
 
        return array_merge($listingConfigs, $defaultListingConfigs);
-     }
+    }
 }
