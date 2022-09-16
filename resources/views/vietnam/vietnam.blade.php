@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Document</title>
     <link rel="stylesheet" href="css/vietnam.css">
 	<script src="https://kit.fontawesome.com/f99152938e.js" crossorigin="anonymous"></script>
 	<!-----fonts----->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
 	<!-----bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<!------Ajax------>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
             charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
     <script src="/js/jquery.mapael.js" charset="utf-8"></script>
     <script src="/js/france_departments.js" charset="utf-8"></script>
-x
+
 
 	<style type="text/css">
 		.mapael .mapTooltip {
@@ -81,64 +84,93 @@ x
         .mapael .map {
             position: relative;
         }
+		.mapael .mapTooltip {
+            position: absolute;
+            background-color: #fff;
+            moz-opacity: 0.70;
+            opacity: 0.80;
+            filter: alpha(opacity=70);
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            max-width: 200px;
+            display: none;
+            color: #343434;
+        }
     </style>
 	<!---------Mapeal------>
-	 <script type="text/javascript">
+	<script type="text/javascript">
         $(function () {
             $(".mapcontainer").mapael({
                 map: {
                     name: "france_departments",
-                    zoom: {
+                     zoom: {
                         enabled: true
                     },
                     defaultArea: {
                         attrs: {
-                            
-                            cursor: "pointer"
+    
+                 
                         },
                         attrsHover: {
-                            animDuration: 0
-                        },
-                        text: {
-                            attrs: {
-                                cursor: "pointer",
-                                "font-size": 10,
-                                fill: "#000"
-                            },
-                            attrsHover: {
-                                animDuration: 0
-                            }
-                        },
-                        eventHandlers: {
-                            click: function (e, id, mapElem, textElem) {
-                                var newData = {
-                                    'areas': {}
-                                };
-                                if (mapElem.originalAttrs.fill == "#5ba4ff") {
-                                    newData.areas[id] = {
-                                        attrs: {
-                                            fill: "#0088db"
-                                        }
-                                    };
-                                } else {
-                                    newData.areas[id] = {
-                                        attrs: {
-                                            fill: "#5ba4ff"
-                                        }
-                                    };
-                                }
-                                $(".mapcontainer").trigger('update', [{mapOptions: newData}]);
-                            }
+                            "stroke-width": 2
                         }
                     }
                 },
                 areas: {
+					@foreach ($vietnams as $vietnam )
+					"{{ $vietnam->id*10 }}": {
+                        tooltip: {content: "<span style=\"font-weight:bold;\">{{ $vietnam->name }}</span><br />Diện tích : {{ number_format($vietnam->area,0, ',', ',') }}km2<br />Dân số : {{ number_format($vietnam->population,0, ',', ',') }}"}
+                    	},
+					@endforeach
+
                 }
             });
         });
     </script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+ 		fetch_customer_data();
+
+ 		function fetch_customer_data(query = '')
+ 		{
+			$.ajax({
+            url:"{{ route('action') }}",
+            method:'GET',
+            data:{query:query},
+            dataType:'json',
+            success:function(data)
+            {
+                $('#listArea').html(data.table_data);
+             
+            }
+        })
+ 		}
+
+ 			$(document).on('keyup', '#search', function(){
+	 		var query = $(this).val();
+	 		fetch_customer_data(query);
+ 			});
+		});
+		</script>
+	<script type="text/javascript">
+		function myFunction() {
+  		var moreText = document.getElementById("more");
+  		var btnText = document.getElementById("myBtn");
+
+  		if (moreText.style.display === "none") {
+    		btnText.innerHTML = "Read less";
+    		moreText.style.display = "block";
+ 		} else {
+    		btnText.innerHTML = "Read more";
+   			 moreText.style.display = "none";
+  }
+}
+
+	</script>
 </head>
 <body>
+
 
 <!------------------------nav bar----------------------------------------------->
 	<nav class="navbar navbar-expand-md navbar-light sticky-top">
@@ -196,9 +228,9 @@ x
 			<div class="col-md-6 aboutRight pr-3">
                 <h3>Việt Nam đất nước con người</h3>
                 <p><span>"Chào các bạn!"</span> Câu chào luôn được người Việt coi trọng trong giao tiếp, nó như mang đến sự suôn sẻ và may mắn cho một sự khởi đầu mới hay một ngày mới. Người Việt có câu “Lời chào cao hơn mâm cỗ” là thể hiện sự tôn trọng và lịch sự trong giao tiếp đối với người đối diện. Lời chào còn thể hiện sự thân thiện, tính hiếu khách của người Việt. Vì vậy, các bạn đi đến đâu trên đất nước Việt Nam hay gặp bất cứ ai bạn đều nhận được một lời chào đấy!
-Các bạn biết không, mỗi một quốc gia đều có một nét văn hóa đặc trưng riêng, Việt Nam cũng như vậy các bạn ạ! Sau đây, tôi xin giới thiệu với các bạn nét đặc trưng của văn hóa Việt.
-Với một quá trình lịch sử đấu tranh chống kẻ thù xâm lược để bảo vệ bờ cõi, giành tự do, độc lập và xây dựng đất nước có từ hàng ngàn năm của người Việt cùng sự hội tụ của 54 thành phần dân tộc khác nhau đã góp phần tạo nên sự đa dạng, phong phú và đặc sắc cho nền văn hóa của Việt Nam.
-Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đời sống sinh hoạt cộng đồng và trong các hoạt động kinh tế từ phong tục tập quán, trang phục cho đến phong cách ẩm thực. Dưới đây là những nét đặc sắc của văn hóa Việt Nam mà bạn có thể tìm hiểu.</p>
+	Các bạn biết không, mỗi một quốc gia đều có một nét văn hóa đặc trưng riêng, Việt Nam cũng như vậy các bạn ạ! Sau đây, tôi xin giới thiệu với các bạn nét đặc trưng của văn hóa Việt.
+	Với một quá trình lịch sử đấu tranh chống kẻ thù xâm lược để bảo vệ bờ cõi, giành tự do, độc lập và xây dựng đất nước có từ hàng ngàn năm của người Việt cùng sự hội tụ của 54 thành phần dân tộc khác nhau đã góp phần tạo nên sự đa dạng, phong phú và đặc sắc cho nền văn hóa của Việt Nam.
+	Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đời sống sinh hoạt cộng đồng và trong các hoạt động kinh tế từ phong tục tập quán, trang phục cho đến phong cách ẩm thực. Dưới đây là những nét đặc sắc của văn hóa Việt Nam mà bạn có thể tìm hiểu.</p>
 			</div>
             <div class="d-flex midImage justify-content-center">
 				<div class="blockImage">
@@ -234,37 +266,59 @@ Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đ
     					margin-top: 10px;
 						margin-bottom: 20px;
 					}
-					#search-box #search-text{
+					#search-box #search{
 						border: none;
 						outline: none;
 						background: none;
-						font-size: 20px;
+						font-size: 16px;
 						width: 0;
 						padding: 0;
 						transition: all 0.25s ease-in-out;
 					}
-					#search-box:hover #search-text{
-						width: 450px;
+					#search-box:hover #search{
+						width: 460px;
 						padding: 10px 0px 10px 15px;
 					}
 					#search-box #search-btn{
 						background-color: #fff;
 						cursor: pointer;
 						border: none;
-						padding: 15px;
+						padding: 10px;
 						border-radius: 50%;
-						font-size: 15px;
+						font-size: 12px;
+
 					}
+					#listArea ul{
+						list-style-type: none;
+						columns: 3;
+						margin-bottom: 0rem;
+						font-size: 18px;
+					}
+					
+
+					
 				</style>
-				<form action="" id="search-box">
-					<input type="text" name="" id="search-text" placeholder="Bạn muốn tìm địa điểm nào?">
+				<form action="" method="POST" id="search-box">
+					<input type="text" name="search" id="search" placeholder="Bạn muốn tìm địa điểm nào?">
 					<button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
 				</form>
 				<div id="listArea">
-						Danh sach cac vugn mienn
+
+						{{-- <ul>
+						
+						</ul><ul id="more" style="display: none;">
+
+						</ul>
+						
+						<button onclick="myFunction()" id="myBtn">Read more</button> --}}
+						
 				</div>
 			</div>
-			<div class="col-12 infoCol2">tim kiem</div>
+			<div class="col-12 infoCol2">
+				<h1>tim kiem</h1>
+				
+
+			</div>
 		</div>
 		<div class="col-md-6" style="background-color: #f7f2e9">
 			<div class="mapcontainer">
@@ -288,7 +342,7 @@ Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đ
 <!-------Start_famousArea---------->
 <hr>
 <section id="famousArea">
-<div class="container text-center">
+	<div class="container text-center">
 
 	<div class="row">
 		<div class="col-md-12 my-4">

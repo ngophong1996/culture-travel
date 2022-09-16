@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Vietnam;
 use Illuminate\Http\Request;
-
+use DB;
 class VietnamController extends Controller
 {
     /**
@@ -13,7 +13,11 @@ class VietnamController extends Controller
      */
     public function index()
     {
-        return view('vietnam.vietnam');
+        $vietnams = Vietnam::all();
+        
+        return view('vietnam.vietnam',[
+            'vietnams'=>$vietnams
+        ]);
     }
 
     /**
@@ -80,5 +84,56 @@ class VietnamController extends Controller
     public function destroy($id)
     {
         //
+    }
+    function action(Request $request)
+    {   
+        $vietnams= DB::table('vietnams')->get();
+        if($request->ajax())
+        {
+            $output = '<ul>';
+            $query = $request->get('query');
+            if($query != '') {
+                $data = DB::table('vietnams')
+                    ->where('name', 'like', '%'.$query.'%')
+                    ->get();
+            } else {
+                $data = DB::table('vietnams')
+                    ->get();
+            }
+             
+            $total_row = $data->count();
+            if($total_row > 0 && $total_row < $vietnams->count()){
+                foreach($data as $row)
+                {
+                    $output .= '
+                    <li>'.$row->name.'</li>
+                    ';
+                }
+                $output .= '</ul>';
+            }else if($total_row === $vietnams->count()){
+                $count = 1 ;
+                foreach($data as $row)
+                {   
+                    if($count==10){$output .= '</ul><ul id="more" style="display: none;">';}
+                    $output .= '
+                    <li>'.$row->name.'</li>
+                    ';
+                    $count +=1;
+                }
+                $output .= '</ul>';
+                $output .= '<button onclick="myFunction()" id="myBtn">Read more</button>';
+            }else{
+                $output = '
+                <li>No Data Found</li>
+                ';
+                $output .= '</ul>';
+            }
+     
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+            echo json_encode($data);
+        }
     }
 }

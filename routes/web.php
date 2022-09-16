@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VietnamController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -31,6 +31,8 @@ Route::middleware(['admin'])->group(function (){
     Route::get('admin/static', [AdminController::class, 'static'])->name('admin.static');
     Route::get('admin/listing/{model}', [ListingController::class, 'index'])->name('listing.index');
 });
+
+Route::get('/action', [VietnamController::class, 'action'])->name('action');
 
 
 

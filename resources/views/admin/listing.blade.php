@@ -5,7 +5,7 @@
 <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Tables <small>Some examples to get you started</small></h3>
+        <h3>Tables <small></small></h3>
       </div>
 
       <div class="title_right">
@@ -23,7 +23,7 @@
       <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Bordered table <small>Bordered table subtitle</small></h2>
+   
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>

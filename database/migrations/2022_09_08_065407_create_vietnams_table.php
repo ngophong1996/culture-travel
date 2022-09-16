@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('vietnams', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('area');
+            $table->integer('population');
+            $table->string('title');
             $table->timestamps();
         });
     }

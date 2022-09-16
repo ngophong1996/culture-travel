@@ -30,7 +30,7 @@ font-size: 100rem;
 }
 p, ul, ol {
   margin-bottom: 1.5em;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Roboto", Arial, serif;
 }
 .yellowInRight{
@@ -97,7 +97,7 @@ p, ul, ol {
 #about{
   color: #000 !important;
 }
-#about h1{
+#about h1 {
   
 }
 #about .aboutRight{
@@ -124,6 +124,24 @@ p, ul, ol {
   height: 100%;
 }
 /*--------------Map-----------*/
+#listArea ul li{
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+li:hover {
+  color: #FFCC00 ;
+  -webkit-transform: scale(1.05);
+     -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+       -o-transform: scale(1.05);
+          transform: scale(1.05);  
+}
+
+li {
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear;
+}
+
 .map_inner{
   height: 75vh;
 }
@@ -157,7 +175,7 @@ path:hover .content{
   visibility: visible;
   opacity: 1;
 }
-
+#more {display: none;}
 #areaMap .infoCol1{
   background-color: #0F0F0F ;
 }

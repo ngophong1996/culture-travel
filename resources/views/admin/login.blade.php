@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>Admin | </title>
 
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
           <section class="login_content">
             <form id="admin-login" method="POST" action="/admin/login">
                 @csrf
-              <h1>Login Form</h1>
+              <h1>Admin Login</h1>
               <div>
                 <input type="text" name="email" class="form-control" placeholder="Email" required="" />
               </div>
@@ -53,8 +53,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <h1><i class="fa fa-paw"></i> Culture Travel</h1>
+                  <p>©2016 Culture Travel at Home. All Rights Reserved.</p>
                 </div>
               </div>
             </form>
