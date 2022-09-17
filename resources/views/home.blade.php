@@ -719,7 +719,7 @@ body.custom-background { background-color: #ffffff; }
 				<div class="elementor-element elementor-element-a8af596 elementor-button-link elementor-align-center elementor-widget elementor-widget-button" data-id="a8af596" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 			        <div class="elementor-button-wrapper">
-            <a href="/society/our-focus/ocean/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+            <a href="{{ route('vietnam.index') }}" class="elementor-button-link elementor-button elementor-size-sm" role="button">
                         <span class="elementor-button-content-wrapper">
 			            <span class="elementor-button-text">Việt Nam</span>
 		</span>
@@ -746,7 +746,7 @@ body.custom-background { background-color: #ffffff; }
 				<div class="elementor-element elementor-element-cffe660 elementor-button-link elementor-align-center elementor-widget elementor-widget-button" data-id="cffe660" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 			        <div class="elementor-button-wrapper">
-            <a href="/society/our-focus/human-ingenuity/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+            <a href="{{ route('vietnam.index') }}" class="elementor-button-link elementor-button elementor-size-sm" role="button">
                         <span class="elementor-button-content-wrapper">
 			            <span class="elementor-button-text">Nhật Bản</span>
 		</span>

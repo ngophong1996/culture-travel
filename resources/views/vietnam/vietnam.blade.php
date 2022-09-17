@@ -173,39 +173,48 @@
 
 
 <!------------------------nav bar----------------------------------------------->
-	<nav class="navbar navbar-expand-md navbar-light sticky-top">
-		<div class="container-fluid">
-			<a href="#" class="navbar-brand">
-				<img src="/img/CultureTravel.png" style="width:100px;height:auto;">
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+	<div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
+        </div>
+		  <a href="#" class="">
+			<img src="/img/CultureTravel.png" style="width:90px;height:auto;">
+		</a>
+		<div class=" navbar-collapse justify-content-end">
+		  <ul class="navbar-nav">
+		  <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<img src="https://khoinguonsangtao.vn/wp-content/uploads/2022/02/anh-dai-dien-fb-dep.jpg" alt="">{{ Auth::user()->name }}
 			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-			 data-target="#navbarResponsive">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="me-3 justify-content-end collapse navbar-collapse" id="navbarResponsive">
-				<div class="yellowInRight">
-				<ul class="navbar-nav ml=auto">
-					<li class="nav-item">
-						<a class="nav-link" href="#">Dự án</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Bản đồ</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Nổi tiếng</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Sự kiện</a>
-					</li>
-				</ul>
-				</div>
-				<div class="nav-item1">
-					<a class="btn btn-success" href="loginPage/index.html" role="button">GET START</a>
-				</div>
-			</div>
+			<ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="#">Settings</a></li>
+			  <li><form method="POST" action="{{ route('logout') }}">
+				@csrf
+				<a href="route('logout')"
+						onclick="event.preventDefault();
+									this.closest('form').submit();">
+					{{ __('Log Out') }}
+				</a>
+			</form></li>
+			</ul>
+		  </li>
+		</ul>
 		</div>
-	</nav>
-<!-----------------------------------end Nav bar---------------------------------------------------------------------->
+	 
+	</div>
+  </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
 <section id="slider">
 	<div class="slider container-fluid">
@@ -215,8 +224,6 @@
 		  </div>
 	</div>
 </section>
-<!-------------------------------EndSlide---------------------------->
-
 <!-----------StartAbout------->
 <section id="about">
 	<div class="container-fluid">
@@ -241,7 +248,108 @@
 </section>
 
 <!-----------EndAbout---------->
+<style>
+#countNumber{
+	margin-top: 100px;
+    margin-bottom: 120px;
+    padding: 30px 0px 0px 0px;
+	position: relative;
+}
+.elementor-counter .heading-decor {
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    margin-top: 25px;
+	background-color: #ffcc00;
+}
+.elementor-counter {
+    text-align: center;
+	padding: 15px 50px 30px 50px;
+	border-right: 1px solid #f0efef;
+}
+.elementor-counter .elementor-counter-number-wrapper {
+    font-weight: 400;
+    font-family: Bebas Neue,cursive;
+}
+.elementor-counter .elementor-counter-number {
+    font-family: "takeEasy";
+	font-size: 60px;
+}
+.elementor-counter-number-prefix, .elementor-counter-number-suffix {
+    font-family: "takeEasy";
+	font-size: 40px;
+}
+hr.hrForCount{
+	border-top: 2px solid #b3b3b3;
+	width: 100%;
+	margin: 70px 0;
+}
+.elementor-counter-description{
+	color: #575757 !important;
+}
 
+</style>
+<section id="countNumber">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="elementor-counter">
+					<div class="elementor-counter-wrapper">
+						<div class="elementor-counter-title-wrap">
+						
+								<div class="elementor-counter-description">Dân số hiện tại của Việt Nam</div>
+								<span class="heading-decor"></span>
+						</div>
+						<div class="elementor-counter-number-wrapper">
+							<span class="elementor-counter-number-prefix"></span>
+							<span class="elementor-counter-number" data-duration="2000" data-to-value="99113159" data-delimiter=",">99.113.159</span><br>
+							<span class="elementor-counter-number-suffix">người</span>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="elementor-counter">
+					<div class="elementor-counter-wrapper">
+						<div class="elementor-counter-title-wrap">
+						
+							<div class="elementor-counter-description">Tổng diện tích đất</div>
+							<span class="heading-decor"></span>
+					</div>
+					<div class="elementor-counter-number-wrapper">
+						<span class="elementor-counter-number-prefix"></span>
+						<span class="elementor-counter-number" data-duration="2000" data-to-value="310060" data-delimiter=",">310.060</span> <br>
+						<span class="elementor-counter-number-suffix">km2</span>
+					</div>
+				</div>
+			</div></div>
+			<div class="col-md-4">
+				<div class="elementor-counter">
+					<div class="elementor-counter-wrapper">
+						<div class="elementor-counter-title-wrap">
+						
+							<div class="elementor-counter-description">Mật độ dân số của Việt Nam</div>
+							<span class="heading-decor"></span>
+					</div>
+					<div class="elementor-counter-number-wrapper">
+						<span class="elementor-counter-number-prefix"></span>
+						<span class="elementor-counter-number" data-duration="2000" data-to-value="320" data-delimiter=",">320</span><br>
+						<span class="elementor-counter-number-suffix">người/km2</span>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<hr class="hrForCount">
+	</div>
+
+</section>
+
+
+
+
+<!---------------->
 
 <!-------StartMap------->
 <section id="areaMap">
@@ -292,7 +400,8 @@
 						list-style-type: none;
 						columns: 3;
 						margin-bottom: 0rem;
-						font-size: 18px;
+						font-size: 16px;
+						color: #FDFDFD !important;
 					}
 					
 
@@ -303,19 +412,72 @@
 					<button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
 				</form>
 				<div id="listArea">
-
-						{{-- <ul>
-						
-						</ul><ul id="more" style="display: none;">
-
-						</ul>
-						
-						<button onclick="myFunction()" id="myBtn">Read more</button> --}}
 						
 				</div>
 			</div>
+			<style>
+				[d] .active{
+					fill: #ccc !important;
+				}
+				path.area.active {
+    				fill: #fff;
+				}
+				.infoArea{
+					display: none;
+					transition: 0.5s;
+				}
+				.infoArea.active{
+					display: block;
+					transition: 0.5s;
+				}
+			</style>
+
+			<script type="text/javascript">
+			$(document).ready(function () {
+				//default area when load
+				$('[data-id="160"]').addClass( "active" );
+
+				$("path").on("click",function(){
+
+					var classID = $(this).attr("data-id").toString();
+				
+
+					$("path").removeClass( "active" );
+					$(".infoArea").removeClass( "active" );
+					$(this).addClass( "active" );
+
+					var containString = "." + classID;
+					var $newID= $(containString);
+
+					$newID.addClass("active");
+			
+				});
+			});
+			</script>
 			<div class="col-12 infoCol2">
-				<h1>tim kiem</h1>
+				<ul>
+					<li id="" class="infoArea 160 active">
+						<h1>Hà Nội</h1>
+						<p>Hà nội là một</p>
+					</li>
+					<li id="" class="infoArea 170">
+						<h1>Hà Nam</h1>
+						<p>Hà nội là một</p>
+					</li>
+					<li id="" class="infoArea">
+						<h1>HCM</h1>
+						<p>Hà nội là một</p>
+					</li>
+					<li id="" class="infoArea">
+						<h1>Binh duong</h1>
+						<p>Hà nội là một</p>
+					</li>
+					<li id="" class="infoArea">
+						<h1>Hai duong</h1>
+						<p>Hà nội là một</p>
+					</li>
+				</ul>
+
 				
 
 			</div>
@@ -404,17 +566,6 @@
 </div>
 </section>
 <!-------End_famousArea---------->
-
-
-
-
-
-
-
-
-
-
-
 
 		<footer>
 			<div id="footer">

@@ -35,7 +35,9 @@ Route::middleware(['admin'])->group(function (){
 Route::get('/action', [VietnamController::class, 'action'])->name('action');
 
 
-
+Route::middleware(['auth'])->group(function (){
+    Route::resource('vietnam', VietnamController::class);
+});
 
 
 
@@ -43,29 +45,15 @@ Route::get('/action', [VietnamController::class, 'action'])->name('action');
 Route::get('/home', function() {
     return view('home');
 });
-Route::resource('vietnam', VietnamController::class
-);
 
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
 
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
- 
-    return redirect('/home');
-})->middleware(['auth', 'signed'])->name('verification.verify');
 
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
- 
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard')->middleware('verified');
+    return view('home');
+})->middleware(['auth'])->name('dashboard');
+Route::resource('vietnam', VietnamController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
 
