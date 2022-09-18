@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Vietnam;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 class VietnamController extends Controller
 {
     /**
@@ -122,7 +122,7 @@ class VietnamController extends Controller
                     $count +=1;
                 }
                 $output .= '</ul>';
-                $output .= '<button onclick="myFunction()" id="myBtn">Read more</button>';
+                $output .= '<button onclick="myFunction()" id="myBtn">Xem thêm</button>';
             }else{
                 $output = '
                 <li>No Data Found</li>

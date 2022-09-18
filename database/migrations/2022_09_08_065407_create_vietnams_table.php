@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('area');
             $table->integer('population');
-            $table->string('title');
+            $table->longtext('title');
             $table->timestamps();
         });
     }

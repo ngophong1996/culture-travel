@@ -23,7 +23,7 @@ a {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  text-decoration: none;
+  text-decoration: none !important;
   background-color: transparent;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -78,7 +78,7 @@ p, ul, ol {
 .nav-link{
   color: #fff !important;
   font-weight: 800 !important;
-  font-size: 1.1em !important;
+  font-size: 1em !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -114,11 +114,16 @@ p, ul, ol {
   color: #000 !important;
 }
 #about h1 {
-  
+  font-size: 5.5em;
+  text-align: left;
 }
 #about .aboutRight{
   background-color: #f7f2e9 !important;
-  padding: 90px 0px 80px 95px;
+  padding: 70px 80px 50px 70px;
+}
+#about .aboutLeft{
+
+  padding: 70px 80px 50px 70px;
 }
 #about .aboutRight p{
   color: #2A2828 !important;
@@ -197,10 +202,15 @@ path:hover .content{
 }
 #areaMap .infoCol2{
   background-color: #FFCC00  ;
+  padding: 20px 70px 50px 50px;
 }
 #areaMap {
   margin-left: auto ;
+  margin-bottom: 100px;
   margin-right: auto;
+}
+#areaMap h1{
+  font-size: 3.5rem;
 }
 
 
@@ -216,7 +226,13 @@ figure.snip1084 {
   background: #000000;
   text-align: center;
 }
-
+#famousArea h1{
+  font-size: 3.5rem;
+}
+#famousArea .my-4 {
+  margin-top: 2.5rem!important;
+  margin-bottom: 2.5rem!important;
+}
 figure.snip1084 * {
   -webkit-box-sizing: padding-box;
   box-sizing: padding-box;
@@ -396,7 +412,7 @@ figure.snip1084.hover:after {
     padding-left: 40px;
   }
 #footer h1, h2, h3, h4, h5, h6 {
-  color: #212121;
+  
   font-family: "Roboto Slab", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 30px 0 !important;

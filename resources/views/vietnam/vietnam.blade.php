@@ -11,7 +11,7 @@
 	<!-----fonts----->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
 	<!-----bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -25,7 +25,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
     <script src="/js/jquery.mapael.js" charset="utf-8"></script>
     <script src="/js/france_departments.js" charset="utf-8"></script>
-
 
 	<style type="text/css">
 		.mapael .mapTooltip {
@@ -128,8 +127,10 @@
             });
         });
     </script>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
+
  		fetch_customer_data();
 
  		function fetch_customer_data(query = '')
@@ -159,15 +160,16 @@
   		var btnText = document.getElementById("myBtn");
 
   		if (moreText.style.display === "none") {
-    		btnText.innerHTML = "Read less";
+    		btnText.innerHTML = "Rút gọn";
     		moreText.style.display = "block";
  		} else {
-    		btnText.innerHTML = "Read more";
+    		btnText.innerHTML = "Xem thêm";
    			 moreText.style.display = "none";
   }
 }
 
 	</script>
+	
 </head>
 <body>
 
@@ -179,14 +181,20 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#">Tổng quán</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Văn hoá</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="#">Vùng miền</a>
             </li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Địa danh</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Sự kiện</a>
+			  </li>
           </ul>
         </div>
 		  <a href="#" class="">
@@ -199,13 +207,13 @@
 				<img src="https://khoinguonsangtao.vn/wp-content/uploads/2022/02/anh-dai-dien-fb-dep.jpg" alt="">{{ Auth::user()->name }}
 			</a>
 			<ul class="dropdown-menu">
-			  <li><a class="dropdown-item" href="#">Settings</a></li>
+			  <li><a class="dropdown-item" href="#">Cài dặt tài khoản</a></li>
 			  <li><form method="POST" action="{{ route('logout') }}">
 				@csrf
 				<a href="route('logout')"
 						onclick="event.preventDefault();
 									this.closest('form').submit();">
-					{{ __('Log Out') }}
+					{{ __('Đăng xuất') }}
 				</a>
 			</form></li>
 			</ul>
@@ -228,16 +236,19 @@
 <section id="about">
 	<div class="container-fluid">
 		<div class="row justify-content-center" >
-			<div class="col-md-6 aboutLeft pl-3">
-				<p></p>
+			<div class="col-md-4 aboutLeft pl-3">
+				<p>Xin Chào</p>
 				<h1>Việt Nam</h1>
 			</div>
-			<div class="col-md-6 aboutRight pr-3">
-                <h3>Việt Nam đất nước con người</h3>
-                <p><span>"Chào các bạn!"</span> Câu chào luôn được người Việt coi trọng trong giao tiếp, nó như mang đến sự suôn sẻ và may mắn cho một sự khởi đầu mới hay một ngày mới. Người Việt có câu “Lời chào cao hơn mâm cỗ” là thể hiện sự tôn trọng và lịch sự trong giao tiếp đối với người đối diện. Lời chào còn thể hiện sự thân thiện, tính hiếu khách của người Việt. Vì vậy, các bạn đi đến đâu trên đất nước Việt Nam hay gặp bất cứ ai bạn đều nhận được một lời chào đấy!
-	Các bạn biết không, mỗi một quốc gia đều có một nét văn hóa đặc trưng riêng, Việt Nam cũng như vậy các bạn ạ! Sau đây, tôi xin giới thiệu với các bạn nét đặc trưng của văn hóa Việt.
-	Với một quá trình lịch sử đấu tranh chống kẻ thù xâm lược để bảo vệ bờ cõi, giành tự do, độc lập và xây dựng đất nước có từ hàng ngàn năm của người Việt cùng sự hội tụ của 54 thành phần dân tộc khác nhau đã góp phần tạo nên sự đa dạng, phong phú và đặc sắc cho nền văn hóa của Việt Nam.
-	Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đời sống sinh hoạt cộng đồng và trong các hoạt động kinh tế từ phong tục tập quán, trang phục cho đến phong cách ẩm thực. Dưới đây là những nét đặc sắc của văn hóa Việt Nam mà bạn có thể tìm hiểu.</p>
+			<div class="col-md-8 aboutRight pr-3">
+				<h2>"Việt Nam đất nước con người"</h2>
+				<div style="text-align: justify;">
+					<p>Việt Nam là một đất nước nhiệt đới nằm ở khu vực Đông Nam Á – trung tâm của tuyến đường biển quốc tế. Khí hậy nhiệt đới gió mùa tạo nên sự đa dạng tài nguyên sinh học của Việt Nam. Bên cạnh đó, đất nước Việt Nam có hình chữ S với 3260km đường biển có tiềm năng du lịch và thủy hải sản phong phú.</p>
+			
+					<p>Một trong những đặc điểm nổi bật khi nhắc tới Việt Nam là các địa điểm du lịch. Việt Nam là một đất nước nhỏ nhắn, xinh đẹp với những phong cảnh hùng vĩ. Nhờ có khí hậu nhiệt đới nên Việt Nam được biết tới với các cảnh đẹp hút hồn du khách như các ngọn núi tráng lệ, thung lũng ở phía bắc hay những bãi biển cát trắng ở phía nam. Vì Việt Nam có những bờ biển dài nên du lịch đặc biệt được chú trọng. Sapa, thủ đô Hà Nội, Đà Nẵng hay thành phố Hồ Chí Minh là những địa điểm thu hút khách du lịch nước ngoài nhiều nhất.</p>
+					<p>Việt Nam có một lịch sử lâu dài với hơn 4000 ngàn năm đấu tranh chống kẻ thù xâm lược để bảo vệ bờ cõi, giành tự do, độc lập và xây dựng đất nước có từ hàng ngàn năm của người Việt cùng sự hội tụ của 54 thành phần dân tộc khác nhau đã góp phần tạo nên sự đa dạng, phong phú và đặc sắc cho nền văn hóa của Việt Nam.
+						Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đời sống sinh hoạt cộng đồng và trong các hoạt động kinh tế từ phong tục tập quán, trang phục cho đến phong cách ẩm thực. Dưới đây là những nét đặc sắc của văn hóa Việt Nam mà bạn có thể tìm hiểu. </p></div>
+                
 			</div>
             <div class="d-flex midImage justify-content-center">
 				<div class="blockImage">
@@ -269,15 +280,16 @@
 }
 .elementor-counter .elementor-counter-number-wrapper {
     font-weight: 400;
-    font-family: Bebas Neue,cursive;
+    font-family: "takeEasy";
+
 }
-.elementor-counter .elementor-counter-number {
+.elementor-counter .count-num {
     font-family: "takeEasy";
 	font-size: 60px;
 }
 .elementor-counter-number-prefix, .elementor-counter-number-suffix {
     font-family: "takeEasy";
-	font-size: 40px;
+	font-size: 30px;
 }
 hr.hrForCount{
 	border-top: 2px solid #b3b3b3;
@@ -289,6 +301,7 @@ hr.hrForCount{
 }
 
 </style>
+
 <section id="countNumber">
 	<div class="container">
 		<div class="row">
@@ -302,7 +315,7 @@ hr.hrForCount{
 						</div>
 						<div class="elementor-counter-number-wrapper">
 							<span class="elementor-counter-number-prefix"></span>
-							<span class="elementor-counter-number" data-duration="2000" data-to-value="99113159" data-delimiter=",">99.113.159</span><br>
+							<span class="count-num">99,113,159</span><br>
 							<span class="elementor-counter-number-suffix">người</span>
 						</div>
 					</div>
@@ -319,7 +332,7 @@ hr.hrForCount{
 					</div>
 					<div class="elementor-counter-number-wrapper">
 						<span class="elementor-counter-number-prefix"></span>
-						<span class="elementor-counter-number" data-duration="2000" data-to-value="310060" data-delimiter=",">310.060</span> <br>
+						<span class="count-num">310,060</span> <br>
 						<span class="elementor-counter-number-suffix">km2</span>
 					</div>
 				</div>
@@ -334,7 +347,7 @@ hr.hrForCount{
 					</div>
 					<div class="elementor-counter-number-wrapper">
 						<span class="elementor-counter-number-prefix"></span>
-						<span class="elementor-counter-number" data-duration="2000" data-to-value="320" data-delimiter=",">320</span><br>
+						<span class="count-num">320</span><br>
 						<span class="elementor-counter-number-suffix">người/km2</span>
 					</div>
 				</div>
@@ -349,13 +362,14 @@ hr.hrForCount{
 
 
 
+
 <!---------------->
 
 <!-------StartMap------->
 <section id="areaMap">
 	<div class="container">
 		<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-6" style="padding: 0;">
 			<div class="col-12 py-4" style="background-color: #FDFDFD;">
 				<p class="text-dark">Khám phá văn hoá qua</p>
 				<h1 class="text-dark">Bản đồ Việt Nam</h1>
@@ -430,12 +444,15 @@ hr.hrForCount{
 					display: block;
 					transition: 0.5s;
 				}
+				.snip1084 span{
+					text-shadow: black 0.1em 0.1em 0.2em;
+				}
 			</style>
 
 			<script type="text/javascript">
 			$(document).ready(function () {
 				//default area when load
-				$('[data-id="160"]').addClass( "active" );
+				$('[data-id="630"]').addClass( "active" );
 
 				$("path").on("click",function(){
 
@@ -456,26 +473,20 @@ hr.hrForCount{
 			</script>
 			<div class="col-12 infoCol2">
 				<ul>
-					<li id="" class="infoArea 160 active">
-						<h1>Hà Nội</h1>
-						<p>Hà nội là một</p>
-					</li>
-					<li id="" class="infoArea 170">
-						<h1>Hà Nam</h1>
-						<p>Hà nội là một</p>
-					</li>
-					<li id="" class="infoArea">
-						<h1>HCM</h1>
-						<p>Hà nội là một</p>
-					</li>
-					<li id="" class="infoArea">
-						<h1>Binh duong</h1>
-						<p>Hà nội là một</p>
-					</li>
-					<li id="" class="infoArea">
-						<h1>Hai duong</h1>
-						<p>Hà nội là một</p>
-					</li>
+					@foreach ($vietnams as $vietnam )
+						@if ($vietnam->id === 63)
+							<li id="" class="infoArea {{ $vietnam->id*10 }} active">
+							<h1>{{ $vietnam->name }}</h1>
+							<p>{{ $vietnam->title }}</p>
+							</li>
+						@else
+							<li id="" class="infoArea {{ $vietnam->id*10 }}">
+							<h1>{{ $vietnam->name }}</h1>
+							<p>{{ $vietnam->title }}</p>
+							</li>
+						@endif
+					@endforeach
+
 				</ul>
 
 				
@@ -513,7 +524,7 @@ hr.hrForCount{
 		</div>
 		<div class="col-4">
 			<figure class="snip1084 red">
-				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample43.jpg" alt="sample43" />
+				<img src="/img/hanoi.jpg" alt="sample43" />
 				<figcaption>
 				  <h2><span>Hà Nội</span></h2>
 				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
@@ -521,7 +532,7 @@ hr.hrForCount{
 				<a href="#"></a>
 			  </figure></div>
 			  <div class="col-4">
-			  <figure class="snip1084 blue"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample51.jpg" alt="sample51" />
+			  <figure class="snip1084 blue"><img src="/img/hochiminh.jpg" alt="sample51" />
 				<figcaption>
 				  <h2><span>Hồ Chí Minh</span></h2>
 				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
@@ -529,7 +540,7 @@ hr.hrForCount{
 				<a href="#"></a>
 			  </figure></div>
 			  <div class="col-4">
-			  <figure class="snip1084 yellow"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample49.jpg" alt="sample49" />
+			  <figure class="snip1084 yellow"><img src="/img/danang.jpeg" alt="sample49" />
 				<figcaption>
 				  <h2><span>Đà Nẵng</span></h2>
 				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
@@ -538,15 +549,15 @@ hr.hrForCount{
 			  </figure></div>
 		<div class="col-4">
 	<figure class="snip1084 red">
-		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample43.jpg" alt="sample43" />
+		<img src="/img/camau.jpeg" alt="sample43" />
 		<figcaption>
-		  <h2><span>Nha Trang</span></h2>
+		  <h2><span>Cà Mau</span></h2>
 		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
 		</figcaption>
 		<a href="#"></a>
 	  </figure></div>
 	  <div class="col-4">
-	  <figure class="snip1084 blue"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample51.jpg" alt="sample51" />
+	  <figure class="snip1084 blue"><img src="/img/hue.jpeg" alt="sample51" />
 		<figcaption>
 		  <h2><span>Huế</span></h2>
 		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
@@ -554,7 +565,7 @@ hr.hrForCount{
 		<a href="#"></a>
 	  </figure></div>
 	  <div class="col-4">
-	  <figure class="snip1084 yellow"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample49.jpg" alt="sample49" />
+	  <figure class="snip1084 yellow"><img src="/img/vungtau.jpg" alt="sample49" />
 		<figcaption>
 		  <h2><span>Vũng Tàu</span></h2>
 		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
@@ -623,5 +634,9 @@ hr.hrForCount{
 				</div>
 			</div>
 		</footer>
+		
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+<script src="/assets/js/jquery.rcounterup.js"></script>
+<script src="/assets/js/active.js"></script>
 </body>
 </html>

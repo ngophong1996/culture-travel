@@ -49,11 +49,8 @@ Route::get('/home', function() {
 
 
 
-
-Route::get('/dashboard', function () {
-    return view('home');
-})->middleware(['auth'])->name('dashboard');
 Route::resource('vietnam', VietnamController::class)->middleware(['auth']);
+Route::resource('blog', BlogController::class);
 
 require __DIR__.'/auth.php';
 
