@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Vietnam;
+use App\Models\AreaVN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class VietnamController extends Controller
@@ -14,7 +15,7 @@ class VietnamController extends Controller
      */
     public function index()
     {
-        $vietnams = Vietnam::all();
+        $vietnams = AreaVN::all();
         
         return view('vietnam.vietnam',[
             'vietnams'=>$vietnams
@@ -88,17 +89,17 @@ class VietnamController extends Controller
     }
     function action(Request $request)
     {   
-        $vietnams= DB::table('vietnams')->get();
+        $vietnams= DB::table('area_v_n_s')->get();
         if($request->ajax())
         {
             $output = '<ul>';
             $query = $request->get('query');
             if($query != '') {
-                $data = DB::table('vietnams')
+                $data = DB::table('area_v_n_s')
                     ->where('name', 'like', '%'.$query.'%')
                     ->get();
             } else {
-                $data = DB::table('vietnams')
+                $data = DB::table('area_v_n_s')
                     ->get();
             }
              

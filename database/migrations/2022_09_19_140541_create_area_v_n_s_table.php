@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vietnams', function (Blueprint $table) {
+        Schema::create('area_v_n_s', function (Blueprint $table) {
             $table->id();
-            $table->integer('userid');
-            $table->integer('areaid');
+            $table->string('name');
+            $table->integer('area');
+            $table->integer('population');
+            $table->longtext('title');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vietnams');
+        Schema::dropIfExists('area_v_n_s');
     }
 };
