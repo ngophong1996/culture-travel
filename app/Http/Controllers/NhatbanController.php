@@ -1,8 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\Nhatban;
+use App\Models\AreaJP;
+use App\Models\AreaVN;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class NhatbanController extends Controller
 {
@@ -13,7 +18,11 @@ class NhatbanController extends Controller
      */
     public function index()
     {
-        //
+        $vietnams = AreaVN::all();
+        
+        return view('nhatban.nhatban',[
+            'vietnams'=>$vietnams
+        ]);    
     }
 
     /**
@@ -80,5 +89,56 @@ class NhatbanController extends Controller
     public function destroy($id)
     {
         //
+    }
+    function action(Request $request)
+    {   
+        $vietnams= DB::table('area_v_n_s')->get();
+        if($request->ajax())
+        {
+            $output = '<ul>';
+            $query = $request->get('query');
+            if($query != '') {
+                $data = DB::table('area_v_n_s')
+                    ->where('name', 'like', '%'.$query.'%')
+                    ->get();
+            } else {
+                $data = DB::table('area_v_n_s')
+                    ->get();
+            }
+             
+            $total_row = $data->count();
+            if($total_row > 0 && $total_row < $vietnams->count()){
+                foreach($data as $row)
+                {
+                    $output .= '
+                    <li>'.$row->name.'</li>
+                    ';
+                }
+                $output .= '</ul>';
+            }else if($total_row === $vietnams->count()){
+                $count = 1 ;
+                foreach($data as $row)
+                {   
+                    if($count==10){$output .= '</ul><ul id="more" style="display: none;">';}
+                    $output .= '
+                    <li>'.$row->name.'</li>
+                    ';
+                    $count +=1;
+                }
+                $output .= '</ul>';
+                $output .= '<button onclick="myFunction()" id="myBtn">Xem thêm</button>';
+            }else{
+                $output = '
+                <li>No Data Found</li>
+                ';
+                $output .= '</ul>';
+            }
+     
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+            echo json_encode($data);
+        }
     }
 }

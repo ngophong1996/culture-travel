@@ -6,6 +6,7 @@ use App\Models\Vietnam;
 use App\Models\AreaVN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Redirect,Response;
 class VietnamController extends Controller
 {
     /**
@@ -16,9 +17,17 @@ class VietnamController extends Controller
     public function index()
     {
         $vietnams = AreaVN::all();
-        
+        $choosenArea= DB::table('vietnams')
+                        ->where('userid', Auth::user()->id)
+                        ->get();
+ 
         return view('vietnam.vietnam',[
-            'vietnams'=>$vietnams
+            'vietnams'=>$vietnams,
+            'choosenArea'=> $choosenArea
+        ]);
+    }
+    public function aodai(){
+        return view('vietnam.aodai',[
         ]);
     }
 
@@ -138,4 +147,5 @@ class VietnamController extends Controller
             echo json_encode($data);
         }
     }
+   
 }

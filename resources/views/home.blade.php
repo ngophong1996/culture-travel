@@ -57,9 +57,38 @@
             </li>
           </ul>
           </div>
-          <div class="nav-item1">
-            <a class="btn btn-success" href="loginPage/index.html" role="button">GET START</a>
-          </div>
+
+
+          @if (Route::has('login'))
+            @auth
+              <div class=" navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    @if(Auth::user()->image)
+                                  <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
+                              @endif
+                    {{ Auth::user()->name }}
+                  </a>
+                  <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ url('/profile') }}">Cài dặt tài khoản</a></li>
+                  <li><form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="route('logout')"
+                      onclick="event.preventDefault();
+                            this.closest('form').submit();">
+                      {{ __('Đăng xuất') }}
+                    </a>
+                    </form></li>
+                  </ul>
+                    </li>
+                </ul>
+              </div>
+            @else
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Đăng nhập</a>
+            @endauth
+          @endif
+          
         </div>
       </div>
   </nav>
@@ -101,7 +130,7 @@
 
       <h2 class="fw-normal">Nhật Bản</h2>
       
-      <p><a class="btn btn-secondary" href="#">Xem nội dung &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="{{ url('/nhatban') }}">Xem nội dung &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
 
   <div class="col-lg-4">
@@ -109,7 +138,7 @@
 
       <h2 class="fw-normal">Việt Nam</h2>
       
-      <p><a class="btn btn-secondary" href="#">Xem nội dung &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="{{ url('/vietnam') }}">Xem nội dung &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
   
   <div class="col-lg-4">
@@ -180,58 +209,58 @@ Theo Ban tổ chức, Lễ hội Lam Kinh 2022 nhằm kỷ niệm 604 năm Khở
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h3 class="section-title">About Us</h3>
-          <p>All around us, both in places far away and in places near us, there are always beautiful things that in the midst of the busyness of life that we rarely notice. 
-             <br> Come to us, you will see it. We wil make you curious and amazed about the wonderfull cultures in the world.</p>
-        </div>
-      
+          <h3 class="section-title">Giới thiệu</h3>
+          <p>CultureTravel là một Website về thông tin vắn hoá của nhiều nước trên thế giới được vận hành và phát triển từ năm 2022. Các bài viết được tổng hợp đa phần từ nội dung tham khảo trên Google.</p>
 
+          <h3 class="section-title">Cơ Hội hợp tác với CultureTravel</h3>
+          <p>Cùng với mục tiêu phát triển của CultureTravel là muốn đưa thông tin nhiều hơn về văn hoá đến với độc giả. Song song đó là lượng nội dung bổ ích và chính xác về văn hoá phải được cập nhật thường xuyên.</p>
+
+          <p>Hiện tại,CultureTravel muốn hợp tác với các bên phát triển dịch vụ du lịch và cá nhân đam mê du lịch.</p></div>
         <div class="col-md-4">
-          <h3 class="section-title">Our Address</h3>
-          <ul class="contact-info">
-            <li><i class="fa-regular fa-map"></i>Chiyoda-ku, Tokyo, Japan</li>
-            <li><i class="fa-solid fa-phone-flip"></i>+ 1235 2355 98</li>
-            <li><i class="fa-regular fa-envelope"></i><a href="#">internship@nal.vn</a></li>
-            <li><i class="fa-solid fa-globe"></i><a href="#">https://nal.co.jp/</a></li>
-          </ul>
+          <h3 class="section-title">Liên lạc</h3>
+            <ul class="contact-info">
+              <li><i class="fa-regular fa-map"></i>98 West 21th Street, Suite 721 New York NY 10016</li>
+              <li><i class="fa-solid fa-phone-flip"></i>+ 1235 2355 98</li>
+              <li><i class="fa-regular fa-envelope"></i><a href="#">info@yoursite.com</a></li>
+              <li><i class="fa-solid fa-globe"></i><a href="#">www.yoursite.com</a></li>
+            </ul>
         </div>
-        <div class="col-md-4">
-          <h3 class="section-title">Drop us a line</h3>
-          <form class="contact-form">
-            <div class="form-group">
-              <label for="name" class="sr-only">Name</label>
-              <input type="name" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <label for="email" class="sr-only">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="message" class="sr-only">Message</label>
-              <textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
-            </div>
-          </form>
+          <div class="col-md-4">
+            <h3 class="section-title">Phản hồi</h3>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name" class="sr-only">Tên</label>
+                <input type="name" class="form-control" id="name" placeholder="Tên">
+              </div>
+              <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="message" class="sr-only">Nội dung tin nhắn</label>
+                <textarea class="form-control" id="message" rows="7" placeholder="Nội dung tin nhắn"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Gửi">
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="row copy-right justify-content-md-center">
-        <div class="col-md-6 col-md-offset-3 text-center">
-          <p>CONNECT WITH US</p>
-          <p class="fh5co-social-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          </p>
-          <p>&copy; 2022 <a href="#">Culture Travel</a> at Home. All Rights Reserved. </p>
+        <div class="row copy-right justify-content-md-center">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <p>THEO DÕI CHÚNG TÔI</p>
+            <p class="fh5co-social-icons">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </p>
+            <p>&copy; 2022 <a href="#">Culture Travel</a> at Home. All Rights Reserved. </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
   </body>
 </html>

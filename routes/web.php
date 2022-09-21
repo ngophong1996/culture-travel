@@ -1,8 +1,12 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Routes;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VietnamController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\NhatbanController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController; 
@@ -33,13 +37,19 @@ Route::middleware(['admin'])->group(function (){
 });
 
 Route::get('/action', [VietnamController::class, 'action'])->name('action');
+Route::get('/choosenVN', [VietnamController::class, 'choosen'])->name('choosenVN');
+
 
 
 Route::middleware(['auth'])->group(function (){
     Route::resource('vietnam', VietnamController::class);
+    Route::get('aodai', [VietnamController::class,'aodai'])->name('aodai');
+    Route::resource('nhatban', NhatbanController::class);
+    Route::resource('blog', BlogController::class);
+    Route::get('/profile',[HomeController::class,'profile']);
+    Route::post('/profile', [HomeController::class,'upload']);
+
 });
-
-
 
 
 Route::get('/home', function() {
@@ -47,10 +57,6 @@ Route::get('/home', function() {
 });
 
 
-
-
-Route::resource('vietnam', VietnamController::class)->middleware(['auth']);
-Route::resource('blog', BlogController::class);
 
 require __DIR__.'/auth.php';
 
