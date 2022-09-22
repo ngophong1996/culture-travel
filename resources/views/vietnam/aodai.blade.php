@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/vietnam.css">
+    <link rel="stylesheet" href="css/aodai.css">
 	<script src="https://kit.fontawesome.com/f99152938e.js" crossorigin="anonymous"></script>
 	<!-----fonts----->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,34 +37,56 @@
 
 
 <!------------------------nav bar----------------------------------------------->
-<nav class="navbar navbar-expand-md navbar-light sticky-top">
+<style>
+    .navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  top: 0px;
+  position: absolute;
+}
+.navbar-brand img {
+        width: 85px;
+    }
+.navbar-toggle { z-index: 1; }
+.navbar {
+	
+background-color:#0F0F0F !important;
+  padding-top: 27px;
+  padding-bottom: 27px;;
+}
+.nav-link {
+	padding: 0;
+}.dropdown-menu {
+	width: 200px;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 	<div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-            	<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
-            </li>
-            <li class="nav-item">
-            	<a class="nav-link" href="#mienbac">Văn hoá</a>
-            </li>
-            <li class="nav-item">
-            	<a class="nav-link" href="#areaMap">Vùng miền</a>
-            </li>
+		
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#"><img src="/img/CultureTravel.png"></a>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
 			<li class="nav-item">
-				<a class="nav-link" href="#famousArea">Địa danh</a>
+				<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#nonthEvent">Sự kiện</a>
+				<a class="nav-link" href="#">Văn hoá</a>
 			</li>
-          </ul>
-        </div>
-		<a href="#" class="">
-			<img src="/img/CultureTravel.png" style="width:90px;height:auto;">
-		</a>
-		<div class=" navbar-collapse justify-content-end">
-			<ul class="navbar-nav">
-				<li class="nav-item dropdown">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Vùng miền</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Địa danh</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Sự kiện</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					@if(Auth::user()->image)
                         <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
@@ -83,8 +105,11 @@
 					</form></li>
 				</ul>
 		  		</li>
-			</ul>
-		</div>
+		</ul>
+	  </div>
+	<div>
+  
+	</div>
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
@@ -96,6 +121,8 @@
 		  </div>
 	</div>
 </section>
+<!------------------->
+
 <!-----------StartAbout------->
 <section id="about">
 	<div class="container-fluid">
@@ -123,104 +150,143 @@
 </section>
 
 <!-----------EndAbout---------->
-<style>
-	#countNumber{
-	margin-top: 100px;
-    margin-bottom: 120px;
-    padding: 30px 0px 0px 0px;
-	position: relative;
-	}
-	.elementor-counter .heading-decor {
-		display: inline-block;
-		width: 60px;
-		height: 3px;
-		margin-top: 25px;
-		background-color: #ffcc00;
-	}
-	.elementor-counter {
-		text-align: center;
-		padding: 15px 50px 30px 50px;
-		border-right: 1px solid #f0efef;
-	}
-	.elementor-counter .elementor-counter-number-wrapper {
-		font-weight: 400;
-		font-family: "takeEasy";
-
-	}
-	.elementor-counter .count-num {
-		font-family: "takeEasy";
-		font-size: 60px;
-	}
-	.elementor-counter-number-prefix, .elementor-counter-number-suffix {
-		font-family: "takeEasy";
-		font-size: 30px;
-	}
-	hr.hrForCount{
-		border-top: 2px solid #b3b3b3;
-		width: 100%;
-		margin: 70px 0;
-	}
-	.elementor-counter-description{
-		color: #575757 !important;
-	}
-
-</style>
-
-<section id="countNumber">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<div class="elementor-counter">
-					<div class="elementor-counter-wrapper">
-						<div class="elementor-counter-title-wrap">
-							<div class="elementor-counter-description">Dân số hiện tại của Việt Nam</div>
-								<span class="heading-decor"></span>
-						</div>
-						<div class="elementor-counter-number-wrapper">
-							<span class="elementor-counter-number-prefix"></span>
-							<span class="count-num">99,113,159</span><br>
-							<span class="elementor-counter-number-suffix">người</span>
-						</div>
-					</div>
-				</div>
+<section id="content">
+<div class="ad-banner">
+	<img width="80%" class="img-fluid" src="/img/aodaitet1.jpg" alt="">
+</div>
+<div class="container">
+	<div class="row">
+		<div data-aos="zoom-in-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center aodai-left aos-init">
+			<img width="80%" class="img-fluid" src="/img/aodai2.jpg" alt="">
+			<p>テットの祝日の伝統的な衣装</p>
+		</div>
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aodai-right">
+			<h2>
+				ベトナムの伝統的な衣装
+			</h2>
+			<p>長い間、ベトナムの女性に関しては、国際的な友人はアオザイを賞賛してきました。確かに、ベトナムのアオザイは、ベトナムの女性の美しさと魂を示す伝統的な衣装と見なされるに値します。ユネスコの無形文化遺産に認定され、優しくて優しいベトナム人女性のシンボルになりました。シャツの構造から青台と呼ばれ、体は2束になっています。女性の腰に近く、その後、背中の底から2つのボディがかかとに落ちて、女の子のためのより優雅で柔らかく柔軟なステップを作成します。<br><br> 多くの控えめな色がエレガントに通りを滑る薄いシルクシャツが注目を集め、明るい花になります。それは人々と周囲の優雅さと優雅さを高めます。同色のユニフォーム生地や白のサテンで作られたワイドレッグパンツのスタイルで作られたパンツは、裾をサポートし、柔らかさと優雅さを高めて滑らかで優雅な衣装を作り、素敵な愛らしさを呼び起こします。</p>
+		</div>
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ad-1">
+			<div class="img-text">
+				<img data-aos="zoom-in-right" width="60%" class="img-fluid aos-init" src="/img/aodai18.jpg" alt="">
+				<p class="adhs">学生のアオザイ</p>
 			</div>
-			<div class="col-md-4">
-				<div class="elementor-counter">
-					<div class="elementor-counter-wrapper">
-						<div class="elementor-counter-title-wrap">
-							<div class="elementor-counter-description">Tổng diện tích đất</div>
-							<span class="heading-decor"></span>
-						</div>
-						<div class="elementor-counter-number-wrapper">
-							<span class="elementor-counter-number-prefix"></span>
-							<span class="count-num">310,060</span> <br>
-							<span class="elementor-counter-number-suffix">km2</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="elementor-counter">
-					<div class="elementor-counter-wrapper">
-						<div class="elementor-counter-title-wrap">
-							<div class="elementor-counter-description">Mật độ dân số của Việt Nam</div>
-							<span class="heading-decor"></span>
-						</div>
-						<div class="elementor-counter-number-wrapper">
-							<span class="elementor-counter-number-prefix"></span>
-							<span class="count-num">320</span><br>
-							<span class="elementor-counter-number-suffix">người/km2</span>
-						</div>
-					</div>
-				</div>
+
+			<p>元日や地元のお祭り、結婚式、茶色、ピンク、赤のアオザイ...は、超越した威厳のある心で禅門にあなたの誠実な心を表現する方法です。 枕を覆うロングドレス、蓮の花のように巧妙なスカーフ、お寺の扉に敬意を表してトレイを持ち上げる手、…これらの画像は、ユニークなドンホー版画に入っています。ベトナムの文化の象徴。 今、コスチューム、ドレス、ショートドレス、ファッションドレスの多くの革新の中で...ベトナムのアオザイは今でも国民的アイデンティティのユニークな位置を占めており、ベトナムの人々のスタイルと魂を世界にもたらしています。5つの大陸とオフィスウェアになります。多くの場所で。
+			</p>
+		</div>
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12  ad-2">
+			<img data-aos="zoom-in-left" width="60%" class="img-fluid aos-init" src="/img/aodai7.jpg" alt="">
+			<p>学生のアオザイ</p>
+			<img data-aos="zoom-in-left" width="80%" class="img-fluid mrt aos-init" src="/img/aodai23.jpg" alt="">
+			<p class="adhs">歴史的な衣装</p>
+		</div>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="thuvien">
+				<h4>フォトライブラリ</h4>
 			</div>
 		</div>
-		<hr class="hrForCount">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 thuvienanh">
+			<div class="image">
+				<img class="myimg" src="/img/aodai1.jpg" alt="" style="cursor: zoom-in;">
+				<p>歴史的な衣装</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai2.jpg" alt="" style="cursor: zoom-in;">
+				<p>テトの祝日の伝統的な衣装</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodai3.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodai4.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodai7.jpg" alt="" style="cursor: zoom-in;">
+				<p>アオザイ</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodai8.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodai9.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai10.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai11.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai12.jpg" alt="" style="cursor: zoom-in;">
+				<p>歴史的な衣装</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai13.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai14.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai15.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai16.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai17.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai18.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai19.jpg" alt="" style="cursor: zoom-in;">
+				<p>歴史的な衣装</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai20.jpg" alt="" style="cursor: zoom-in;">
+				<p>歴史的な衣装</p>
+			</div>
+			<div class="image">
+				<img class="myimg" src="/img/aodai21.jpg" alt="" style="cursor: zoom-in;">
+				<p>歴史的な衣装</p>
+			</div>
+
+			<div class="image">
+				<img class=" myimg" src="/img/aodai23.jpg" alt="" style="cursor: zoom-in;">
+				<p>歴史的な衣装</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodai24.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodaitet1.jpg" alt="" style="cursor: zoom-in;">
+				<p>テトの祝日の伝統的な衣装</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodaitet.jpg" alt="" style="cursor: zoom-in;">
+				<p>テトの祝日の伝統的な衣装</p>
+			</div>
+			<div class="image">
+				<img class=" myimg" src="/img/aodai25.jpg" alt="" style="cursor: zoom-in;">
+				<p>学生のアオザイ</p>
+			</div>
+		</div>
 	</div>
 </section>
-
-
-
 <!---------------->
 
 <!-------StartMap------->
@@ -294,12 +360,28 @@
 			</div>
 		</footer>
 		
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-<script src="/assets/js/jquery.rcounterup.js"></script>
-<script src="/assets/js/active.js"></script>
-<script>
-	AOS.init();
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="/js/zooming.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+            new Zooming().listen('.thuvienanh img');
+            $(window).scroll(function() {
 
-</script>
+                if (this.scrollY > 400) {
+                    $('.scroll-up-btn').addClass("show");
+                } else {
+                    $('.scroll-up-btn').removeClass("show");
+                }
+            });
+            $('.scroll-up-btn').click(function() {
+                $('html').animate({
+                    scrollTop: 0
+                });
+                $('html').css("scrollBehavior", "auto");
+            });
+        </script>
+
 </body>
 </html>
