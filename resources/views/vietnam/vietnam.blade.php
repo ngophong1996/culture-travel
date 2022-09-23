@@ -131,48 +131,42 @@
 		dataType:'json',
 		success:function(data)
 		{	$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
-			
 			data.forEach(function(value, index){
 				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
-			// console.log(data[1].areaid*10);
-			// $('[data-id="' + data[1].areaid*10 + '"]').css('fill', '#FF4D00');
 		});
 		}
 		});
- 		function fetch_customer_data(query = '')
- 		{
+ 		function fetch_customer_data(query = ''){
 			$.ajax({
             url:"{{ route('actionvn') }}",
             method:'GET',
             data:{query:query},
             dataType:'json',
-            success:function(data)
-            {
-                $('#listArea').html(data.table_data);
-             
-            }
-        })
+            success:function(data){
+				$('#listArea').html(data.table_data);
+				}
+        	})
  		}
  			$(document).on('keyup', '#search', function(){
 	 		var query = $(this).val();
 	 		fetch_customer_data(query);
  			});
 		});
-		</script>
+	</script>
+
 	<script type="text/javascript">
+	//Readmore_Readless
 		function myFunction() {
-  		var moreText = document.getElementById("more");
-  		var btnText = document.getElementById("myBtn");
-
-  		if (moreText.style.display === "none") {
-    		btnText.innerHTML = "Rút gọn";
-    		moreText.style.display = "block";
- 		} else {
-    		btnText.innerHTML = "Xem thêm";
-   			 moreText.style.display = "none";
-  }
-}
-
+			var moreText = document.getElementById("more");
+			var btnText = document.getElementById("myBtn");
+			if (moreText.style.display === "none") {
+				btnText.innerHTML = "Rút gọn";
+				moreText.style.display = "block";
+			} else {
+				btnText.innerHTML = "Xem thêm";
+				moreText.style.display = "none";
+  			}
+		}
 	</script>
 </head>
 <body>
@@ -290,49 +284,6 @@
 </section>
 
 <!-----------EndAbout---------->
-<style>
-	#countNumber{
-	margin-top: 100px;
-    margin-bottom: 120px;
-    padding: 30px 0px 0px 0px;
-	position: relative;
-	}
-	.elementor-counter .heading-decor {
-		display: inline-block;
-		width: 60px;
-		height: 3px;
-		margin-top: 25px;
-		background-color: #ffcc00;
-	}
-	.elementor-counter {
-		text-align: center;
-		padding: 15px 50px 30px 50px;
-		border-right: 1px solid #f0efef;
-	}
-	.elementor-counter .elementor-counter-number-wrapper {
-		font-weight: 400;
-		font-family: "takeEasy";
-
-	}
-	.elementor-counter .count-num {
-		font-family: "takeEasy";
-		font-size: 60px;
-	}
-	.elementor-counter-number-prefix, .elementor-counter-number-suffix {
-		font-family: "takeEasy";
-		font-size: 30px;
-	}
-	hr.hrForCount{
-		border-top: 2px solid #b3b3b3;
-		width: 100%;
-		margin: 70px 0;
-	}
-	.elementor-counter-description{
-		color: #575757 !important;
-	}
-
-</style>
-
 <section id="countNumber">
 	<div class="container">
 		<div class="row">
@@ -395,7 +346,7 @@
 			</div>
 			<div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 title-mb aos-init aos-animate">
 				<p>Việt Nam có một nền văn hóa lâu đời và đặc biệt gắn liền với lịch sử địa lý và sự phát triển trên cả nước. Những nét đặc trưng của văn hóa Việt Nam luôn hấp dẫn du khách nước ngoài, khiến họ tò mò, tìm hiểu. Nhìn chung, Việt Nam là một xã hội, thực hành tốt nề nếp gia đình và phát huy các chức năng truyền thống.</p>
-				<a href="vanhoavn.html" class="">Xem thêm</a><br>
+				
 				<h1>︾</h1>
 			</div>
 			<div data-aos="zoom-in-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 img-mb aos-init aos-animate">
@@ -534,7 +485,19 @@
 
 			<script type="text/javascript">
 				$(document).ready(function () {
-				
+				//clickOnListArea
+				$('#listArea').on('click','li', function(event){
+					var classID = $(this).attr('data-id');
+					console.log(classID);
+					$("path").removeClass( "active" );
+					$(".infoArea").removeClass( "active" );
+					var containString = "." + classID+"0";
+					var $newID= $(containString);
+					$('[data-id=' + classID + '0]').addClass( "active" );
+					$newID.addClass("active");
+				});
+
+
 				$.ajaxSetup({
         			headers: {
             			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -544,43 +507,38 @@
 				$(".deleteRecord").click(function(){
     				var id = $(this).data("id");
 					var url = "vietnam/"+id;
-    			$.ajax(
-   				 {
-       				url: url,
-        			type: 'DELETE',
-					dataType:'json',
-        			data: {
+    				$.ajax(
+   				 	{	url: url,
+        				type: 'DELETE',
+						dataType:'json',
+        				data: {
             			"id": id,
-        			},
-        		success: function (data){
-					console.log(data.length);
-					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.choosenArea.length/64*100)+"%  của Việt Nam");
-					$('[data-id="' + data.deletedid[0].areaid*10 + '"]').css('fill', '');
-    			}});
-   
+        				},
+        			success: function (data){
+						console.log(data.length);
+						$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.choosenArea.length/64*100)+"%  của Việt Nam");
+						$('[data-id="' + data.deletedid[0].areaid*10 + '"]').css('fill', '');
+    				}});
 				});
 				//create btn
 				$(".createRecord").click(function(){
     				var id = $(this).data("id");
 					var url = "vietnam";
 					
-    			$.ajax(
-   				 {
-       				url: url,
-        			type: 'POST',
-					dataType:'json',
-        			data: {
-            			"id": id,
-				
-        			},
-        		success: function (data){
-					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
-            		data.forEach(function(value, index){
-				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
-				});
-        		}
+    				$.ajax(
+   				 	{	url: url,
+        				type: 'POST',
+						dataType:'json',
+        				data: {
+            				"id": id,
+        				},
+        			success: function (data){
+						$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
+						data.forEach(function(value, index){
+						$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
+						});
+        			}
     			});
-   
 				});
 				//default area when load
 				//click path
@@ -627,34 +585,7 @@
 						@endif
 					@endforeach
 				</ul>
-<script>
 
-$(document).ready(function () {
-	$('#listArea').on('click','li', function(event){
-	var classID = $(this).attr('data-id');
-    console.log(classID);
-	$("path").removeClass( "active" );
-	$(".infoArea").removeClass( "active" );
-	var containString = "." + classID+"0";
-	var $newID= $(containString);
-	$('[data-id=' + classID + '0]').addClass( "active" );
-	
-	$newID.addClass("active");
-});
-
-
-	$(".areaBtn").on("click",function(){
-
-	var classID = $(this).attr("data-id").toString();
-
-	$("path").removeClass( "active" );
-	$(".infoArea").removeClass( "active" );
-
-	
-});
-});
-				
-</script>
 			</div>
 		</div>
 		<div class="col-md-6" style="background-color: #f7f2e9">
@@ -693,7 +624,7 @@ $(document).ready(function () {
 				<img src="/img/hanoi.jpg" alt="sample43" />
 				<figcaption>
 				  <h2><span>Hà Nội</span></h2>
-				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				  <p>Thành phố Hà Nội là Thủ đô ngàn năm văn hiến với những di tích cổ xưa, cuộc sống yên bình.</p>
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
@@ -701,7 +632,7 @@ $(document).ready(function () {
 			  <figure class="snip1084 blue"><img src="/img/hochiminh.jpg" alt="sample51" />
 				<figcaption>
 				  <h2><span>Hồ Chí Minh</span></h2>
-				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				  <p>Được mệnh danh là “Hòn ngọc Viễn Đông”, TP.HCM từ lâu đã là trung tâm văn hóa, kinh tế, chính trị của Việt Nam.</p>
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
@@ -709,36 +640,36 @@ $(document).ready(function () {
 			  <figure class="snip1084 yellow"><img src="/img/danang.jpeg" alt="sample49" />
 				<figcaption>
 				  <h2><span>Đà Nẵng</span></h2>
-				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				  <p>Đà Nẵng còn là trung tâm của 3 di sản văn hóa thế giới là Cố đô Huế, phố cổ Hội An và thánh địa Mỹ Sơn. Phía bắc Đà Nẵng giáp tỉnh Thừa Thiên - Huế, phía tây và nam giáp tỉnh Quảng Nam, phía đông giáp biển Đông.</p>
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
 		<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
-	<figure class="snip1084 red">
-		<img src="/img/camau.jpeg" alt="sample43" />
-		<figcaption>
-		  <h2><span>Cà Mau</span></h2>
-		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
-		</figcaption>
-		<a href="#"></a>
-	  </figure></div>
-	  <div class="col-4 " data-aos="zoom-in-up" data-aos-offset="300">
-	  <figure class="snip1084 blue"><img src="/img/hue.jpeg" alt="sample51" />
-		<figcaption>
-		  <h2><span>Huế</span></h2>
-		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
-		</figcaption>
-		<a href="#"></a>
-	  </figure></div>
-	  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300"> 
-	  <figure class="snip1084 yellow"><img src="/img/vungtau.jpg" alt="sample49" />
-		<figcaption>
-		  <h2><span>Vũng Tàu</span></h2>
-		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
-		</figcaption>
-		<a href="#"></a>
-	  </figure></div>
-	</div>
+			<figure class="snip1084 red">
+				<img src="/img/camau.jpeg" alt="sample43" />
+				<figcaption>
+				<h2><span>Cà Mau</span></h2>
+				<p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				</figcaption>
+				<a href="#"></a>
+			</figure></div>
+			<div class="col-4 " data-aos="zoom-in-up" data-aos-offset="300">
+			<figure class="snip1084 blue"><img src="/img/hue.jpeg" alt="sample51" />
+				<figcaption>
+				<h2><span>Huế</span></h2>
+				<p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				</figcaption>
+				<a href="#"></a>
+			</figure></div>
+			<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300"> 
+			<figure class="snip1084 yellow"><img src="/img/vungtau.jpg" alt="sample49" />
+				<figcaption>
+				<h2><span>Vũng Tàu</span></h2>
+				<p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				</figcaption>
+				<a href="#"></a>
+			</figure></div>
+		</div>
 	</div>
 </div>
 </section>
