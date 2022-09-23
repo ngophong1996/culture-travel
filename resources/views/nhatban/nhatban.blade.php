@@ -258,8 +258,8 @@
 <section id="slider">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
-			<div class="p-2"><h1>Việt Nam</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span>Việt Nam</div>
+			<div class="p-2"><h1>Nhật Bản</h1></div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span>Nhật Bản</div>
 		  </div>
 	</div>
 </section>
@@ -268,8 +268,8 @@
 	<div class="container-fluid">
 		<div class="row justify-content-center" >
 			<div class="col-md-4 aboutLeft pl-3" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="300">
-				<p>Xin Chào</p>
-				<h1>Việt Nam</h1>
+				<p>Ohayo</p>
+				<h1>Nhật Bản</h1>
 				<div id="test"></div>
 			</div>
 			<div class="col-md-8 aboutRight pr-3">
@@ -345,7 +345,7 @@
 						</div>
 						<div class="elementor-counter-number-wrapper">
 							<span class="elementor-counter-number-prefix"></span>
-							<span class="count-num">99,113,159</span><br>
+							<span class="count-num">125,468,876</span><br>
 							<span class="elementor-counter-number-suffix">người</span>
 						</div>
 					</div>
@@ -360,7 +360,7 @@
 						</div>
 						<div class="elementor-counter-number-wrapper">
 							<span class="elementor-counter-number-prefix"></span>
-							<span class="count-num">310,060</span> <br>
+							<span class="count-num">364,571</span> <br>
 							<span class="elementor-counter-number-suffix">km2</span>
 						</div>
 					</div>
@@ -375,7 +375,7 @@
 						</div>
 						<div class="elementor-counter-number-wrapper">
 							<span class="elementor-counter-number-prefix"></span>
-							<span class="count-num">320</span><br>
+							<span class="count-num">344</span><br>
 							<span class="elementor-counter-number-suffix">người/km2</span>
 						</div>
 					</div>

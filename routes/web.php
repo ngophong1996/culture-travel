@@ -55,11 +55,14 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/63', function() {
         return view('vietnam.hanoi');
     })->name('63');
+    Route::get('/about', function() {
+        return view('about');
+    })->name('about');
 });
 
 Route::get('/home', function() {
     return view('home');
-});
+})->name('home');
 
 
 

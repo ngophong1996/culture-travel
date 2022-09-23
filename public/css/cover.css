@@ -19,10 +19,7 @@
 /*
  * Base structure
  */
- a {
-  color: rgb(255, 255, 255);
-  text-decoration: none !important;
-}
+
 body {
   font-family: "Roboto", Arial, serif;
   line-height: 1.8;
@@ -73,7 +70,20 @@ p{
   font-weight: 600;
   font-size: 16px;
 }
-
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none !important;
+}
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 0 !important;
+  align-items: center;}
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -86,6 +96,7 @@ p{
 .marketing .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;
+    margin-top: 50px;
 }
 .marketing img{
   border: 2px solid #000000;
@@ -96,6 +107,11 @@ p{
   cursor: pointer;
   opacity: 0.7;
   transform: scale(1.1);
+}
+
+.country{
+  border: 2px solid #000000;
+
 }
 
 #slogan{
@@ -143,16 +159,20 @@ h1{
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
-.navbar-collapse {
-  flex-basis: 100%;
-  flex-grow: 0 !important;
-  align-items: center;
+
+
+
+
+/*-----------picture libary------------*/
+div .layout {
+  z-index: 2;
+  min-width: 100%;
+  padding: 20px;
 }
-.yellowInRight {
-  border-right: 3px solid yellow;
-  padding-right: 23px;
-  margin-right: 23px;
-}
+
+
+
+
 /*----------videoCover---------*/
 #videoCover {
   position: relative;
@@ -210,9 +230,11 @@ a:link{
   color: #333;
 }
 a:hover{
-  color: #FFCC00 ;
+  color: #000000;
 }
-
+a:visited{
+  color: #333;
+}
 
 
 
