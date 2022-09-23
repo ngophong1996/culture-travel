@@ -42,4 +42,11 @@ class Post extends Base
 
        return array_merge($listingConfigs, $defaultListingConfigs);
     }
+    protected $fillable = [
+        'user_id',
+        'area',
+        'title',
+        'image',
+        'content',
+    ];
 }

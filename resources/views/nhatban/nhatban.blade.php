@@ -14,6 +14,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
 	<!-----bootstrap-->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<!------Ajax------>
@@ -24,8 +26,9 @@
             charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
     <script src="/js/jquery.mapael.js" charset="utf-8"></script>
-    <script src="/js/france_departments.js" charset="utf-8"></script>
-
+    <script src="/js/nhatbanmap.js" charset="utf-8"></script>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	
 	<style type="text/css">
 		.mapael .mapTooltip {
             position: absolute;
@@ -83,26 +86,15 @@
         .mapael .map {
             position: relative;
         }
-		.mapael .mapTooltip {
-            position: absolute;
-            background-color: #fff;
-            moz-opacity: 0.70;
-            opacity: 0.80;
-            filter: alpha(opacity=70);
-            border-radius: 10px;
-            padding: 10px;
-            z-index: 1000;
-            max-width: 200px;
-            display: none;
-            color: #343434;
-        }
+
+
     </style>
 	<!---------Mapeal------>
 	<script type="text/javascript">
         $(function () {
             $(".mapcontainer").mapael({
                 map: {
-                    name: "france_departments",
+                    name: "nhatbans",
                      zoom: {
                         enabled: true
                     },
@@ -117,9 +109,9 @@
                     }
                 },
                 areas: {
-					@foreach ($vietnams as $vietnam )
-					"{{ $vietnam->id*10 }}": {
-                        tooltip: {content: "<span style=\"font-weight:bold;\">{{ $vietnam->name }}</span><br />Diện tích : {{ number_format($vietnam->area,0, ',', ',') }}km2<br />Dân số : {{ number_format($vietnam->population,0, ',', ',') }}"}
+					@foreach ($nhatbans as $nhatban )
+					"{{ $nhatban->id*10 }}": {
+                        tooltip: {content: "<span style=\"font-weight:bold;\">{{ $nhatban->name }}</span><br />Diện tích : {{ number_format($nhatban->area,0, ',', ',') }}km2<br />Dân số : {{ number_format($nhatban->population,0, ',', ',') }}"}
                     	},
 					@endforeach
 
@@ -128,15 +120,29 @@
         });
     </script>
 
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 
  		fetch_customer_data();
-
+		 $.ajax({
+		url:"{{ route('choosenVN') }}",
+		method:'GET',
+		dataType:'json',
+		success:function(data)
+		{	$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
+			
+			data.forEach(function(value, index){
+				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
+			// console.log(data[1].areaid*10);
+			// $('[data-id="' + data[1].areaid*10 + '"]').css('fill', '#FF4D00');
+		});
+		}
+		});
  		function fetch_customer_data(query = '')
  		{
 			$.ajax({
-            url:"{{ route('action') }}",
+            url:"{{ route('actionjp') }}",
             method:'GET',
             data:{query:query},
             dataType:'json',
@@ -147,7 +153,6 @@
             }
         })
  		}
-
  			$(document).on('keyup', '#search', function(){
 	 		var query = $(this).val();
 	 		fetch_customer_data(query);
@@ -169,45 +174,66 @@
 }
 
 	</script>
-	
 </head>
 <body>
 
 
 <!------------------------nav bar----------------------------------------------->
-<nav class="navbar navbar-expand-md navbar-light sticky-top">
+<style>
+    .navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  top: 0px;
+  position: absolute;
+}
+.navbar-brand img {
+        width: 85px;
+    }
+.navbar-toggle { z-index: 1; }
+.navbar {
+	
+	background-color:#0F0F0F !important;
+  padding-top: 27px;
+  padding-bottom: 27px;;
+}
+.nav-link {
+	padding: 0;
+}.dropdown-menu {
+	width: 200px;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 	<div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-            	<a class="nav-link active" aria-current="page" href="#">Tổng quán</a>
-            </li>
-            <li class="nav-item">
-            	<a class="nav-link" href="#">Văn hoá</a>
-            </li>
-            <li class="nav-item">
-            	<a class="nav-link" href="#">Vùng miền</a>
-            </li>
+		
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#"><img src="/img/CultureTravel.png"></a>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Văn hoá</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Vùng miền</a>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Địa danh</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Sự kiện</a>
 			</li>
-          </ul>
-        </div>
-		<a href="#" class="">
-			<img src="/img/CultureTravel.png" style="width:90px;height:auto;">
-		</a>
-		<div class=" navbar-collapse justify-content-end">
-			<ul class="navbar-nav">
-				<li class="nav-item dropdown">
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					@if(Auth::user()->image)
                         <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
                     @endif
-                    {{ Auth::user()->name }}
+					{{ Auth::user()->name }}
 				</a>
 				<ul class="dropdown-menu">
 				<li><a class="dropdown-item" href="{{ url('/profile') }}">Cài dặt tài khoản</a></li>
@@ -221,8 +247,11 @@
 					</form></li>
 				</ul>
 		  		</li>
-			</ul>
-		</div>
+		</ul>
+	  </div>
+	<div>
+  
+	</div>
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
@@ -230,7 +259,7 @@
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Việt Nam</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span>Việt Nam</span></div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span>Việt Nam</div>
 		  </div>
 	</div>
 </section>
@@ -238,13 +267,14 @@
 <section id="about">
 	<div class="container-fluid">
 		<div class="row justify-content-center" >
-			<div class="col-md-4 aboutLeft pl-3">
+			<div class="col-md-4 aboutLeft pl-3" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="300">
 				<p>Xin Chào</p>
 				<h1>Việt Nam</h1>
+				<div id="test"></div>
 			</div>
 			<div class="col-md-8 aboutRight pr-3">
-				<h2>"Việt Nam đất nước con người"</h2>
-				<div style="text-align: justify;">
+				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Việt Nam đất nước con người"</h2>
+				<div style="text-align: justify;" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" >
 					<p>Việt Nam là một đất nước nhiệt đới nằm ở khu vực Đông Nam Á – trung tâm của tuyến đường biển quốc tế. Khí hậy nhiệt đới gió mùa tạo nên sự đa dạng tài nguyên sinh học của Việt Nam. Bên cạnh đó, đất nước Việt Nam có hình chữ S với 3260km đường biển có tiềm năng du lịch và thủy hải sản phong phú.</p>
 					<p>Một trong những đặc điểm nổi bật khi nhắc tới Việt Nam là các địa điểm du lịch. Việt Nam là một đất nước nhỏ nhắn, xinh đẹp với những phong cảnh hùng vĩ. Nhờ có khí hậu nhiệt đới nên Việt Nam được biết tới với các cảnh đẹp hút hồn du khách như các ngọn núi tráng lệ, thung lũng ở phía bắc hay những bãi biển cát trắng ở phía nam. Vì Việt Nam có những bờ biển dài nên du lịch đặc biệt được chú trọng. Sapa, thủ đô Hà Nội, Đà Nẵng hay thành phố Hồ Chí Minh là những địa điểm thu hút khách du lịch nước ngoài nhiều nhất.</p>
 					<p>Việt Nam có một lịch sử lâu dài với hơn 4000 ngàn năm đấu tranh chống kẻ thù xâm lược để bảo vệ bờ cõi, giành tự do, độc lập và xây dựng đất nước có từ hàng ngàn năm của người Việt cùng sự hội tụ của 54 thành phần dân tộc khác nhau đã góp phần tạo nên sự đa dạng, phong phú và đặc sắc cho nền văn hóa của Việt Nam.
@@ -261,45 +291,45 @@
 
 <!-----------EndAbout---------->
 <style>
-#countNumber{
+	#countNumber{
 	margin-top: 100px;
     margin-bottom: 120px;
     padding: 30px 0px 0px 0px;
 	position: relative;
-}
-.elementor-counter .heading-decor {
-    display: inline-block;
-    width: 60px;
-    height: 3px;
-    margin-top: 25px;
-	background-color: #ffcc00;
-}
-.elementor-counter {
-    text-align: center;
-	padding: 15px 50px 30px 50px;
-	border-right: 1px solid #f0efef;
-}
-.elementor-counter .elementor-counter-number-wrapper {
-    font-weight: 400;
-    font-family: "takeEasy";
+	}
+	.elementor-counter .heading-decor {
+		display: inline-block;
+		width: 60px;
+		height: 3px;
+		margin-top: 25px;
+		background-color: #ffcc00;
+	}
+	.elementor-counter {
+		text-align: center;
+		padding: 15px 50px 30px 50px;
+		border-right: 1px solid #f0efef;
+	}
+	.elementor-counter .elementor-counter-number-wrapper {
+		font-weight: 400;
+		font-family: "takeEasy";
 
-}
-.elementor-counter .count-num {
-    font-family: "takeEasy";
-	font-size: 60px;
-}
-.elementor-counter-number-prefix, .elementor-counter-number-suffix {
-    font-family: "takeEasy";
-	font-size: 30px;
-}
-hr.hrForCount{
-	border-top: 2px solid #b3b3b3;
-	width: 100%;
-	margin: 70px 0;
-}
-.elementor-counter-description{
-	color: #575757 !important;
-}
+	}
+	.elementor-counter .count-num {
+		font-family: "takeEasy";
+		font-size: 60px;
+	}
+	.elementor-counter-number-prefix, .elementor-counter-number-suffix {
+		font-family: "takeEasy";
+		font-size: 30px;
+	}
+	hr.hrForCount{
+		border-top: 2px solid #b3b3b3;
+		width: 100%;
+		margin: 70px 0;
+	}
+	.elementor-counter-description{
+		color: #575757 !important;
+	}
 
 </style>
 
@@ -355,7 +385,66 @@ hr.hrForCount{
 		<hr class="hrForCount">
 	</div>
 </section>
+<section id="mienbac">
+	<div class="container">
+		<div class="row">
+			<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 taito-mb aos-init aos-animate">
+				<h1 class="css-taito-mb">
+					Văn hóa truyền thống việt nam
+				</h1>
+			</div>
+			<div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 title-mb aos-init aos-animate">
+				<p>Việt Nam có một nền văn hóa lâu đời và đặc biệt gắn liền với lịch sử địa lý và sự phát triển trên cả nước. Những nét đặc trưng của văn hóa Việt Nam luôn hấp dẫn du khách nước ngoài, khiến họ tò mò, tìm hiểu. Nhìn chung, Việt Nam là một xã hội, thực hành tốt nề nếp gia đình và phát huy các chức năng truyền thống.</p>
+				<a href="vanhoavn.html" class="">Xem thêm</a><br>
+				<h1>︾</h1>
+			</div>
+			<div data-aos="zoom-in-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 img-mb aos-init aos-animate">
+				<img class="img-fluid mb1" src="/img/anhchua2.jpeg" alt="" srcset="">
+				<img class="img-fluid mb2" src="/img/anhchua.jpeg" alt="" srcset="">
+				<img class="img-fluid mb3" src="/img/chuamotcot.jpeg" alt="" srcset="">
 
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 best-dd">
+				<h1 data-aos="zoom-in-left" class="aos-init">
+					Nét đẹp văn hóa truyền thống việt nam
+				</h1>
+				<div class="row fix-center">
+					<div style="margin-top: 20px;" class="col-xl-4 col-lg-4 col-md-4">
+						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
+							<a href="{{ route('aodai')}}">
+								<img src="/img/aodai19.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
+								<div class="text-best-mb">
+									<p class="css-text-best-mb">Trang phục truyền thống</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4">
+						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
+							<a href="{{ route('ngayle')}}">
+								<img src="/img/ngayle2.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
+								<div class="text-best-mb">
+									<p class="css-text-best-mb">Ngày lễ truyền thống</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div style="margin-top: 20px;" class="col-xl-4 col-lg-4 col-md-4">
+						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
+							<a href="{{ route('tongiao')}}">
+								<img src="/img/dlhoian6.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
+								<div class="text-best-mb">
+									<p class="css-text-best-mb">Tín ngưỡng-Tôn giáo</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
 
 
 
@@ -367,11 +456,11 @@ hr.hrForCount{
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6" style="padding: 0;">
-				<div class="col-12 py-4" style="background-color: #FDFDFD;">
+				<div class="col-12 py-4" style="background-color: #FDFDFD;" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500" >
 					<p class="text-dark">Khám phá văn hoá qua</p>
 					<h1 class="text-dark">Bản đồ Việt Nam</h1>
 				</div>
-				<div class="col-12 infoCol1 d-flex flex-column">
+				<div class="col-12 infoCol1 d-flex flex-column" >
 				<style>
 					.infoCol1{
 						box-sizing: border-box;
@@ -428,7 +517,7 @@ hr.hrForCount{
 					fill: #ccc !important;
 				}
 				path.area.active {
-    				fill: #fff;
+    				fill: #FFCC00 !important;
 				}
 				.infoArea{
 					display: none;
@@ -445,7 +534,56 @@ hr.hrForCount{
 
 			<script type="text/javascript">
 				$(document).ready(function () {
+				
+				$.ajaxSetup({
+        			headers: {
+            			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        			}
+    			});
+				//delete btn
+				$(".deleteRecord").click(function(){
+    				var id = $(this).data("id");
+					var url = "nhatban/"+id;
+    			$.ajax(
+   				 {
+       				url: url,
+        			type: 'DELETE',
+					dataType:'json',
+        			data: {
+            			"id": id,
+        			},
+        		success: function (data){
+					console.log(data.length);
+					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.choosenArea.length/64*100)+"%  của Việt Nam");
+					$('[data-id="' + data.deletedid[0].areaid*10 + '"]').css('fill', '');
+    			}});
+   
+				});
+				//create btn
+				$(".createRecord").click(function(){
+    				var id = $(this).data("id");
+					var url = "nhatban";
+					
+    			$.ajax(
+   				 {
+       				url: url,
+        			type: 'POST',
+					dataType:'json',
+        			data: {
+            			"id": id,
+				
+        			},
+        		success: function (data){
+					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
+            		data.forEach(function(value, index){
+				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
+				});
+        		}
+    			});
+   
+				});
 				//default area when load
+				//click path
 				$('[data-id="630"]').addClass( "active" );
 
 				$("path").on("click",function(){
@@ -467,33 +605,71 @@ hr.hrForCount{
 			</script>
 				<div class="col-12 infoCol2">
 				<ul>
-					@foreach ($vietnams as $vietnam )
-						@if ($vietnam->id === 63)
-							<li id="" class="infoArea {{ $vietnam->id*10 }} active">
-							<h1>{{ $vietnam->name }}</h1>
-							<p>{{ $vietnam->title }}</p>
+					@foreach ($nhatbans as $nhatban )
+						@if ($nhatban->id === 63)
+							<li id="" class="infoArea {{ $nhatban->id*10 }} active">
+							<h1>{{ $nhatban->name }}</h1>							<button type="button" class="btn btn-success createRecord" data-id="{{ $nhatban->id  }}">Đã đến</button>
+							<button type="button" class="btn btn-danger deleteRecord" data-id="{{ $nhatban->id  }}" >Xoá điểm đến</button>
+							<p>{{ $nhatban->title }}</p>
+							<div class="title-mb">
+								<a href="{{ route($nhatban->id ) }}" class="">Xem thêm</a>
+							</div>
 							</li>
 						@else
-							<li id="" class="infoArea {{ $vietnam->id*10 }}">
-							<h1>{{ $vietnam->name }}</h1>
-							<p>{{ $vietnam->title }}</p>
+							<li id="" class="infoArea {{ $nhatban->id*10 }}">
+							<h1>{{ $nhatban->name }}</h1>							<button type="button" class="btn btn-success createRecord" data-id="{{ $nhatban->id  }}">Đã đến</button>
+							<button type="button" class="btn btn-danger deleteRecord" data-id="{{ $nhatban->id  }}" >Xoá điểm đến</button>
+							<p>{{ $nhatban->title }}</p>
+							<div class="title-mb">
+								<a href="vanhoavn.html" class="">Xem thêm</a>
+							</div>
 							</li>
 						@endif
 					@endforeach
 				</ul>
+<script>
+
+$(document).ready(function () {
+	$('#listArea').on('click','li', function(event){
+	var classID = $(this).attr('data-id');
+    console.log(classID);
+	$("path").removeClass( "active" );
+	$(".infoArea").removeClass( "active" );
+	var containString = "." + classID+"0";
+	var $newID= $(containString);
+	$('[data-id=' + classID + '0]').addClass( "active" );
+	
+	$newID.addClass("active");
+});
+
+
+	$(".areaBtn").on("click",function(){
+
+	var classID = $(this).attr("data-id").toString();
+
+	$("path").removeClass( "active" );
+	$(".infoArea").removeClass( "active" );
+
+	
+});
+});
+				
+</script>
 			</div>
 		</div>
 		<div class="col-md-6" style="background-color: #f7f2e9">
+				<p id="percentage"></p>
 			<div class="mapcontainer">
 				<div class="map"><span>Alternative content for the map</span>
 		
 				</div>
+				
 			</div>
+		
 		</div>
 	</div></div>
 </section>
-
-
+ 
 
 
 <!--------EndMap--------->
@@ -508,11 +684,11 @@ hr.hrForCount{
 	<div class="container text-center">
 
 	<div class="row">
-		<div class="col-md-12 my-4">
+		<div class="col-md-12 my-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
 			<p class="text-dark">Cùng khám phá một số</p>
 			<h1 class="text-dark">Địa danh nổi tiếng</h1>
 		</div>
-		<div class="col-4">
+		<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			<figure class="snip1084 red">
 				<img src="/img/hanoi.jpg" alt="sample43" />
 				<figcaption>
@@ -521,7 +697,7 @@ hr.hrForCount{
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
-			  <div class="col-4">
+			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			  <figure class="snip1084 blue"><img src="/img/hochiminh.jpg" alt="sample51" />
 				<figcaption>
 				  <h2><span>Hồ Chí Minh</span></h2>
@@ -529,7 +705,7 @@ hr.hrForCount{
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
-			  <div class="col-4">
+			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			  <figure class="snip1084 yellow"><img src="/img/danang.jpeg" alt="sample49" />
 				<figcaption>
 				  <h2><span>Đà Nẵng</span></h2>
@@ -537,7 +713,7 @@ hr.hrForCount{
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
-		<div class="col-4">
+		<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 	<figure class="snip1084 red">
 		<img src="/img/camau.jpeg" alt="sample43" />
 		<figcaption>
@@ -546,7 +722,7 @@ hr.hrForCount{
 		</figcaption>
 		<a href="#"></a>
 	  </figure></div>
-	  <div class="col-4">
+	  <div class="col-4 " data-aos="zoom-in-up" data-aos-offset="300">
 	  <figure class="snip1084 blue"><img src="/img/hue.jpeg" alt="sample51" />
 		<figcaption>
 		  <h2><span>Huế</span></h2>
@@ -554,7 +730,7 @@ hr.hrForCount{
 		</figcaption>
 		<a href="#"></a>
 	  </figure></div>
-	  <div class="col-4">
+	  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300"> 
 	  <figure class="snip1084 yellow"><img src="/img/vungtau.jpg" alt="sample49" />
 		<figcaption>
 		  <h2><span>Vũng Tàu</span></h2>
@@ -572,17 +748,18 @@ hr.hrForCount{
 	<div id="fh5co-press" data-section="press">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 section-heading text-center">
+				<div class="col-md-12 section-heading text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
 					<h2 class="single-animate animate-press-1">Sự kiện trong tháng 9</h2>
 					<div class="row">
-						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2">
-							<h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
+						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2" style="margin-left: auto;margin-right: auto;">
+							<h3>Tháng 9 – thời điểm giao mùa giữa hạ và thu, thời tiết dễ chịu và không khí cũng trở nên trong lành hơn hẳn. Đây sẽ là khoảng thời gian lý tưởng để bạn đi đây đi đó, khám phá đất nước Việt Nam tươi đẹp. 
+							</h3>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
 						<div class="fh5co-press-img" style="background-image: url(/img/quockhanh.jpeg);background-position:50% 50%;">
@@ -597,7 +774,7 @@ hr.hrForCount{
 					<!-- Press Item -->
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
 						<div class="fh5co-press-img" style="background-image: url(/img/trungthu.webp);background-position:50% 50%;">
@@ -612,7 +789,7 @@ hr.hrForCount{
 					<!-- Press Item -->
 				</div>
 				
-				<div class="col-md-6">
+				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
 						<div class="fh5co-press-img" style="background-image: url(/img/nhacnuoc.jpeg);background-position:50% 50%;">
@@ -626,7 +803,7 @@ hr.hrForCount{
 					<!-- Press Item -->
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
 						<div class="fh5co-press-img" style="background-image: url(/img/lehoiamthuc.jpeg);background-position:50% 50%;">
@@ -708,5 +885,9 @@ hr.hrForCount{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 <script src="/assets/js/jquery.rcounterup.js"></script>
 <script src="/assets/js/active.js"></script>
+<script>
+	AOS.init();
+
+</script>
 </body>
 </html>

@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
+            $table->integer('countryid');
+            $table->string('name');
+            $table->integer('area');
+            $table->integer('population');
+            $table->longtext('title')->nullable();
             $table->timestamps();
         });
     }

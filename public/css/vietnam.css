@@ -331,6 +331,16 @@ html {
   text-decoration: none;
   border: 2px solid #ad7153;
 }
+#areaMap .title-mb a {
+  padding: 10px 50px;
+  color: #ad7153;
+  text-decoration: none;
+  border: 2px solid #ad7153;
+}
+#areaMap .title-mb{
+  margin-bottom: 20px;
+  
+}
 
 #mienbac .title-mb a:hover {
   background: #ad7153;

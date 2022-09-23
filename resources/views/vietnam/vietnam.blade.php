@@ -26,8 +26,9 @@
             charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" charset="utf-8"></script>
     <script src="/js/jquery.mapael.js" charset="utf-8"></script>
-    <script src="/js/france_departments.js" charset="utf-8"></script>
-
+    <script src="/js/vietnammap.js" charset="utf-8"></script>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	
 	<style type="text/css">
 		.mapael .mapTooltip {
             position: absolute;
@@ -85,26 +86,15 @@
         .mapael .map {
             position: relative;
         }
-		.mapael .mapTooltip {
-            position: absolute;
-            background-color: #fff;
-            moz-opacity: 0.70;
-            opacity: 0.80;
-            filter: alpha(opacity=70);
-            border-radius: 10px;
-            padding: 10px;
-            z-index: 1000;
-            max-width: 200px;
-            display: none;
-            color: #343434;
-        }
+
+
     </style>
 	<!---------Mapeal------>
 	<script type="text/javascript">
         $(function () {
             $(".mapcontainer").mapael({
                 map: {
-                    name: "france_departments",
+                    name: "vietnams",
                      zoom: {
                         enabled: true
                     },
@@ -130,15 +120,29 @@
         });
     </script>
 
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 
  		fetch_customer_data();
-
+		 $.ajax({
+		url:"{{ route('choosenVN') }}",
+		method:'GET',
+		dataType:'json',
+		success:function(data)
+		{	$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
+			
+			data.forEach(function(value, index){
+				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
+			// console.log(data[1].areaid*10);
+			// $('[data-id="' + data[1].areaid*10 + '"]').css('fill', '#FF4D00');
+		});
+		}
+		});
  		function fetch_customer_data(query = '')
  		{
 			$.ajax({
-            url:"{{ route('action') }}",
+            url:"{{ route('actionvn') }}",
             method:'GET',
             data:{query:query},
             dataType:'json',
@@ -170,9 +174,6 @@
 }
 
 	</script>
-	<style>
-		[data-id="30"]{fill:  blue;}
-	</style>
 </head>
 <body>
 
@@ -258,7 +259,7 @@
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Việt Nam</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span>Việt Nam</span></div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span>Việt Nam</div>
 		  </div>
 	</div>
 </section>
@@ -410,7 +411,7 @@
 				<div class="row fix-center">
 					<div style="margin-top: 20px;" class="col-xl-4 col-lg-4 col-md-4">
 						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
-							<a href="tpttvn.html">
+							<a href="{{ route('aodai')}}">
 								<img src="/img/aodai19.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
 								<div class="text-best-mb">
 									<p class="css-text-best-mb">Trang phục truyền thống</p>
@@ -420,7 +421,7 @@
 					</div>
 					<div class="col-xl-4 col-lg-4 col-md-4">
 						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
-							<a href="ngaylevn.html">
+							<a href="{{ route('ngayle')}}">
 								<img src="/img/ngayle2.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
 								<div class="text-best-mb">
 									<p class="css-text-best-mb">Ngày lễ truyền thống</p>
@@ -430,7 +431,7 @@
 					</div>
 					<div style="margin-top: 20px;" class="col-xl-4 col-lg-4 col-md-4">
 						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
-							<a href="tongiaovn.html">
+							<a href="{{ route('tongiao')}}">
 								<img src="/img/dlhoian6.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
 								<div class="text-best-mb">
 									<p class="css-text-best-mb">Tín ngưỡng-Tôn giáo</p>
@@ -516,7 +517,7 @@
 					fill: #ccc !important;
 				}
 				path.area.active {
-    				fill: #fff;
+    				fill: #FFCC00 !important;
 				}
 				.infoArea{
 					display: none;
@@ -533,7 +534,56 @@
 
 			<script type="text/javascript">
 				$(document).ready(function () {
+				
+				$.ajaxSetup({
+        			headers: {
+            			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        			}
+    			});
+				//delete btn
+				$(".deleteRecord").click(function(){
+    				var id = $(this).data("id");
+					var url = "vietnam/"+id;
+    			$.ajax(
+   				 {
+       				url: url,
+        			type: 'DELETE',
+					dataType:'json',
+        			data: {
+            			"id": id,
+        			},
+        		success: function (data){
+					console.log(data.length);
+					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.choosenArea.length/64*100)+"%  của Việt Nam");
+					$('[data-id="' + data.deletedid[0].areaid*10 + '"]').css('fill', '');
+    			}});
+   
+				});
+				//create btn
+				$(".createRecord").click(function(){
+    				var id = $(this).data("id");
+					var url = "vietnam";
+					
+    			$.ajax(
+   				 {
+       				url: url,
+        			type: 'POST',
+					dataType:'json',
+        			data: {
+            			"id": id,
+				
+        			},
+        		success: function (data){
+					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
+            		data.forEach(function(value, index){
+				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
+				});
+        		}
+    			});
+   
+				});
 				//default area when load
+				//click path
 				$('[data-id="630"]').addClass( "active" );
 
 				$("path").on("click",function(){
@@ -558,30 +608,68 @@
 					@foreach ($vietnams as $vietnam )
 						@if ($vietnam->id === 63)
 							<li id="" class="infoArea {{ $vietnam->id*10 }} active">
-							<h1>{{ $vietnam->name }}</h1>
+							<h1>{{ $vietnam->name }}</h1>							<button type="button" class="btn btn-success createRecord" data-id="{{ $vietnam->id  }}">Đã đến</button>
+							<button type="button" class="btn btn-danger deleteRecord" data-id="{{ $vietnam->id  }}" >Xoá điểm đến</button>
 							<p>{{ $vietnam->title }}</p>
+							<div class="title-mb">
+								<a href="{{ route($vietnam->id ) }}" class="">Xem thêm</a>
+							</div>
 							</li>
 						@else
 							<li id="" class="infoArea {{ $vietnam->id*10 }}">
-							<h1>{{ $vietnam->name }}</h1>
+							<h1>{{ $vietnam->name }}</h1>							<button type="button" class="btn btn-success createRecord" data-id="{{ $vietnam->id  }}">Đã đến</button>
+							<button type="button" class="btn btn-danger deleteRecord" data-id="{{ $vietnam->id  }}" >Xoá điểm đến</button>
 							<p>{{ $vietnam->title }}</p>
+							<div class="title-mb">
+								<a href="vanhoavn.html" class="">Xem thêm</a>
+							</div>
 							</li>
 						@endif
 					@endforeach
 				</ul>
+<script>
+
+$(document).ready(function () {
+	$('#listArea').on('click','li', function(event){
+	var classID = $(this).attr('data-id');
+    console.log(classID);
+	$("path").removeClass( "active" );
+	$(".infoArea").removeClass( "active" );
+	var containString = "." + classID+"0";
+	var $newID= $(containString);
+	$('[data-id=' + classID + '0]').addClass( "active" );
+	
+	$newID.addClass("active");
+});
+
+
+	$(".areaBtn").on("click",function(){
+
+	var classID = $(this).attr("data-id").toString();
+
+	$("path").removeClass( "active" );
+	$(".infoArea").removeClass( "active" );
+
+	
+});
+});
+				
+</script>
 			</div>
 		</div>
 		<div class="col-md-6" style="background-color: #f7f2e9">
+				<p id="percentage"></p>
 			<div class="mapcontainer">
 				<div class="map"><span>Alternative content for the map</span>
 		
 				</div>
+				
 			</div>
+		
 		</div>
 	</div></div>
 </section>
-
-
+ 
 
 
 <!--------EndMap--------->

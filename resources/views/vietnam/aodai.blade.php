@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Document</title>
+    <title>Trang phục truyền thống</title>
     <link rel="stylesheet" href="css/aodai.css">
 	<script src="https://kit.fontawesome.com/f99152938e.js" crossorigin="anonymous"></script>
 	<!-----fonts----->
@@ -25,13 +25,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
             charset="utf-8"></script>
 
-
-	
-
-	
-	<style>
-		[data-id="30"]{fill:  blue;}
-	</style>
 </head>
 <body>
 
@@ -69,21 +62,7 @@ background-color:#0F0F0F !important;
 	  <a class="navbar-brand" href="#"><img src="/img/CultureTravel.png"></a>
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Văn hoá</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Vùng miền</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Địa danh</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Sự kiện</a>
-			</li>
+			
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="nav-item dropdown">
@@ -116,8 +95,8 @@ background-color:#0F0F0F !important;
 <section id="slider">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
-			<div class="p-2"><h1>Việt Nam</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span>Việt Nam</span></div>
+			<div class="p-2"><h1>Trang phục truyền thống</h1></div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span class="yellowInRight"><a href="{{ url('vietnam') }}">Việt Nam</a></span>Trang phục truyền thống</div>
 		  </div>
 	</div>
 </section>
@@ -128,22 +107,14 @@ background-color:#0F0F0F !important;
 	<div class="container-fluid">
 		<div class="row justify-content-center" >
 			<div class="col-md-4 aboutLeft pl-3" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="300">
-				<p>Xin Chào</p>
-				<h1>Việt Nam</h1>
+				<p></p>
+				<h2>Áo dài</h2><h1>Việt Nam</h1>
 				<div id="test"></div>
 			</div>
 			<div class="col-md-8 aboutRight pr-3">
-				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Việt Nam đất nước con người"</h2>
+				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Di sản văn hóa Việt, niềm tự hào của người Việt Nam"</h2>
 				<div style="text-align: justify;" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" >
-					<p>Việt Nam là một đất nước nhiệt đới nằm ở khu vực Đông Nam Á – trung tâm của tuyến đường biển quốc tế. Khí hậy nhiệt đới gió mùa tạo nên sự đa dạng tài nguyên sinh học của Việt Nam. Bên cạnh đó, đất nước Việt Nam có hình chữ S với 3260km đường biển có tiềm năng du lịch và thủy hải sản phong phú.</p>
-					<p>Một trong những đặc điểm nổi bật khi nhắc tới Việt Nam là các địa điểm du lịch. Việt Nam là một đất nước nhỏ nhắn, xinh đẹp với những phong cảnh hùng vĩ. Nhờ có khí hậu nhiệt đới nên Việt Nam được biết tới với các cảnh đẹp hút hồn du khách như các ngọn núi tráng lệ, thung lũng ở phía bắc hay những bãi biển cát trắng ở phía nam. Vì Việt Nam có những bờ biển dài nên du lịch đặc biệt được chú trọng. Sapa, thủ đô Hà Nội, Đà Nẵng hay thành phố Hồ Chí Minh là những địa điểm thu hút khách du lịch nước ngoài nhiều nhất.</p>
-					<p>Việt Nam có một lịch sử lâu dài với hơn 4000 ngàn năm đấu tranh chống kẻ thù xâm lược để bảo vệ bờ cõi, giành tự do, độc lập và xây dựng đất nước có từ hàng ngàn năm của người Việt cùng sự hội tụ của 54 thành phần dân tộc khác nhau đã góp phần tạo nên sự đa dạng, phong phú và đặc sắc cho nền văn hóa của Việt Nam.
-						Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đời sống sinh hoạt cộng đồng và trong các hoạt động kinh tế từ phong tục tập quán, trang phục cho đến phong cách ẩm thực. Dưới đây là những nét đặc sắc của văn hóa Việt Nam mà bạn có thể tìm hiểu. </p></div>
-			</div>
-            <div class="d-flex midImage justify-content-center">
-				<div class="blockImage">
-            		<img src="/img/353350.jpg" alt="">
-           		</div>
+					<p>Áo dài từ lâu đã trở thành quốc phục của Việt Nam, thể hiện được bản sắc văn hóa dân tộc của người Việt Nam, được nhiều đại diện sắc đẹp của Việt Nam lựa chọn là trang phục trong nhất nhiều chương trình, lễ hội lớn nhằm tôn vinh giá trị áo dài cũng như giới thiệu quảng bá văn hóa, đất nước con người Việt Nam. Từ nhỏ đến lớn, từ nam đến nữ ai ai cũng thể khoác chiếc áo dài trên người với đầy niềm kiêu hãnh và tự hào.</p></div>
 			</div>
 		</div>
 	</div>
@@ -158,147 +129,136 @@ background-color:#0F0F0F !important;
 	<div class="row">
 		<div data-aos="zoom-in-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center aodai-left aos-init">
 			<img width="80%" class="img-fluid" src="/img/aodai2.jpg" alt="">
-			<p>テットの祝日の伝統的な衣装</p>
+			<p>Trang phục truyền thống ngày tết</p>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aodai-right">
-			<h2>
-				ベトナムの伝統的な衣装
-			</h2>
-			<p>長い間、ベトナムの女性に関しては、国際的な友人はアオザイを賞賛してきました。確かに、ベトナムのアオザイは、ベトナムの女性の美しさと魂を示す伝統的な衣装と見なされるに値します。ユネスコの無形文化遺産に認定され、優しくて優しいベトナム人女性のシンボルになりました。シャツの構造から青台と呼ばれ、体は2束になっています。女性の腰に近く、その後、背中の底から2つのボディがかかとに落ちて、女の子のためのより優雅で柔らかく柔軟なステップを作成します。<br><br> 多くの控えめな色がエレガントに通りを滑る薄いシルクシャツが注目を集め、明るい花になります。それは人々と周囲の優雅さと優雅さを高めます。同色のユニフォーム生地や白のサテンで作られたワイドレッグパンツのスタイルで作られたパンツは、裾をサポートし、柔らかさと優雅さを高めて滑らかで優雅な衣装を作り、素敵な愛らしさを呼び起こします。</p>
+			<p>Đã từ lâu, khi nhắc đến người phụ nữ Việt Nam, bạn bè quốc tế lại trầm trồ nói về chiếc áo dài. Quả thực, chiếc áo dài Việt Nam xứng đáng được coi là loại trang phục truyền thống thể hiện được vẻ đẹp và tâm hồn người phụ nữ Việt Nam.
+
+				Gọi là <strong>"Áo dài"</strong> là theo cấu tạo của áo, thân áo gồm 2 mảnh bó sát eo của người phụ nữ rồi từ đáy lưng ong 2 thân thả bay xuống tận gót chân tạo nên những bước đi duyên dáng, mềm mại, uyển chuyển hơn cho người con gái.<br><br>Tấm áo lụa mỏng thướt tha với nhiều màu sắc kín đáo trang nhã lướt trên đường phố trở thành tâm điểm chú ý và là bông hoa sáng tôn lên vẻ yêu kiều, thanh lịch cho con người và khung cảnh xung quanh. Chiếc quần may theo kiểu quần ta ống rộng bằng thứ vải đồng chất đồng màu hay sa tanh trắng nâng đỡ tà áo và làm tăng sự mềm mại thướt tha cho bộ trang phục mượt mà duyên dáng, gợi vẻ đằm thắm đáng yêu.</p>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ad-1">
 			<div class="img-text">
 				<img data-aos="zoom-in-right" width="60%" class="img-fluid aos-init" src="/img/aodai18.jpg" alt="">
-				<p class="adhs">学生のアオザイ</p>
+				
 			</div>
 
-			<p>元日や地元のお祭り、結婚式、茶色、ピンク、赤のアオザイ...は、超越した威厳のある心で禅門にあなたの誠実な心を表現する方法です。 枕を覆うロングドレス、蓮の花のように巧妙なスカーフ、お寺の扉に敬意を表してトレイを持ち上げる手、…これらの画像は、ユニークなドンホー版画に入っています。ベトナムの文化の象徴。 今、コスチューム、ドレス、ショートドレス、ファッションドレスの多くの革新の中で...ベトナムのアオザイは今でも国民的アイデンティティのユニークな位置を占めており、ベトナムの人々のスタイルと魂を世界にもたらしています。5つの大陸とオフィスウェアになります。多くの場所で。
+			<p>Ngày Tết hay lễ hội quê hương, đám cưới hay những buổi lên chùa của các bà, các mẹ, các chị, chiếc áo dài nâu, hồng, đỏ... là một cách biểu hiện tấm lòng thành kính gửi đến cửa thiền một lòng siêu thoát, tôn nghiêm. Chiếc áo dài trùm gối, khăn mỏ quạ chít khéo như hoa sen, tay nâng mâm lễ kính cẩn lên cửa chùa, miệng "mô phật di đà"... hình ảnh ấy đã đi vào bức họa tranh dân gian Đông Hồ là một biểu tượng độc đáo của văn hóa Việt Nam.
+
+				<br><br>Ngày nay trong muôn vàn sự cách tân về trang phục, váy đầm, áo ngắn, áo thời trang... chiếc áo dài Việt Nam vẫn chiếm độc tôn về bản sắc dân tộc, mang theo phong cách và tâm hồn người Việt đến với năm châu và trở thành trang phục công sở ở nhiều nơi.
 			</p>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12  ad-2">
 			<img data-aos="zoom-in-left" width="60%" class="img-fluid aos-init" src="/img/aodai7.jpg" alt="">
-			<p>学生のアオザイ</p>
+			<p>Áo dài học sinh</p>
 			<img data-aos="zoom-in-left" width="80%" class="img-fluid mrt aos-init" src="/img/aodai23.jpg" alt="">
-			<p class="adhs">歴史的な衣装</p>
+			
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="thuvien">
-				<h4>フォトライブラリ</h4>
+				<h4>Thư viện ảnh</h4>
 			</div>
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 thuvienanh">
 			<div class="image">
 				<img class="myimg" src="/img/aodai1.jpg" alt="" style="cursor: zoom-in;">
-				<p>歴史的な衣装</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai2.jpg" alt="" style="cursor: zoom-in;">
-				<p>テトの祝日の伝統的な衣装</p>
+
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodai3.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodai4.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodai7.jpg" alt="" style="cursor: zoom-in;">
-				<p>アオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodai8.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodai9.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai10.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai11.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai12.jpg" alt="" style="cursor: zoom-in;">
-				<p>歴史的な衣装</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai13.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai14.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai15.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai16.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai17.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai18.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+				
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai19.jpg" alt="" style="cursor: zoom-in;">
-				<p>歴史的な衣装</p>
+		
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai20.jpg" alt="" style="cursor: zoom-in;">
-				<p>歴史的な衣装</p>
+
 			</div>
 			<div class="image">
 				<img class="myimg" src="/img/aodai21.jpg" alt="" style="cursor: zoom-in;">
-				<p>歴史的な衣装</p>
+
 			</div>
 
 			<div class="image">
 				<img class=" myimg" src="/img/aodai23.jpg" alt="" style="cursor: zoom-in;">
-				<p>歴史的な衣装</p>
+
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodai24.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodaitet1.jpg" alt="" style="cursor: zoom-in;">
-				<p>テトの祝日の伝統的な衣装</p>
+		
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodaitet.jpg" alt="" style="cursor: zoom-in;">
-				<p>テトの祝日の伝統的な衣装</p>
+
 			</div>
 			<div class="image">
 				<img class=" myimg" src="/img/aodai25.jpg" alt="" style="cursor: zoom-in;">
-				<p>学生のアオザイ</p>
+			
 			</div>
 		</div>
 	</div>
 </section>
 <!---------------->
-
-<!-------StartMap------->
-
-
-<!--------EndMap--------->
-
-
-
-
-
-<!-------Start_famousArea---------->
 
 <!--------Event----------------->
 	<footer>

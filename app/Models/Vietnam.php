@@ -42,4 +42,8 @@ class Vietnam extends Base
 
        return array_merge($listingConfigs, $defaultListingConfigs);
     }
+    protected $fillable = [
+        'userid',
+        'areaid',
+    ];
 }

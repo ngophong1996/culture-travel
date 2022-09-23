@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Nhatban;
-use App\Models\AreaJP;
-use App\Models\AreaVN;
+use App\Models\Area;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
-class NhatbanController extends Controller
+use Redirect;
+use Illuminate\Http\Response;
+class nhatbanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +18,29 @@ class NhatbanController extends Controller
      */
     public function index()
     {
-        $vietnams = AreaVN::all();
-        
+        $nhatbans = Area::where('countryid',2)->get();
+        $choosenArea= DB::table('nhatbans')
+                        ->where('userid', Auth::user()->id)
+                        ->get();
+ 
         return view('nhatban.nhatban',[
-            'vietnams'=>$vietnams
-        ]);    
+            'nhatbans'=>$nhatbans,
+            'choosenArea'=> $choosenArea
+        ]);
+    }
+    public function aodai(){
+        return view('nhatban.aodai',[
+        ]);
+    }
+    
+    public function ngayle(){
+        return view('nhatban.ngayle',[
+        ]);
+    }
+    
+    public function tongiao(){
+        return view('nhatban.tongiao',[
+        ]);
     }
 
     /**
@@ -43,7 +61,23 @@ class NhatbanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = DB::table('nhatbans')
+                    ->where('userid', Auth::user()->id)
+                    ->where('areaid', $request->id)
+                    ->first();
+        if ($user === null) {
+            // user doesn't exist
+         DB::table('nhatbans')->insert([
+            'userid' => Auth::user()->id,
+            'areaid' => $request->id
+        ]);
+    }
+        $choosenArea = DB::table('nhatbans')
+                    ->select('areaid')
+                    ->where('userid', Auth::user()->id)
+                     ->get();
+        return json_encode($choosenArea);
+    
     }
 
     /**
@@ -87,41 +121,52 @@ class NhatbanController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        
+        $deletedid = DB::table('nhatbans')->where('userid', Auth::user()->id)->where('areaid', $id)->get();;
+        DB::table('nhatbans')->where('userid', Auth::user()->id)->where('areaid', $id)->delete();
+        $choosenArea = DB::table('nhatbans')
+                    ->select('areaid')
+                    ->where('userid', Auth::user()->id)
+                     ->get();
+        return json_encode([
+            'deletedid' => $deletedid,
+            'choosenArea' => $choosenArea,
+        ]);
+        
     }
     function action(Request $request)
     {   
-        $vietnams= DB::table('area_v_n_s')->get();
+        $nhatbans= DB::table('areas')->where('countryid',2)->get();
         if($request->ajax())
         {
             $output = '<ul>';
             $query = $request->get('query');
             if($query != '') {
-                $data = DB::table('area_v_n_s')
+                $data = DB::table('areas')->where('countryid',2)
                     ->where('name', 'like', '%'.$query.'%')
                     ->get();
             } else {
-                $data = DB::table('area_v_n_s')
+                $data = DB::table('areas')->where('countryid',2)
                     ->get();
             }
              
             $total_row = $data->count();
-            if($total_row > 0 && $total_row < $vietnams->count()){
+            if($total_row > 0 && $total_row < $nhatbans->count()){
                 foreach($data as $row)
                 {
                     $output .= '
-                    <li>'.$row->name.'</li>
+                    <li class="areaBtn" data-id="'.$row->id.'">'.$row->name.'</li>
                     ';
                 }
                 $output .= '</ul>';
-            }else if($total_row === $vietnams->count()){
+            }else if($total_row === $nhatbans->count()){
                 $count = 1 ;
                 foreach($data as $row)
                 {   
                     if($count==10){$output .= '</ul><ul id="more" style="display: none;">';}
                     $output .= '
-                    <li>'.$row->name.'</li>
+                    <li class="areaBtn" data-id="'.$row->id.'">'.$row->name.'</li>
                     ';
                     $count +=1;
                 }
@@ -141,4 +186,11 @@ class NhatbanController extends Controller
             echo json_encode($data);
         }
     }
+   public function choosen(){
+    $choosenArea = DB::table('nhatbans')
+                    ->select('areaid')
+                    ->where('userid', Auth::user()->id)
+                     ->get();
+        return json_encode($choosenArea);
+   }
 }

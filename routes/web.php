@@ -36,21 +36,26 @@ Route::middleware(['admin'])->group(function (){
     Route::get('admin/listing/{model}', [ListingController::class, 'index'])->name('listing.index');
 });
 
-Route::get('/action', [VietnamController::class, 'action'])->name('action');
-Route::get('/choosenVN', [VietnamController::class, 'choosen'])->name('choosenVN');
+
 
 
 
 Route::middleware(['auth'])->group(function (){
+    Route::get('/actionvn', [VietnamController::class, 'action'])->name('actionvn');
+    Route::get('/actionjp', [NhatbanController::class, 'action'])->name('actionjp');
+    Route::get('/choosenVN', [VietnamController::class, 'choosen'])->name('choosenVN');
     Route::resource('vietnam', VietnamController::class);
     Route::get('aodai', [VietnamController::class,'aodai'])->name('aodai');
+    Route::get('ngayle', [VietnamController::class,'ngayle'])->name('ngayle');
+    Route::get('tongiao', [VietnamController::class,'tongiao'])->name('tongiao');
     Route::resource('nhatban', NhatbanController::class);
     Route::resource('blog', BlogController::class);
     Route::get('/profile',[HomeController::class,'profile']);
     Route::post('/profile', [HomeController::class,'upload']);
-
+    Route::get('/63', function() {
+        return view('vietnam.hanoi');
+    })->name('63');
 });
-
 
 Route::get('/home', function() {
     return view('home');

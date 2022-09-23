@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Vietnam;
+use App\Models\Area;
 use App\Models\AreaVN;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Redirect,Response;
+use Redirect;
+use Illuminate\Http\Response;
 class VietnamController extends Controller
 {
     /**
@@ -16,7 +18,7 @@ class VietnamController extends Controller
      */
     public function index()
     {
-        $vietnams = AreaVN::all();
+        $vietnams = Area::where('countryid',1)->get();
         $choosenArea= DB::table('vietnams')
                         ->where('userid', Auth::user()->id)
                         ->get();
@@ -28,6 +30,16 @@ class VietnamController extends Controller
     }
     public function aodai(){
         return view('vietnam.aodai',[
+        ]);
+    }
+    
+    public function ngayle(){
+        return view('vietnam.ngayle',[
+        ]);
+    }
+    
+    public function tongiao(){
+        return view('vietnam.tongiao',[
         ]);
     }
 
@@ -49,7 +61,23 @@ class VietnamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = DB::table('vietnams')
+                    ->where('userid', Auth::user()->id)
+                    ->where('areaid', $request->id)
+                    ->first();
+        if ($user === null) {
+            // user doesn't exist
+         DB::table('vietnams')->insert([
+            'userid' => Auth::user()->id,
+            'areaid' => $request->id
+        ]);
+    }
+        $choosenArea = DB::table('vietnams')
+                    ->select('areaid')
+                    ->where('userid', Auth::user()->id)
+                     ->get();
+        return json_encode($choosenArea);
+    
     }
 
     /**
@@ -93,22 +121,33 @@ class VietnamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        
+        $deletedid = DB::table('vietnams')->where('userid', Auth::user()->id)->where('areaid', $id)->get();;
+        DB::table('vietnams')->where('userid', Auth::user()->id)->where('areaid', $id)->delete();
+        $choosenArea = DB::table('vietnams')
+                    ->select('areaid')
+                    ->where('userid', Auth::user()->id)
+                     ->get();
+        return json_encode([
+            'deletedid' => $deletedid,
+            'choosenArea' => $choosenArea,
+        ]);
+        
     }
     function action(Request $request)
     {   
-        $vietnams= DB::table('area_v_n_s')->get();
+        $vietnams= DB::table('areas')->where('countryid',1)->get();
         if($request->ajax())
         {
             $output = '<ul>';
             $query = $request->get('query');
             if($query != '') {
-                $data = DB::table('area_v_n_s')
+                $data = DB::table('areas')->where('countryid',1)
                     ->where('name', 'like', '%'.$query.'%')
                     ->get();
             } else {
-                $data = DB::table('area_v_n_s')
+                $data = DB::table('areas')->where('countryid',1)
                     ->get();
             }
              
@@ -117,7 +156,7 @@ class VietnamController extends Controller
                 foreach($data as $row)
                 {
                     $output .= '
-                    <li>'.$row->name.'</li>
+                    <li class="areaBtn" data-id="'.$row->id.'">'.$row->name.'</li>
                     ';
                 }
                 $output .= '</ul>';
@@ -127,7 +166,7 @@ class VietnamController extends Controller
                 {   
                     if($count==10){$output .= '</ul><ul id="more" style="display: none;">';}
                     $output .= '
-                    <li>'.$row->name.'</li>
+                    <li class="areaBtn" data-id="'.$row->id.'">'.$row->name.'</li>
                     ';
                     $count +=1;
                 }
@@ -147,5 +186,11 @@ class VietnamController extends Controller
             echo json_encode($data);
         }
     }
-   
+   public function choosen(){
+    $choosenArea = DB::table('vietnams')
+                    ->select('areaid')
+                    ->where('userid', Auth::user()->id)
+                     ->get();
+        return json_encode($choosenArea);
+   }
 }

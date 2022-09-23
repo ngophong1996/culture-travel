@@ -30,7 +30,7 @@
     $.extend(true, Mapael, 
         {
             maps : {
-                france_departments : {
+                vietnams : {
                     width : 800.08728, 
                     height : 850.26221,
                     getCoords : function (lat, lon) {
