@@ -26,39 +26,61 @@
 
 
 <!------------------------nav bar----------------------------------------------->
-<nav class="navbar navbar-expand-md navbar-light sticky-top">
+<style>
+    .navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  top: 0px;
+  position: absolute;
+}
+.navbar-brand img {
+        width: 85px;
+    }
+.navbar-toggle { z-index: 1; }
+.navbar {
+	
+	background-color:#0F0F0F !important;
+  padding-top: 27px;
+  padding-bottom: 27px;;
+}
+.nav-link {
+	padding: 0;
+}.dropdown-menu {
+	width: 200px;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 	<div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-            	<a class="nav-link active" aria-current="page" href="#">Tổng quán</a>
-            </li>
-            <li class="nav-item">
-            	<a class="nav-link" href="#">Văn hoá</a>
-            </li>
-            <li class="nav-item">
-            	<a class="nav-link" href="#">Vùng miền</a>
-            </li>
+		
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#"><img src="/img/CultureTravel.png"></a>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
 			<li class="nav-item">
-				<a class="nav-link" href="#">Địa danh</a>
+				<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Sự kiện</a>
+				<a class="nav-link" href="#mienbac">Văn hoá</a>
 			</li>
-          </ul>
-        </div>
-		<a href="#" class="">
-			<img src="/img/CultureTravel.png" style="width:90px;height:auto;">
-		</a>
-		<div class=" navbar-collapse justify-content-end">
-			<ul class="navbar-nav">
-				<li class="nav-item dropdown">
+			<li class="nav-item">
+				<a class="nav-link" href="#areaMap">Vùng miền</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#famousArea">Địa danh</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#nonthEvent">Sự kiện</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					@if(Auth::user()->image)
                         <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
                     @endif
-                    {{ Auth::user()->name }}
+					{{ Auth::user()->name }}
 				</a>
 				<ul class="dropdown-menu">
 				<li><a class="dropdown-item" href="{{ url('/profile') }}">Cài dặt tài khoản</a></li>
@@ -72,8 +94,11 @@
 					</form></li>
 				</ul>
 		  		</li>
-			</ul>
-		</div>
+		</ul>
+	  </div>
+	<div>
+  
+	</div>
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
@@ -81,7 +106,7 @@
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Việt Nam</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight">Trang chủ</span><span>Việt Nam</span></div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span>Việt Nam</span></div>
 		  </div>
 	</div>
 </section>

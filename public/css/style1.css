@@ -43,7 +43,7 @@ header.sticky{
     position: relative;
     width: 30px;
     height: 30px;
-    background: url(./images/menu.png);
+    background: url(/img/menu.png);
     color:  #fff;
     background-size: 30px;
     background-repeat: no-repeat;
@@ -51,7 +51,7 @@ header.sticky{
     cursor: pointer;
 }
 .menuToggle.active{
-    background: url(./images/close.png);
+    background: url(/img/close.png);
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: center;

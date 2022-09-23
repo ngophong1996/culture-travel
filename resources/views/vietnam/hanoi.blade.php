@@ -5,11 +5,11 @@
     <title>Thành phố Hồ Chí MinhTokyo</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="hokkaido/style.css" />
+    <link rel="stylesheet" href="/css/style1.css" />
     <link rel="stylesheet" href="/css/tokyo.css">
     <link rel="stylesheet" href="/css/HaNoi.css">
     
-    <link rel="shortcut icon" type="image/png" href="CultureTravel.png"/> 
+    <link rel="shortcut icon" type="image/png" href="/img/CultureTravel.png"/> 
     <!-----fonts----->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,14 +21,14 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo"><img src="CultureTravel.png" style="width:80px;height:auto;">Hà Nội</a>
+      <a href="#" class="logo"><img src="/img/CultureTravel.png" style="width:80px;height:auto;">Hà Nội</a>
       <div class="menuToggle"></div>
     </header>
     <ul class="navigation">
-      <li><a href="./home.html" onclick="toggleMenu()">Home</a></li>
-      <li><a href="#testText" onclick="toggleMenu()">Việt Nam</a></li>
-      <li><a href="./TeamB.html" onclick="toggleMenu()">About us</a></li>
-      <li><a href="#post" onclick="toggleMenu()">Blog</a></li>
+      <li><a href="{{ route('home') }}" onclick="toggleMenu()">Trang chủ</a></li>
+      <li><a href="{{ route('vietnam.index') }}" onclick="toggleMenu()">Việt Nam</a></li>
+      <li><a href="{{ route('about') }}" onclick="toggleMenu()">Về chúng tôi</a></li>
+      <li><a href="{{ route('blog.index') }}" onclick="toggleMenu()">Blog</a></li>
       
     </ul>
 
@@ -45,7 +45,7 @@
     <!-- About Ho Chi Minh -->
   <section class="about" id="about">
     <div class="title">
-      <h2>About Hà Nội</h2>
+      <h2>Hà Nội</h2>
     </div>
     <hr class="featurette-divider">
 
@@ -203,7 +203,7 @@
     <!-- Travel -->
   <section class="post" id="post">
     <div class="title">
-      <h2>TRAVEL</h2>
+      <h2>DU LỊCH</h2>
       <p>
          Hà Nội đã sớm trở thành một trung tâm chính trị, kinh tế và văn hóa ngay từ những buổi đầu của lịch sử Việt Nam. 
          Với vai trò thủ đô, Hà Nội là nơi tập trung nhiều địa điểm văn hóa giải trí, công trình thể thao quan trọng của đất nước, 

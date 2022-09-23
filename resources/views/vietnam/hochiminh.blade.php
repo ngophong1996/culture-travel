@@ -25,10 +25,10 @@
       <div class="menuToggle"></div>
     </header>
     <ul class="navigation">
-      <li><a href="./home.html" onclick="toggleMenu()">Home</a></li>
-      <li><a href="#testText" onclick="toggleMenu()">Việt Nam</a></li>
-      <li><a href="./TeamB.html" onclick="toggleMenu()">About us</a></li>
-      <li><a href="#post" onclick="toggleMenu()">Blog</a></li>
+      <li><a href="{{ route('home') }}" onclick="toggleMenu()">Trang chủ</a></li>
+      <li><a href="{{ route('vietnam.index') }}" onclick="toggleMenu()">Việt Nam</a></li>
+      <li><a href="{{ route('about') }}" onclick="toggleMenu()">Về chúng tôi</a></li>
+      <li><a href="{{ route('blog.index') }}" onclick="toggleMenu()">Blog</a></li>
       
     </ul>
 
@@ -45,7 +45,7 @@
     <!-- About Ho Chi Minh -->
   <section class="about" id="about">
     <div class="title">
-      <h2>About Thành phố Hồ Chí Minh</h2>
+      <h2>Thành phố Hồ Chí Minh</h2>
     </div>
     <hr class="featurette-divider">
 
@@ -198,7 +198,7 @@
     <!-- Travel -->
   <section class="post" id="post">
     <div class="title">
-      <h2>TRAVEL</h2>
+      <h2>DU LỊCH</h2>
       <p>
          Đến thành phố Hồ Chí Minh, các bạn sẽ được tham quan nhiều nơi mang đậm dấu ấn lịch sử, văn hóa của cộng đồng người Việt và cả khu vực Đông Nam Á. 
          Với hệ thống bảo tàng nhiều nhất so với các tỉnh thành trong cả nước (11 bảo tàng), điểm tham quan nổi tiếng là hệ thống kiến trúc thời Pháp với nhiều trường phái kiến trúc, 

@@ -126,11 +126,11 @@
 
  		fetch_customer_data();
 		 $.ajax({
-		url:"{{ route('choosenVN') }}",
+		url:"{{ route('choosenjp') }}",
 		method:'GET',
 		dataType:'json',
 		success:function(data)
-		{	$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
+		{	$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/47*100)+"%  của Nhật Bản");
 			
 			data.forEach(function(value, index){
 				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
@@ -273,16 +273,17 @@
 				<div id="test"></div>
 			</div>
 			<div class="col-md-8 aboutRight pr-3">
-				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Việt Nam đất nước con người"</h2>
-				<div style="text-align: justify;" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" >
-					<p>Việt Nam là một đất nước nhiệt đới nằm ở khu vực Đông Nam Á – trung tâm của tuyến đường biển quốc tế. Khí hậy nhiệt đới gió mùa tạo nên sự đa dạng tài nguyên sinh học của Việt Nam. Bên cạnh đó, đất nước Việt Nam có hình chữ S với 3260km đường biển có tiềm năng du lịch và thủy hải sản phong phú.</p>
-					<p>Một trong những đặc điểm nổi bật khi nhắc tới Việt Nam là các địa điểm du lịch. Việt Nam là một đất nước nhỏ nhắn, xinh đẹp với những phong cảnh hùng vĩ. Nhờ có khí hậu nhiệt đới nên Việt Nam được biết tới với các cảnh đẹp hút hồn du khách như các ngọn núi tráng lệ, thung lũng ở phía bắc hay những bãi biển cát trắng ở phía nam. Vì Việt Nam có những bờ biển dài nên du lịch đặc biệt được chú trọng. Sapa, thủ đô Hà Nội, Đà Nẵng hay thành phố Hồ Chí Minh là những địa điểm thu hút khách du lịch nước ngoài nhiều nhất.</p>
-					<p>Việt Nam có một lịch sử lâu dài với hơn 4000 ngàn năm đấu tranh chống kẻ thù xâm lược để bảo vệ bờ cõi, giành tự do, độc lập và xây dựng đất nước có từ hàng ngàn năm của người Việt cùng sự hội tụ của 54 thành phần dân tộc khác nhau đã góp phần tạo nên sự đa dạng, phong phú và đặc sắc cho nền văn hóa của Việt Nam.
-						Bản sắc văn hóa của các dân tộc thể hiện rất rõ nét trong đời sống sinh hoạt cộng đồng và trong các hoạt động kinh tế từ phong tục tập quán, trang phục cho đến phong cách ẩm thực. Dưới đây là những nét đặc sắc của văn hóa Việt Nam mà bạn có thể tìm hiểu. </p></div>
+				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Xứ sở Hoa Anh Đào - Đất nước Mặt Trời Mọc"</h2>
+				<div style="text-align: justify;"  >
+					<p data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine">Nhật Bản – Đất nước mặt trời mọc không chỉ nổi tiếng với hoa Anh Đào, núi Phú Sĩ mà còn là cái nôi của một nền văn hóa đặc sắc, đa dạng với những con người thân thiện, hiếu khách và nền khoa học tiên tiến.</p>
+					<p data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine">Nhật Bản theo tiếng Hán có nghĩ là “Mặt trời – 日本”, cho nên nước Nhật mới được gọi là đất nước mặt trời mọc. Với diện tích 377.972,28 km2 (xếp hạng 62 thế giới), trải dài từ bờ biển Okhotsk ở phía Bắc đến phía Nam biển Đông Hải của Trung Quốc. Phía Đông giáp với Hàn Quốc và Nga đã tạo cho Nhật Bản một địa thế giao thương thuận lợi. Đặc biệt, Nhật bản còn là đất nước có nhiều đảo nhất thế giới với gần 7.000 hòn đảo, trong đó có 5 đảo lớn nhất và có nhiều người sinh sống nhất là Honshu, Hokkaido, Kyushu, Shikoku và Okinawa.</p>
+					<p data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine">Do nằm trên vành đai Thái Bình Dương, nên khí hậu Nhật Bản thuộc vùng ôn đới, với 4 mùa rõ rệt và thiên nhiên tươi đẹp, cây cối màu mỡ, xanh tốt, thực vật phong phú và đa dạng. Bởi thế mà không phải tự nhiên Nhật Bản được xếp vào Top 10 những đất nước đẹp nhất thế giới.</p>
+						<p data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine">
+						Thế nhưng, cũng chính vì địa thế này mà mỗi năm Nhật Bản phải hứng chịu hàng trăm trận động đất, núi lửa phun trào và sóng thần lớn nhỏ. Vì những thiên tai này mà đất nước Nhật Bản đã tưởng như bị xóa sổ khỏi bản đồ. Nhưng với ý chí kiên cường, mạnh mẽ và quyết tâm, người dân đất nước này đã chung tay xây dựng và giữ vững quê hương của mình.</p></div>
 			</div>
             <div class="d-flex midImage justify-content-center">
 				<div class="blockImage">
-            		<img src="/img/353350.jpg" alt="">
+            		<img src="/img/mount2.jpg" alt="">
            		</div>
 			</div>
 		</div>
@@ -340,7 +341,7 @@
 				<div class="elementor-counter">
 					<div class="elementor-counter-wrapper">
 						<div class="elementor-counter-title-wrap">
-							<div class="elementor-counter-description">Dân số hiện tại của Việt Nam</div>
+							<div class="elementor-counter-description">Dân số hiện tại của Nhật Bản</div>
 								<span class="heading-decor"></span>
 						</div>
 						<div class="elementor-counter-number-wrapper">
@@ -370,7 +371,7 @@
 				<div class="elementor-counter">
 					<div class="elementor-counter-wrapper">
 						<div class="elementor-counter-title-wrap">
-							<div class="elementor-counter-description">Mật độ dân số của Việt Nam</div>
+							<div class="elementor-counter-description">Mật độ dân số của Nhật Bản</div>
 							<span class="heading-decor"></span>
 						</div>
 						<div class="elementor-counter-number-wrapper">
@@ -390,29 +391,29 @@
 		<div class="row">
 			<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 taito-mb aos-init aos-animate">
 				<h1 class="css-taito-mb">
-					Văn hóa truyền thống việt nam
+					Văn hóa truyền thống Nhật Bản
 				</h1>
 			</div>
 			<div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 title-mb aos-init aos-animate">
-				<p>Việt Nam có một nền văn hóa lâu đời và đặc biệt gắn liền với lịch sử địa lý và sự phát triển trên cả nước. Những nét đặc trưng của văn hóa Việt Nam luôn hấp dẫn du khách nước ngoài, khiến họ tò mò, tìm hiểu. Nhìn chung, Việt Nam là một xã hội, thực hành tốt nề nếp gia đình và phát huy các chức năng truyền thống.</p>
-				<a href="vanhoavn.html" class="">Xem thêm</a><br>
+				<p>Nhắc đến Nhật Bản, người ta thường nói đến một siêu cường quốc trong thời kỳ hội nhập với nền kinh tế, công nghệ hiện đại hàng đầu. Bên cạnh đó, người ta cũng không thể không nhắc đến một quốc gia Á Đông với nền văn hóa truyền thống đậm đà và giàu bản sắc. Không chỉ mang nét đẹp và đặc trưng riêng, Nhật Bản cũng là quốc gia có sự thống nhất về văn hóa. Nơi đây được bao quanh bởi biển đảo và chưa hề có cuộc chiến tranh xâm lược nào nên không có văn hóa du nhập.</p>
+				<p>Những nét văn hóa này được thể hiện qua những lễ hội, nghi lễ hay phong tục tập quán, và trong cả chính cuộc sống hàng ngày của người dân quốc gia này, trở thành một nét đẹp, một “món ăn’ tinh thần.</p>
 				<h1>︾</h1>
 			</div>
 			<div data-aos="zoom-in-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 img-mb aos-init aos-animate">
-				<img class="img-fluid mb1" src="/img/anhchua2.jpeg" alt="" srcset="">
-				<img class="img-fluid mb2" src="/img/anhchua.jpeg" alt="" srcset="">
-				<img class="img-fluid mb3" src="/img/chuamotcot.jpeg" alt="" srcset="">
+				<img class="img-fluid mb1" src="/img/mount5.jpg" alt="" srcset="">
+				<img class="img-fluid mb2" src="/img/mount7.jpg" alt="" srcset="">
+				<img class="img-fluid mb3" src="/img/mount3.jpg" alt="" srcset="">
 
 			</div>
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 best-dd">
 				<h1 data-aos="zoom-in-left" class="aos-init">
-					Nét đẹp văn hóa truyền thống việt nam
+					Nét đẹp văn hóa truyền thống Nhật Bản
 				</h1>
 				<div class="row fix-center">
 					<div style="margin-top: 20px;" class="col-xl-4 col-lg-4 col-md-4">
 						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
-							<a href="{{ route('aodai')}}">
-								<img src="/img/aodai19.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
+							<a href="{{ route('aojp')}}">
+								<img src="/img/aojp.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
 								<div class="text-best-mb">
 									<p class="css-text-best-mb">Trang phục truyền thống</p>
 								</div>
@@ -421,8 +422,8 @@
 					</div>
 					<div class="col-xl-4 col-lg-4 col-md-4">
 						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
-							<a href="{{ route('ngayle')}}">
-								<img src="/img/ngayle2.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
+							<a href="{{ route('lehoijp')}}">
+								<img src="/img/lehoijp.jpeg" class="img-fluid css-img-best-mb" alt="" srcset="">
 								<div class="text-best-mb">
 									<p class="css-text-best-mb">Ngày lễ truyền thống</p>
 								</div>
@@ -431,8 +432,8 @@
 					</div>
 					<div style="margin-top: 20px;" class="col-xl-4 col-lg-4 col-md-4">
 						<div data-aos="zoom-in-up" class="img-best-mb aos-init">
-							<a href="{{ route('tongiao')}}">
-								<img src="/img/dlhoian6.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
+							<a href="{{ route('tongiaojp')}}">
+								<img src="/img/mount3.jpg" class="img-fluid css-img-best-mb" alt="" srcset="">
 								<div class="text-best-mb">
 									<p class="css-text-best-mb">Tín ngưỡng-Tôn giáo</p>
 								</div>
@@ -458,7 +459,7 @@
 			<div class="col-md-6" style="padding: 0;">
 				<div class="col-12 py-4" style="background-color: #FDFDFD;" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500" >
 					<p class="text-dark">Khám phá văn hoá qua</p>
-					<h1 class="text-dark">Bản đồ Việt Nam</h1>
+					<h1 class="text-dark">Bản đồ Nhật Bản</h1>
 				</div>
 				<div class="col-12 infoCol1 d-flex flex-column" >
 				<style>
@@ -554,7 +555,7 @@
         			},
         		success: function (data){
 					console.log(data.length);
-					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.choosenArea.length/64*100)+"%  của Việt Nam");
+					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.choosenArea.length/47*100)+"%  của Nhật Bản");
 					$('[data-id="' + data.deletedid[0].areaid*10 + '"]').css('fill', '');
     			}});
    
@@ -574,7 +575,7 @@
 				
         			},
         		success: function (data){
-					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/64*100)+"%  của Việt Nam");
+					$('#percentage').html("Chúc mừng bạn đã đi được " + Math.round(data.length/47*100)+"%  của Nhật Bản");
             		data.forEach(function(value, index){
 				$('[data-id="' + value.areaid*10 + '"]').css('fill', '#FF4D00');
 				});
@@ -584,7 +585,7 @@
 				});
 				//default area when load
 				//click path
-				$('[data-id="630"]').addClass( "active" );
+				$('[data-id="1060"]').addClass( "active" );
 
 				$("path").on("click",function(){
 
@@ -606,7 +607,7 @@
 				<div class="col-12 infoCol2">
 				<ul>
 					@foreach ($nhatbans as $nhatban )
-						@if ($nhatban->id === 63)
+						@if ($nhatban->id === 106)
 							<li id="" class="infoArea {{ $nhatban->id*10 }} active">
 							<h1>{{ $nhatban->name }}</h1>							<button type="button" class="btn btn-success createRecord" data-id="{{ $nhatban->id  }}">Đã đến</button>
 							<button type="button" class="btn btn-danger deleteRecord" data-id="{{ $nhatban->id  }}" >Xoá điểm đến</button>
@@ -690,51 +691,51 @@ $(document).ready(function () {
 		</div>
 		<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			<figure class="snip1084 red">
-				<img src="/img/hanoi.jpg" alt="sample43" />
+				<img src="/img/tokyo.jpg" alt="sample43" />
 				<figcaption>
-				  <h2><span>Hà Nội</span></h2>
-				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				  <h2><span>Tokyo</span></h2>
+				  <p>Thủ đô Tokyo không chỉ là trung tâm kinh tế của nước Nhật mà còn có sự giao thoa hài hòa về văn hóa giữa nét hiện đại và truyền thống tạo nên vẻ đẹp đặc biệt của nó trong mắt du khách quốc tế</p>
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
 			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
-			  <figure class="snip1084 blue"><img src="/img/hochiminh.jpg" alt="sample51" />
+			  <figure class="snip1084 blue"><img src="/img/hokkaido.jpg" alt="sample51" />
 				<figcaption>
-				  <h2><span>Hồ Chí Minh</span></h2>
-				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				  <h2><span>Hokkaido</span></h2>
+				  <p>Cảnh sắc thiên nhiên ở Hokkaido đẹp tựa như một bức tranh khiến cho những ai khi nhìn thấy đều không khỏi ngẩn ngơ.</p>
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
 			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
-			  <figure class="snip1084 yellow"><img src="/img/danang.jpeg" alt="sample49" />
+			  <figure class="snip1084 yellow"><img src="/img/kyoto.jpg" alt="sample49" />
 				<figcaption>
-				  <h2><span>Đà Nẵng</span></h2>
-				  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				  <h2><span>Kyoto</span></h2>
+				  <p>Kyoto là thành phố vẫn còn lưu lại các công trình kiến trúc và văn hoá từ xa xưa của Nhật Bản. </p>
 				</figcaption>
 				<a href="#"></a>
 			  </figure></div>
 		<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 	<figure class="snip1084 red">
-		<img src="/img/camau.jpeg" alt="sample43" />
+		<img src="/img/nara.jpg" alt="sample43" />
 		<figcaption>
-		  <h2><span>Cà Mau</span></h2>
-		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+		  <h2><span>Nara</span></h2>
+		  <p>tỉnh Nara có những dãy núi rợp bóng cây, những đền chùa được công nhận là Di sản thế giới, quang cảnh thiên nhiên tuyệt diệu khi nhìn từ trên cao, những khu phố cổ kính không dành cho xe hơi và nhiều điều hấp dẫn khác.</p>
 		</figcaption>
 		<a href="#"></a>
 	  </figure></div>
 	  <div class="col-4 " data-aos="zoom-in-up" data-aos-offset="300">
-	  <figure class="snip1084 blue"><img src="/img/hue.jpeg" alt="sample51" />
+	  <figure class="snip1084 blue"><img src="/img/osaka.jpg" alt="sample51" />
 		<figcaption>
-		  <h2><span>Huế</span></h2>
-		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+		  <h2><span>Osaka</span></h2>
+		  <p>Osaka là một thành phố sôi động, người dân cực kỳ thân thiện vui vẻ, là một địa điểm du lịch không thể bỏ qua khi bạn tới Nhậ</p>
 		</figcaption>
 		<a href="#"></a>
 	  </figure></div>
 	  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300"> 
-	  <figure class="snip1084 yellow"><img src="/img/vungtau.jpg" alt="sample49" />
+	  <figure class="snip1084 yellow"><img src="/img/okinawa.jpg" alt="sample49" />
 		<figcaption>
-		  <h2><span>Vũng Tàu</span></h2>
-		  <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+		  <h2><span>Okinawa</span></h2>
+		  <p>Nước biển màu xanh ngọc hòa lẫn với những dải cát trắng biến nơi đây thành thiên đường nghỉ mát của không chỉ người Nhật mà còn của nhiều du khách nước ngoài khi đến Nhật Bản.</p>
 		</figcaption>
 		<a href="#"></a>
 	  </figure></div>
@@ -752,7 +753,7 @@ $(document).ready(function () {
 					<h2 class="single-animate animate-press-1">Sự kiện trong tháng 9</h2>
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2" style="margin-left: auto;margin-right: auto;">
-							<h3>Tháng 9 – thời điểm giao mùa giữa hạ và thu, thời tiết dễ chịu và không khí cũng trở nên trong lành hơn hẳn. Đây sẽ là khoảng thời gian lý tưởng để bạn đi đây đi đó, khám phá đất nước Việt Nam tươi đẹp. 
+							<h3>Tháng 9 – thời điểm giao mùa giữa hạ và thu, thời tiết dễ chịu và không khí cũng trở nên trong lành hơn hẳn. Đây sẽ là khoảng thời gian lý tưởng để bạn đi đây đi đó, khám phá đất nước Nhật Bản tươi đẹp. 
 							</h3>
 						</div>
 					</div>
@@ -762,13 +763,12 @@ $(document).ready(function () {
 				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(/img/quockhanh.jpeg);background-position:50% 50%;">
+						<div class="fh5co-press-img" style="background-image: url(/img/eventjp2.jpeg);background-position:50% 50%;">
 						</div>
 						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Ngày Quốc khánh Việt Nam<span class="fh5co-border"></span></h3>
-							<p>Ngày Quốc khánh Việt Nam là một dịp lễ vô cùng quan trọng đối với nhân dân ta, diễn ra vào ngày 2/9 hằng năm.
-							Đây là ngày kỷ niệm Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn độc lập tại Quảng trường Ba Đình, Hà Nội, khai sinh ra nước Việt Nam Dân chủ Cộng hòa, nay là nước Cộng hòa Xã hội Chủ nghĩa Việt Nam vào ngày 2/9/1945.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<h3 class="h2 fh5co-press-title"> Lễ hội pháo hoa mùa thu Katagai<span class="fh5co-border"></span></h3>
+							<p>Lễ hội pháo hoa – Lễ hội Katagai được tổ chức vào tháng 9 hàng năm tại thị trấn Katagai, thành phố Ojiya, tỉnh Niigata. Pháo hoa Shosanshakudama trứ danh được biểu diễn tổng cộng 4 lần, mang đến cho khán giả màn trình diễn pháo hoa hoành tráng và đẹp mắt, không hổ danh là một trong ba lễ hội pháo hoa hoành tráng nhất Nhật Bản.</p>
+							<p><a href="https://katakaimachi-enkakyokai.info/" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->
@@ -777,13 +777,14 @@ $(document).ready(function () {
 				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(/img/trungthu.webp);background-position:50% 50%;">
+						<div class="fh5co-press-img" style="background-image: url(/img/eventjp1.jpeg);background-position:50% 50%;">
 						</div>
 						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Tết Trung Thu<span class="fh5co-border"></span></h3>
-							<p>Tết Trung thu là ngày Tết truyền thống và đặc biệt của dân tộc Việt Nam. Đây là dịp để các thành viên trong gia đình quây quần, sum vầy, cùng nhau ngắm trăng, trò chuyện, thưởng trà,rước đèn,phá cỗ,...
-								Tết Trung thu được tổ chức hằng năm vào ngày 15/08 (Rằm tháng 8) âm lịch. Trung thu 2022 rơi vào thứ Bảy, ngày 10/9 dương lịch.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<h3 class="h2 fh5co-press-title">Lễ hội cỏ san hô hồ Notoro<span class="fh5co-border"></span></h3>
+							<p>Cỏ san hô hồ Notoro ở thành phố Abashiri, Hokkaido là quần thể cỏ san hô lớn nhất ở Nhật Bản. Thời gian tốt nhất để ngắm lá cỏ đổi màu là từ giữa tháng 9 đến cuối tháng 9.
+
+								Vào tháng 9, “Lễ hội cỏ san hô hồ Notoro” được tổ chức tại khu vực Ubaranai, nơi bạn có thể thưởng thức ca hát, nhảy múa và các sự kiện khác trong khi thưởng ngoạn quang cảnh ngoạn mục.</p>
+							<p><a href="https://en.visit-hokkaido.jp/destinations/lake-notoro-coral-grass" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->
@@ -792,12 +793,12 @@ $(document).ready(function () {
 				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(/img/nhacnuoc.jpeg);background-position:50% 50%;">
+						<div class="fh5co-press-img" style="background-image: url(/img/eventjp3.jpeg);background-position:50% 50%;">
 						</div>
 						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Lễ hội nhạc nước<br>“The Fountain Festival”<span class="fh5co-border"></span></h3>
-							<p>Không cần phải đến Singapore hay Dubai, lần đầu tiên người dân và du khách tại TP.HCM sẽ được tận mắt chiêm ngưỡng chuỗi sự kiện “Lễ hội Nhạc nước lớn nhất Đông Nam Á” quy mô, hoành tráng và đẳng cấp quốc tế ngay tại khu kênh đào thuộc đại đô thị The Global City, đặc biệt sự kiện sẽ diễn ra hàng tuần và bắt đầu vào đúng dịp lễ 2/9</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<h3 class="h2 fh5co-press-title"> Lễ hội Owara Kaze no Bon<span class="fh5co-border"></span></h3>
+							<p>Owara Kaze no Bon được tổ chức từ ngày 1 đến ngày 3 tháng 9 hàng năm. Đây là một sự kiện hát dân ca được tổ chức trong ba ngày ba đêm tại Yatsuomachi, thành phố Toyama, tỉnh Toyama và toàn bộ thị trấn trở thành địa điểm tổ chức. Một điểm không thể bỏ qua là thị trấn Nagashi, nơi các vũ công diễu hành khắp thị trấn theo giai điệu của buổi biểu diễn!</p>
+							<p><a href="https://www.info-toyama.com/events/10012" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->
@@ -806,12 +807,12 @@ $(document).ready(function () {
 				<div class="col-md-6" data-aos="zoom-in-up" data-aos-offset="300">
 					<!-- Press Item -->
 					<div class="fh5co-press-item to-animate">
-						<div class="fh5co-press-img" style="background-image: url(/img/lehoiamthuc.jpeg);background-position:50% 50%;">
+						<div class="fh5co-press-img" style="background-image: url(/img/eventjp4.jpeg);background-position:50% 50%;">
 						</div>
 						<div class="fh5co-press-text">
-							<h3 class="h2 fh5co-press-title">Lễ hội Văn hóa - Ẩm thực Việt Nam<span class="fh5co-border"></span></h3>
-							<p>Lễ hội Văn hóa - Ẩm thực Việt Nam năm 2022 dự kiến sẽ diễn ra tại Khu dịch vụ du lịch Cửa Việt, tỉnh Quảng Trị từ ngày 23 - 25/9. Lễ hội góp phần tôn vinh sự đa dạng, đặc sắc của nền ẩm thực Việt Nam nói chung và ẩm thực miền Trung nói riêng trong chuỗi các hoạt động kích cầu, mở cửa lại hoạt động du lịch trong điều kiện bình thường mới</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<h3 class="h2 fh5co-press-title">Lễ hội bia Đức Oktoberfest<span class="fh5co-border"></span></h3>
+							<p>Oktoberfest, lễ hội bia số một thế giới, được tổ chức tại Munich, Đức hàng năm từ tháng 9 đến tháng 10. Bạn sẽ có cơ hội thưởng thức nhiều loại bia Đức khác nhau, chẳng hạn như bia trắng vị chuối và bia đen có vị đắng! Đĩa xúc xích, dưa cải muối và các món ngon khác của Đức rất hợp với bia. Bạn có thể tận hưởng cảm giác như đang đi du lịch Đức ngay giữa lòng Tokyo.</p>
+							<p><a href="https://www.oktober-fest.jp/" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->

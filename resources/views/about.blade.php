@@ -8,9 +8,9 @@
     <meta name="generator" content="Hugo 0.101.0">
     <title>About Us</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
-    <link href="bootstrap-5.2.1/css/bootstrap-grid.min.css" rel="stylesheet"> 
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f99152938e.js" crossorigin="anonymous"></script>
 	<!-----fonts----->
 	  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,32 +27,49 @@
     
 </head>
 <body>
-     <nav class="navbar navbar-expand-md navbar-light sticky-top">
-      <div class="container-fluid">
-        <a href="#" class="navbar-brand">
-          <img src="/img/CultureTravel.png" style="width:100px;height:auto;">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-         data-target="#navbarResponsive">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="me-3 justify-content-end collapse navbar-collapse" id="navbarResponsive">
-          <div class="yellowInRight">
-            <ul class="navbar-nav ml=auto">
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home')}}">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-            </ul>
-          </div>
-          <div class="nav-item1">
-            <a class="btn btn-success" href="loginPage/index.html" role="button">GET START</a>
-          </div>
-        </div>
-      </div>
+  <style>
+    .navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  top: 0px;
+  position: absolute;
+}
+.navbar-brand img {
+        width: 85px;
+    }
+.navbar-toggle { z-index: 1; }
+.navbar {
+	
+	background-color:#0F0F0F !important;
+  padding-top: 33px;
+  padding-bottom: 33px;;
+}
+.nav-link {
+	padding: 0;
+}.dropdown-menu {
+	width: 200px;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+	<div class="container-fluid">
+		
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#"><img src="/img/CultureTravel.png"></a>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{{ route('home') }}">Trang chủ</a>
+			</li>
+			
+		</ul>
+		
+	  </div>
+	<div>
+  
+	</div>
+	</div>
   </nav>
     <div class="name">
       <h2>CUL: <h1>CULTURE TRAVEL AT HOME</h1></h2>
@@ -151,7 +168,7 @@
           <label for="modal-btn3">Phong <i class="uil uil-expand-arrows3"></i></label> 		
           <div class="modal3">		
             <div class="modal-wrap3">	
-          <img src="/img/Phong.JPG3" alt="">	
+          <img src="/img/Phong.JPG" alt="">	
               <p class="infor3">Main Developer</p>	          		
             </div>			          		
           </div>	
@@ -186,67 +203,88 @@
             </div>			          		
           </div>	
       </div>
-    
+	  <div class="section full-height">
+		<input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+		<label for="modal-btn">Open Modal <i class="uil uil-expand-arrows"></i></label> 		
+		<div class="modal">		
+			<div class="modal-wrap">	
+			  <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
+				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
+			</div>			          		
+		</div>	
+  </div>
+
+<div class="section full-height">
+		<input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+		<label for="modal-btn">Open Modal <i class="uil uil-expand-arrows"></i></label> 		
+		<div class="modal">		
+			<div class="modal-wrap">	
+			  <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
+				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
+			</div>			          		
+		</div>	
+  </div>
  
 
   <!-------fotter------->
-<footer>
-  <div id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h3 class="section-title">About Us</h3>
-          <p>All around us, both in places far away and in places near us, there are always beautiful things that in the midst of the busyness of life that we rarely notice. 
-             <br> Come to us, you will see it. We wil make you curious and amazed about the wonderfull cultures in the world.</p>
-        </div>
-      
+  <footer>
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<h3 class="section-title">Giới thiệu</h3>
+            <p>CultureTravel là một Website về thông tin vắn hoá của nhiều nước trên thế giới được vận hành và phát triển từ năm 2022. Các bài viết được tổng hợp đa phần từ nội dung tham khảo trên Google.</p>
 
-        <div class="col-md-4">
-          <h3 class="section-title">Our Address</h3>
-          <ul class="contact-info">
-            <li><i class="fa-regular fa-map"></i>Chiyoda-ku, Tokyo, Japan</li>
-            <li><i class="fa-solid fa-phone-flip"></i>+ 1235 2355 98</li>
-            <li><i class="fa-regular fa-envelope"></i><a href="#">internship@nal.vn</a></li>
-            <li><i class="fa-solid fa-globe"></i><a href="#">https://nal.co.jp/</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h3 class="section-title">Drop us a line</h3>
-          <form class="contact-form">
-            <div class="form-group">
-              <label for="name" class="sr-only">Name</label>
-              <input type="name" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <label for="email" class="sr-only">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="message" class="sr-only">Message</label>
-              <textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="row copy-right justify-content-md-center">
-        <div class="col-md-6 col-md-offset-3 text-center">
-          <p>CONNECT WITH US</p>
-          <p class="fh5co-social-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          </p>
-          <p>&copy; 2022 <a href="#">Culture Travel</a> at Home. All Rights Reserved. </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+            <h3 class="section-title">Cơ Hội hợp tác với CultureTravel</h3>
+            <p>Cùng với mục tiêu phát triển của CultureTravel là muốn đưa thông tin nhiều hơn về văn hoá đến với độc giả. Song song đó là lượng nội dung bổ ích và chính xác về văn hoá phải được cập nhật thường xuyên.</p>
+
+            <p>Hiện tại,CultureTravel muốn hợp tác với các bên phát triển dịch vụ du lịch và cá nhân đam mê du lịch.</p></div>
+					<div class="col-md-4">
+						<h3 class="section-title">Liên lạc</h3>
+							<ul class="contact-info">
+								<li><i class="fa-regular fa-map"></i>98 West 21th Street, Suite 721 New York NY 10016</li>
+								<li><i class="fa-solid fa-phone-flip"></i>+ 1235 2355 98</li>
+								<li><i class="fa-regular fa-envelope"></i><a href="#">info@yoursite.com</a></li>
+								<li><i class="fa-solid fa-globe"></i><a href="#">www.yoursite.com</a></li>
+							</ul>
+					</div>
+						<div class="col-md-4">
+							<h3 class="section-title">Phản hồi</h3>
+							<form class="contact-form">
+								<div class="form-group">
+									<label for="name" class="sr-only">Tên</label>
+									<input type="name" class="form-control" id="name" placeholder="Tên">
+								</div>
+								<div class="form-group">
+									<label for="email" class="sr-only">Email</label>
+									<input type="email" class="form-control" id="email" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<label for="message" class="sr-only">Nội dung tin nhắn</label>
+									<textarea class="form-control" id="message" rows="7" placeholder="Nội dung tin nhắn"></textarea>
+								</div>
+								<div class="form-group">
+									<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Gửi">
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="row copy-right justify-content-md-center">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p>THEO DÕI CHÚNG TÔI</p>
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="fa-brands fa-twitter"></i></a>
+								<a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+								<a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+								<a href="#"><i class="fa-brands fa-dribbble"></i></a>
+								<a href="#"><i class="fa-brands fa-youtube"></i></a>
+							</p>
+							<p>&copy; 2022 <a href="#">Culture Travel</a> at Home. All Rights Reserved. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
     
 </body>
 </html>

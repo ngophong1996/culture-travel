@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>HOME</title>
+    <title>Culture Travel</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
@@ -26,62 +26,78 @@
   </head>
 <body>
             
-  <nav class="navbar navbar-expand-md navbar-light sticky-top">
-      <div class="container-fluid">
-        <a href="#" class="navbar-brand">
-          <img src="/img/CultureTravel.png" style="width:100px;height:auto;">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-         data-target="#navbarResponsive">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="me-3 justify-content-end collapse navbar-collapse" id="navbarResponsive">
-          <div class="yellowInRight">
-          <ul class="navbar-nav ml=auto">
-            
-          
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('about') }}">Về Chúng Tôi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-          </ul>
-          </div>
-          @if (Route::has('login'))
-          @auth
-            <div class=" navbar-collapse justify-content-end">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  @if(Auth::user()->image)
-                                <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
-                            @endif
-                  {{ Auth::user()->name }}
-                </a>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ url('/profile') }}">Cài dặt tài khoản</a></li>
-                <li><form method="POST" action="{{ route('logout') }}">
-                  @csrf
-                  <a href="route('logout')"
-                    onclick="event.preventDefault();
-                          this.closest('form').submit();">
-                    {{ __('Đăng xuất') }}
-                  </a>
-                  </form></li>
-                </ul>
-                  </li>
-              </ul>
-            </div>
-          @else
-              <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Đăng nhập</a>
-          @endauth
-        @endif
-        
-        </div>
-      </div>
+  <style>
+    .navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  top: 0px;
+  position: absolute;
+}
+.navbar-brand img {
+        width: 85px;
+    }
+.navbar-toggle { z-index: 1; }
+.navbar {
+	
+	background-color:#0F0F0F !important;
+  padding-top: 27px;
+  padding-bottom: 27px;;
+}
+.nav-link {
+	padding: 0;
+}.dropdown-menu {
+	width: 200px;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+	<div class="container-fluid">
+		
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#"><img src="/img/CultureTravel.png"></a>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#news">Tin tức</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('about') }}">Về chúng tôi</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					@if(Auth::user()->image)
+                        <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
+                    @endif
+					{{ Auth::user()->name }}
+				</a>
+				<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="{{ url('/profile') }}">Cài dặt tài khoản</a></li>
+				<li><form method="POST" action="{{ route('logout') }}">
+					@csrf
+					<a href="route('logout')"
+						onclick="event.preventDefault();
+									this.closest('form').submit();">
+						{{ __('Đăng xuất') }}
+					</a>
+					</form></li>
+				</ul>
+		  		</li>
+		</ul>
+	  </div>
+	<div>
+  
+	</div>
+	</div>
   </nav>
-
   <section id="videoCover">
     <div class="overlay"></div>
 
@@ -208,7 +224,7 @@
 
 
   <!-- START THE FEATURETTES -->
-<section class="news">
+<section id="news" class="news">
   <hr class="featurette-divider">
 
      <div class="row featurette">

@@ -579,7 +579,7 @@
 							<button type="button" class="btn btn-danger deleteRecord" data-id="{{ $vietnam->id  }}" >Xoá điểm đến</button>
 							<p>{{ $vietnam->title }}</p>
 							<div class="title-mb">
-								<a href="vanhoavn.html" class="">Xem thêm</a>
+								<a href="/{{ $vietnam->id  }}" class="">Xem thêm</a>
 							</div>
 							</li>
 						@endif
@@ -626,7 +626,7 @@
 				  <h2><span>Hà Nội</span></h2>
 				  <p>Thành phố Hà Nội là Thủ đô ngàn năm văn hiến với những di tích cổ xưa, cuộc sống yên bình.</p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/63"></a>
 			  </figure></div>
 			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			  <figure class="snip1084 blue"><img src="/img/hochiminh.jpg" alt="sample51" />
@@ -634,40 +634,40 @@
 				  <h2><span>Hồ Chí Minh</span></h2>
 				  <p>Được mệnh danh là “Hòn ngọc Viễn Đông”, TP.HCM từ lâu đã là trung tâm văn hóa, kinh tế, chính trị của Việt Nam.</p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/66"></a>
 			  </figure></div>
 			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			  <figure class="snip1084 yellow"><img src="/img/danang.jpeg" alt="sample49" />
 				<figcaption>
 				  <h2><span>Đà Nẵng</span></h2>
-				  <p>Đà Nẵng còn là trung tâm của 3 di sản văn hóa thế giới là Cố đô Huế, phố cổ Hội An và thánh địa Mỹ Sơn. Phía bắc Đà Nẵng giáp tỉnh Thừa Thiên - Huế, phía tây và nam giáp tỉnh Quảng Nam, phía đông giáp biển Đông.</p>
+				  <p>Đà Nẵng còn là trung tâm của 3 di sản văn hóa thế giới là Cố đô Huế, phố cổ Hội An và thánh địa Mỹ Sơn. </p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/62"></a>
 			  </figure></div>
 		<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			<figure class="snip1084 red">
 				<img src="/img/camau.jpeg" alt="sample43" />
 				<figcaption>
 				<h2><span>Cà Mau</span></h2>
-				<p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				<p>Cà Mau được biết đến là vùng đất tận cùng của Tổ quốc và luôn là điểm du lịch Miền Tây nhất định phải đến một lần trong đời của mọi người dân Việt Nam. </p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/50"></a>
 			</figure></div>
 			<div class="col-4 " data-aos="zoom-in-up" data-aos-offset="300">
 			<figure class="snip1084 blue"><img src="/img/hue.jpeg" alt="sample51" />
 				<figcaption>
 				<h2><span>Huế</span></h2>
-				<p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				<p>Huế là một trong những vùng đất du lịch nổi tiếng bởi nền văn hóa cố đô lâu đời, giàu giá trị lịch sử, có nhiều nét đẹp về văn hóa nghệ thuật, nhiều công trình kiến trúc độc đáo, cùng ẩm thực đặc sắc.</p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/20"></a>
 			</figure></div>
 			<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300"> 
 			<figure class="snip1084 yellow"><img src="/img/vungtau.jpg" alt="sample49" />
 				<figcaption>
 				<h2><span>Vũng Tàu</span></h2>
-				<p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you.</p>
+				<p>Với cát vàng biển xanh, cùng vô vàn món ngon hấp dẫn từ hải sản đến bánh khọt, một khách sạn ở Vũng Tàu hẳn là địa chỉ "đi trốn" không thể hoàn hảo hơn</p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/35"></a>
 			</figure></div>
 		</div>
 	</div>
@@ -699,7 +699,7 @@
 							<h3 class="h2 fh5co-press-title">Ngày Quốc khánh Việt Nam<span class="fh5co-border"></span></h3>
 							<p>Ngày Quốc khánh Việt Nam là một dịp lễ vô cùng quan trọng đối với nhân dân ta, diễn ra vào ngày 2/9 hằng năm.
 							Đây là ngày kỷ niệm Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn độc lập tại Quảng trường Ba Đình, Hà Nội, khai sinh ra nước Việt Nam Dân chủ Cộng hòa, nay là nước Cộng hòa Xã hội Chủ nghĩa Việt Nam vào ngày 2/9/1945.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<p><a href="https://vi.wikipedia.org/wiki/Ng%C3%A0y_Qu%E1%BB%91c_kh%C3%A1nh_(Vi%E1%BB%87t_Nam)" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->
@@ -714,7 +714,7 @@
 							<h3 class="h2 fh5co-press-title">Tết Trung Thu<span class="fh5co-border"></span></h3>
 							<p>Tết Trung thu là ngày Tết truyền thống và đặc biệt của dân tộc Việt Nam. Đây là dịp để các thành viên trong gia đình quây quần, sum vầy, cùng nhau ngắm trăng, trò chuyện, thưởng trà,rước đèn,phá cỗ,...
 								Tết Trung thu được tổ chức hằng năm vào ngày 15/08 (Rằm tháng 8) âm lịch. Trung thu 2022 rơi vào thứ Bảy, ngày 10/9 dương lịch.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<p><a href="https://vi.wikipedia.org/wiki/T%E1%BA%BFt_Trung_thu" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->
@@ -728,7 +728,7 @@
 						<div class="fh5co-press-text">
 							<h3 class="h2 fh5co-press-title">Lễ hội nhạc nước<br>“The Fountain Festival”<span class="fh5co-border"></span></h3>
 							<p>Không cần phải đến Singapore hay Dubai, lần đầu tiên người dân và du khách tại TP.HCM sẽ được tận mắt chiêm ngưỡng chuỗi sự kiện “Lễ hội Nhạc nước lớn nhất Đông Nam Á” quy mô, hoành tráng và đẳng cấp quốc tế ngay tại khu kênh đào thuộc đại đô thị The Global City, đặc biệt sự kiện sẽ diễn ra hàng tuần và bắt đầu vào đúng dịp lễ 2/9</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<p><a href="https://masterisehomes.com/the-global-city/the-fountain-festival/" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->
@@ -742,7 +742,7 @@
 						<div class="fh5co-press-text">
 							<h3 class="h2 fh5co-press-title">Lễ hội Văn hóa - Ẩm thực Việt Nam<span class="fh5co-border"></span></h3>
 							<p>Lễ hội Văn hóa - Ẩm thực Việt Nam năm 2022 dự kiến sẽ diễn ra tại Khu dịch vụ du lịch Cửa Việt, tỉnh Quảng Trị từ ngày 23 - 25/9. Lễ hội góp phần tôn vinh sự đa dạng, đặc sắc của nền ẩm thực Việt Nam nói chung và ẩm thực miền Trung nói riêng trong chuỗi các hoạt động kích cầu, mở cửa lại hoạt động du lịch trong điều kiện bình thường mới</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Xem thêm</a></p>
+							<p><a href="https://baochinhphu.vn/le-hoi-van-hoa-am-thuc-viet-nam-nam-2022-tai-quang-tri-102220906154116929.htm" class="btn btn-primary btn-sm">Xem thêm</a></p>
 						</div>
 					</div>
 					<!-- Press Item -->

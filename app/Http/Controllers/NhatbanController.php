@@ -29,12 +29,12 @@ class nhatbanController extends Controller
         ]);
     }
     public function aodai(){
-        return view('nhatban.aodai',[
+        return view('nhatban.ao',[
         ]);
     }
     
     public function ngayle(){
-        return view('nhatban.ngayle',[
+        return view('nhatban.lehoi',[
         ]);
     }
     

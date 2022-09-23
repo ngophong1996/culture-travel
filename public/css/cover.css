@@ -39,37 +39,11 @@ body {
  * Header
  */
  
- #nav-bar{
-
-  top: 0;
-  z-index: 10;
-}
+ 
 p{
   color: #000000;
 }
-.navbar-brand img{
-  height: 40px;
-  padding-left: 30px;
-}
-.navbar-nav li{
-  padding: 0 10px;
-}
-#nav-bar ul .nav-item a:hover
-{
-  color: #5faa41!important;
-}
-.navbar{
-  background: #0F0F0F;
-  height: 100px;
-}
-.navbar-toggler{
-  border: none!important;
-}
-.nav-link{
-  color: rgb(229, 229, 229)!important;
-  font-weight: 600;
-  font-size: 16px;
-}
+
 .user-profile img {
   width: 40px;
   height: 40px;
@@ -80,10 +54,7 @@ a {
   color: rgb(255, 255, 255);
   text-decoration: none !important;
 }
-.navbar-collapse {
-  flex-basis: 100%;
-  flex-grow: 0 !important;
-  align-items: center;}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -143,22 +114,7 @@ h1{
   vertical-align: -.125em;
   fill: currentColor;
 }
-.nav-scroller {
-  position: relative;
-  z-index: 2;
-  height: 2.75rem;
-  overflow-y: hidden;
-}
-.nav-scroller .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  margin-top: -1px;
-  overflow-x: auto;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
+
 
 
 
@@ -226,13 +182,13 @@ div .layout {
 
 /*-------News------*/
 
-a:link{
+.news a:link{
   color: #333;
 }
-a:hover{
+.news a:hover{
   color: #000000;
 }
-a:visited{
+.news a:visited{
   color: #333;
 }
 

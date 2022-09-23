@@ -43,11 +43,18 @@ Route::middleware(['admin'])->group(function (){
 Route::middleware(['auth'])->group(function (){
     Route::get('/actionvn', [VietnamController::class, 'action'])->name('actionvn');
     Route::get('/actionjp', [NhatbanController::class, 'action'])->name('actionjp');
+    //------Viet Nam-------//
     Route::get('/choosenVN', [VietnamController::class, 'choosen'])->name('choosenVN');
     Route::resource('vietnam', VietnamController::class);
     Route::get('aodai', [VietnamController::class,'aodai'])->name('aodai');
     Route::get('ngayle', [VietnamController::class,'ngayle'])->name('ngayle');
     Route::get('tongiao', [VietnamController::class,'tongiao'])->name('tongiao');
+    //-------Nhat Ban--------//
+    Route::get('/choosenjp', [NhatbanController::class, 'choosen'])->name('choosenjp');
+    Route::get('aojp', [NhatbanController::class,'aodai'])->name('aojp');
+    Route::get('lehoijp', [NhatbanController::class,'ngayle'])->name('lehoijp');
+    Route::get('tongiaojp', [NhatbanController::class,'tongiao'])->name('tongiaojp');
+
     Route::resource('nhatban', NhatbanController::class);
     Route::resource('blog', BlogController::class);
     Route::get('/profile',[HomeController::class,'profile']);
@@ -55,6 +62,16 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/63', function() {
         return view('vietnam.hanoi');
     })->name('63');
+    Route::get('/66', function() {
+        return view('vietnam.hochiminh');
+    })->name('hcm');
+    Route::get('/106', function() {
+        return view('nhatban.tokyo');
+    })->name('106');
+    Route::get('/78', function() {
+        return view('nhatban.hokkaido');
+    })->name('78');
+    
     Route::get('/about', function() {
         return view('about');
     })->name('about');
@@ -63,7 +80,9 @@ Route::middleware(['auth'])->group(function (){
 Route::get('/home', function() {
     return view('home');
 })->name('home');
-
+Route::get('/', function() {
+    return view('home');
+});
 
 
 require __DIR__.'/auth.php';
