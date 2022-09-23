@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+    app:
+        build:
+            context: ./docker/
+            dockerfile: Dockerfile
+        container_name: travelathome-app
+        restart: unless-stopped
+        working_dir: /var/www/travelathome
+        volumes:
+            - ./:/var/www/travelathome/
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        ports:
+            - 80:80
+
+    db:
+        image: mysql:5.7
+        container_name: travelathome-db
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - ./docker/data/mysql:/var/lib/mysql
+        ports:
+            - 3306:3306
+
+volumes:
+    app_data:
+    db_data:
