@@ -116,6 +116,7 @@ padding-bottom: 30px;
   </nav>
 
           <h1 style="color: gray; text-align: center;">Sorry! We have not update yet.</h1>
+          <h5 style="color: gray; text-align: center;"><a href="{{ route('home') }}">Return</a></h5>
           
 
   <!-------fotter------->
@@ -182,7 +183,7 @@ padding-bottom: 30px;
 </footer>
   
   <script src="assets/dist/js/cover.js" ></script>
-  <scrscr src="./assets/dist/js/weather.js"></scrscr>
+
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="./assets/dist/js/loader.js"></script>
   </body>

@@ -160,7 +160,7 @@ padding-bottom: 30px;
 
       <h2 class="fw-normal">Các nước khác</h2>
       
-      <p><a class="btn btn-secondary" href="#">Xem nội dung &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="{{ route('other') }}">Xem nội dung &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
 
