@@ -92,7 +92,7 @@ background-color:#0F0F0F !important;
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
-<section id="slider">
+<section id="slider" style=" background: url('/img/771820.jpg') rgba(64, 64, 64, 0.65);background-size: cover; background-blend-mode: multiply;">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Trang phục truyền thống</h1></div>

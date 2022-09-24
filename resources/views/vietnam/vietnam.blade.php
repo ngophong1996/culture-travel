@@ -221,6 +221,9 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#nonthEvent">Sự kiện</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
+			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="nav-item dropdown">

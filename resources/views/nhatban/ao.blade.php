@@ -92,11 +92,11 @@ background-color:#0F0F0F !important;
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
-<section id="slider">
+<section id="slider" style=" background: url('/img/mount5.jpg') rgba(64, 64, 64, 0.65);background-size: cover; background-blend-mode: multiply;">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Trang phục truyền thống</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span class="yellowInRight"><a href="{{ url('vietnam') }}">Việt Nam</a></span>Trang phục truyền thống</div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span class="yellowInRight"><a href="{{ url('nhatban') }}">Nhật Bản</a></span>Trang phục truyền thống</div>
 		  </div>
 	</div>
 </section>
@@ -108,13 +108,14 @@ background-color:#0F0F0F !important;
 		<div class="row justify-content-center" >
 			<div class="col-md-4 aboutLeft pl-3" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="300">
 				<p></p>
-				<h2>Áo dài</h2><h1>Việt Nam</h1>
+				<h2>Kimono</h2><h1>Nhật Bản</h1>
 				<div id="test"></div>
 			</div>
 			<div class="col-md-8 aboutRight pr-3">
-				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Di sản văn hóa Việt, niềm tự hào của người Việt Nam"</h2>
+				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Kimono - Nét đẹp say đắm lòng người</h2>
 				<div style="text-align: justify;" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" >
-					<p>Áo dài từ lâu đã trở thành quốc phục của Việt Nam, thể hiện được bản sắc văn hóa dân tộc của người Việt Nam, được nhiều đại diện sắc đẹp của Việt Nam lựa chọn là trang phục trong nhất nhiều chương trình, lễ hội lớn nhằm tôn vinh giá trị áo dài cũng như giới thiệu quảng bá văn hóa, đất nước con người Việt Nam. Từ nhỏ đến lớn, từ nam đến nữ ai ai cũng thể khoác chiếc áo dài trên người với đầy niềm kiêu hãnh và tự hào.</p></div>
+					<p>Mỗi đất nước, mỗi dân tộc lại có một trang phục truyền thống riêng. Nhưng có lẽ bộ Kimono của Nhật Bản thực sự đã tạo nên một câu chuyện thú vị bởi kiểu dáng độc đáo, bởi cách mặc và làm nên một bộ Kimono khá cầu kỳ, và bởi ngay cả sự hiện diện đặc sắc trong những dịp nghi lễ của người Nhật.</p>
+				<p>Nói đến Kimono là người ta nghĩ ngay đến xứ  Phù Tang với hình ảnh người phụ nữ Nhật Bản đẹp, kiêu sa cùng với những cánh hoa anh đào mỏng manh. Và Kimono quả thực là độc đáo nhất trong số trang phục truyền thống của Nhật Bản.</p></div>
 			</div>
 		</div>
 	</div>
@@ -123,34 +124,33 @@ background-color:#0F0F0F !important;
 <!-----------EndAbout---------->
 <section id="content">
 <div class="ad-banner">
-	<img width="80%" class="img-fluid" src="/img/aodaitet1.jpg" alt="">
+	<img width="80%" class="img-fluid" src="/img/kimono4.jpeg" alt="">
 </div>
 <div class="container">
 	<div class="row">
 		<div data-aos="zoom-in-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center aodai-left aos-init">
-			<img width="80%" class="img-fluid" src="/img/aodai2.jpg" alt="">
-			<p>Trang phục truyền thống ngày tết</p>
+			<img width="80%" class="img-fluid" src="/img/kimono1.jpeg" alt="">
+
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aodai-right">
-			<p>Đã từ lâu, khi nhắc đến người phụ nữ Việt Nam, bạn bè quốc tế lại trầm trồ nói về chiếc áo dài. Quả thực, chiếc áo dài Việt Nam xứng đáng được coi là loại trang phục truyền thống thể hiện được vẻ đẹp và tâm hồn người phụ nữ Việt Nam.
+			<p>Xưa kia, cả đàn ông và phụ nữ đều sử dụng Kimono như trang phục hàng ngày. Nhưng ngày nay, thường chỉ có phụ nữ Nhật mặc Kimono như nghi phục chính thức, còn hình ảnh người đàn ông Nhật Bản mặc Kimono thường chỉ thấy trong các đám cưới hoặc các dịp lễ theo kiểu truyền thống khác.
 
-				Gọi là <strong>"Áo dài"</strong> là theo cấu tạo của áo, thân áo gồm 2 mảnh bó sát eo của người phụ nữ rồi từ đáy lưng ong 2 thân thả bay xuống tận gót chân tạo nên những bước đi duyên dáng, mềm mại, uyển chuyển hơn cho người con gái.<br><br>Tấm áo lụa mỏng thướt tha với nhiều màu sắc kín đáo trang nhã lướt trên đường phố trở thành tâm điểm chú ý và là bông hoa sáng tôn lên vẻ yêu kiều, thanh lịch cho con người và khung cảnh xung quanh. Chiếc quần may theo kiểu quần ta ống rộng bằng thứ vải đồng chất đồng màu hay sa tanh trắng nâng đỡ tà áo và làm tăng sự mềm mại thướt tha cho bộ trang phục mượt mà duyên dáng, gợi vẻ đằm thắm đáng yêu.</p>
+				<br><br>Du nhập vào Nhật Bản vào khoảng đầu thế kỷ thứ 7, thời đại trị vì của vua Heian dưới dạng những bộ đồ lót bằng cotton, nhưng phải đến khi người Nhật đã chắt lọc được những tinh túy, sáng tạo nó thành một kiểu riêng , đẹp và cầu kỳ hơn rất nhiều thì Kimono mới chính thức được đón nhận và phát triển nhanh chóng trở thành trang phục truyền thống của người Nhật. </p>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ad-1">
 			<div class="img-text">
-				<img data-aos="zoom-in-right" width="60%" class="img-fluid aos-init" src="/img/aodai18.jpg" alt="">
+				<img data-aos="zoom-in-right" width="60%" class="img-fluid aos-init" src="/img/kimono7.jpeg" alt="">
 				
 			</div>
 
-			<p>Ngày Tết hay lễ hội quê hương, đám cưới hay những buổi lên chùa của các bà, các mẹ, các chị, chiếc áo dài nâu, hồng, đỏ... là một cách biểu hiện tấm lòng thành kính gửi đến cửa thiền một lòng siêu thoát, tôn nghiêm. Chiếc áo dài trùm gối, khăn mỏ quạ chít khéo như hoa sen, tay nâng mâm lễ kính cẩn lên cửa chùa, miệng "mô phật di đà"... hình ảnh ấy đã đi vào bức họa tranh dân gian Đông Hồ là một biểu tượng độc đáo của văn hóa Việt Nam.
-
-				<br><br>Ngày nay trong muôn vàn sự cách tân về trang phục, váy đầm, áo ngắn, áo thời trang... chiếc áo dài Việt Nam vẫn chiếm độc tôn về bản sắc dân tộc, mang theo phong cách và tâm hồn người Việt đến với năm châu và trở thành trang phục công sở ở nhiều nơi.
-			</p>
+			<p>Kimono dành cho nam giới và nữ giới có những điểm khác biệt riêng và Kimono nam giới được may thêm quần chẽn ở bên trong. Các võ sĩ đạo cũng đã tạo ra một bộ y phục Kimono riêng khi lên võ đài với tên gọi là Hakama với các nếp gấp mang ý nghĩa tôn vinh tinh thần võ sĩ đạo.
+				<br><br>5 nếp gấp đằnh trước, và 2 nếp gấp đằng sau, mỗi nếp gấp đều có một ý nghĩa riêng: “Yuki”-lòng quả cảm; “Jin”-lòng nhân ái; “Gi”-sự công bằng, chính trực; “Rei”-sự lịch thiệp, lễ độ; “Makoto”-sự chân thành; “Chugi”-tính cống hiến, “Meiyo”-phẩm giá và danh tiếng.
+				<br><br>Mỗi bộ Kimono đều được làm thủ công và mang tính đơn chiếc. Đó là một tác phẩm nghệ thuật công phu, tỉ mẩm từ khâu chọn vải, kết hợp màu sắc, trang trí hoa văn, và lựa chọn các phụ kiện đi cùng. Thiết kế của bộ Kimono cũng hết sức đặc biệt và độc đáo, gồm 8 mảnh ghép với nhau cho phép điều chỉnh kích cỡ phù hợp với người mặc.<br></p>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12  ad-2">
-			<img data-aos="zoom-in-left" width="60%" class="img-fluid aos-init" src="/img/aodai7.jpg" alt="">
-			<p>Áo dài học sinh</p>
-			<img data-aos="zoom-in-left" width="80%" class="img-fluid mrt aos-init" src="/img/aodai23.jpg" alt="">
+			<img data-aos="zoom-in-left" width="60%" class="img-fluid aos-init" src="/img/kimono8.jpg" alt="">
+
+			<img data-aos="zoom-in-left" width="80%" class="img-fluid mrt aos-init" src="/img/kimono5.jpeg" alt="">
 			
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -160,99 +160,99 @@ background-color:#0F0F0F !important;
 		</div>
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 thuvienanh">
 			<div class="image">
-				<img class="myimg" src="/img/aodai1.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono1.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai2.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono2.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodai3.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono3.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodai4.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono4.jpg" alt="" style="cursor: zoom-in;">
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodai7.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono7.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodai8.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono8.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodai9.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono9.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai10.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono10.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai11.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono11.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai12.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono12.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai13.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono13.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai14.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono14.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai15.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono15.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai16.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono16.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai17.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono17.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai18.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono18.jpg" alt="" style="cursor: zoom-in;">
 				
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai19.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono5.jpg" alt="" style="cursor: zoom-in;">
 		
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai20.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono6.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class="myimg" src="/img/aodai21.jpg" alt="" style="cursor: zoom-in;">
+				<img class="myimg" src="/img/kimono21.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 
 			<div class="image">
-				<img class=" myimg" src="/img/aodai23.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono23.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodai24.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono24.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodaitet1.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono25.jpg" alt="" style="cursor: zoom-in;">
 		
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodaitet.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono26.jpg" alt="" style="cursor: zoom-in;">
 
 			</div>
 			<div class="image">
-				<img class=" myimg" src="/img/aodai25.jpg" alt="" style="cursor: zoom-in;">
+				<img class=" myimg" src="/img/kimono27.jpg" alt="" style="cursor: zoom-in;">
 			
 			</div>
 		</div>

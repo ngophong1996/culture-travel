@@ -97,11 +97,11 @@ background-color:#0F0F0F !important;
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
-<section id="slider">
+<section id="slider" style=" background: url('/img/mount5.jpg') rgba(64, 64, 64, 0.65);background-size: cover; background-blend-mode: multiply;">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Ngày lễ truyền thống</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span class="yellowInRight"><a href="{{ url('vietnam') }}">Việt Nam</a></span>Ngày lễ truyền thống</div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span class="yellowInRight"><a href="{{ url('nhatban') }}">Nhật Bản</a></span>Ngày lễ truyền thống</div>
 		  </div>
 	</div>
 </section>
@@ -117,9 +117,10 @@ background-color:#0F0F0F !important;
 				<div id="test"></div>
 			</div>
 			<div class="col-md-8 aboutRight pr-3">
-				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Ngày lễ truyền thống là nét đẹp văn hoá của người Việt Nam"</h2>
+				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Ngày nghỉ lễ tiếng Nhật là 祝日-Shukujitsu"</h2>
 				<div style="text-align: justify;" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" >
-					<p>Ngày lễ truyền thống là loại hình văn hóa đặc sắc, là sản phẩm tinh thần của 54 dân tộc anh em Việt Nam, được truyền từ đời nay qua đời khác. Các hoạt động lễ hội như một bảo tàng sống về phong tục, tập quán, về lối sống độc đáo, đặc thù của từng dân tộc, từng địa phương. Đây còn là sự kiện tưởng nhớ, tỏ lòng biết ơn của nhân dân đối với các vị thần linh, các anh hùng dân tộc có công với cộng đồng, với đất nước</p></div>
+					<p>Hay còn được chúng ta gọi với cái tên thuần Việt là ngày “đỏ”,bởi vì những ngày nghỉ lễ đó trên lịch được in với màu mực đỏ giống với ngày Chủ Nhật.
+                        Trong 1 năm thì tổng cộng có 16 ngày lễ được quy định bởi pháp luật Nhật Bản. Nếu như ngày lễ đó rơi vào ngày Chủ Nhật thì ngày thứ Hai kế tiếp sẽ là ngày được nghỉ bù.</p></div>
 			</div>
 		</div>
 	</div>
@@ -128,59 +129,54 @@ background-color:#0F0F0F !important;
 <!-----------EndAbout---------->
 <section id="content">
     <div class="ad-banner">
-        <img width="80%" class="img-fluid" src="/img/ngayle1.jpg" alt="">
+        <img width="80%" class="img-fluid" src="/img/jple7.jpg" alt="">
     </div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center aodai-left">
-                <img data-aos="zoom-in-right" width="80%" class="img-fluid aos-init aos-animate" src="/img/vh5.jpg" alt="">
-                <p>Lễ hội Trung thu</p>
+                <img data-aos="zoom-in-right" width="80%" class="img-fluid aos-init aos-animate" src="/img/jple9.jpg" alt="">
+    
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aodai-right">
                 <h2>
                     Một số ngày lễ lớn trong năm
                 </h2>
                 <p>Không chỉ ở Việt Nam mà các quốc gia khác trên thế giới cũng có rất nhiều ngày lễ để kỷ niệm, ghi nhớ và ghi dấu những thời khắc quan trọng trong lịch sử.</p>
-                <p style="font-weight: 800;">Ngày lễ quan trọng theo Âm lịch</p>
+                <p style="font-weight: 800;">Ngày lễ quan trọng trong năm</p>
                 <ul>
-                    <li>Tết Nguyên Đán</li>
-                    <li>Tết Nguyên Tiêu</li>
-                    <li>Tết Hàn Thực</li>
-                    <li>Giỗ tổ Hùng Vương</li>
-                    <li>Lễ Phật Đản</li>
-                    <li>Tết Đoan Ngọ</li>
-                    <li>Lễ Vu Lan</li>
-                    <li>Tết Trung Thu</li>
+                    <li>Tết Nguyên đán (Tết Dương lịch)</li>
+                    <li>Lễ trưởng thành (Thứ hai của tuần thứ 2 tháng 1)</li>
+                    <li>Ngày Quốc khánh (11 tháng 2)</li>
+                    <li>Ngày Xuân phân (20 hoặc 21 tháng 3)</li>
+                    <li>Ngày Chiêu hòa (29 tháng 4)</li>
+                    <li>Ngày Hiến pháp (3 tháng 5)</li>
+                    <li>Ngày Lễ dân tộc (4 tháng 5)</li>
+                    <li>Ngày Tết thiếu nhi (5 tháng 5)</li>
 
                 </ul>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12  ad-1">
                 <div class="img-text">
-                    <img data-aos="zoom-in-right" width="80%" class="img-fluid aos-init" src="/img/ngayle3.jpg" alt="">
+                    <img data-aos="zoom-in-right" width="80%" class="img-fluid aos-init" src="/img/jple3.jpeg" alt="">
                     <p class="adhs"></p>
                 </div>
-                <p style="font-weight: 800;">Ngày lễ theo Dương lịch
-                </p><br>
+               
+                <br>
                 <ul>
-                    <li>Ngày văn hoá dân gian Việt Nam</li>
-                    <li>Ngày giải phóng miền Nam</li>
-                    <li>Ngày quốc tế lao động</li>
-                    <li>Ngày trẻ em Quốc tế</li>
-                    <li>Ngày thương binh liệt sĩ</li>
-                    <li>Ngày thành lập Quốc gia</li>
-                    <li>Ngày quốc tế Phụ nữ</li>
-                    <li>Ngày Cách mạng Tháng 8</li>
-                    <li>Ngày giải phóng thủ đô HÀ Nội</li>
-                    <li>Ngày thành lập Mặt trận thống nhất dân tộc Việt Nam</li>
-                    <li>Ngày thành lập Quân đội nhân dân Việt Nam</li>
-                    <li>Ngày nhà giáo Việt Nam</li>
-                    <li>Giáng sinh</li>
+                    <li>Ngày của biển (Thứ hai của tuần thứ 3 tháng 7)</li>
+                    <li>Tuần lễ Obon (13 đến 15 tháng 7 Âm lịch)</li>
+                    <li>Ngày kính lão (Thứ hai của tuần thứ 3 tháng 9)</li>
+                    <li>Ngày thu phân 23/9</li>
+                    <li>Ngày thể dục thể thao (Thứ hai của tuần thứ 2 tháng 10)</li>
+                    <li>Ngày văn hóa Nhật Bản (3 tháng 11)</li>
+                    <li>Ngày lễ Tạ ơn người lao động (23 tháng 11)</li>
+                    <li> Ngày lễ sinh nhật của Nhật hoàng (23 tháng 12)</li>
                 </ul>
             </div>
             <div data-aos="zoom-in-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ad-2 aos-init">
-                <img width="80%" class="img-fluid" src="/img/ngayle.jpg" alt="">
+                <img width="80%" class="img-fluid" src="/img/jple.jpg" alt="">
                 
-                <img width="80%" class="img-fluid mrt" src="/img/ngayle7.jpg" alt="">
+                <img width="80%" class="img-fluid mrt" src="/img/jple7.jpg" alt="">
                
             </div>
 
@@ -191,31 +187,31 @@ background-color:#0F0F0F !important;
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 thuvienanh">
                 <div class="image">
-                    <img class="myimg" src="/img/ngayle1.jpg" alt="" style="cursor: zoom-in;">
+                    <img class="myimg" src="/img/jple1.jpg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class="myimg" src="/img/ngayle2.jpg" alt="" style="cursor: zoom-in;">
+                    <img class="myimg" src="/img/jple2.jpeg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class="myimg" src="/img/ngayle3.jpg" alt="" style="cursor: zoom-in;">
+                    <img class="myimg" src="/img/jple3.jpeg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class=" myimg" src="/img/ngayle4.jpg" alt="" style="cursor: zoom-in;">
+                    <img class=" myimg" src="/img/jple4.jpeg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class=" myimg" src="/img/ngayle5.jpg" alt="" style="cursor: zoom-in;">
+                    <img class=" myimg" src="/img/jple5.jpeg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class=" myimg" src="/img/ngayle6.jpg" alt="" style="cursor: zoom-in;">
+                    <img class=" myimg" src="/img/jple6.jpeg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class=" myimg" src="/img/ngayle7.jpg" alt="" style="cursor: zoom-in;">
+                    <img class=" myimg" src="/img/jple7.jpg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class=" myimg" src="/img/ngayle8.jpg" alt="" style="cursor: zoom-in;">
+                    <img class=" myimg" src="/img/jple8.jpg" alt="" style="cursor: zoom-in;">
                 </div>
                 <div class="image">
-                    <img class=" myimg" src="/img/vh5.jpg" alt="" style="cursor: zoom-in;">
+                    <img class=" myimg" src="/img/jple9.jpg" alt="" style="cursor: zoom-in;">
                 </div>
 
             </div>

@@ -99,11 +99,11 @@ background-color:#0F0F0F !important;
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
-<section id="slider">
+<section id="slider" style=" background: url('/img/mount5.jpg') rgba(64, 64, 64, 0.65);background-size: cover; background-blend-mode: multiply;">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Tín ngưỡng và Tôn giáo</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span class="yellowInRight"><a href="{{ url('vietnam') }}">Việt Nam</a></span>Tín ngưỡng - Tôn giáo</div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span class="yellowInRight"><a href="{{ url('nhatban') }}">Nhật Bản</a></span>Tín ngưỡng - Tôn giáo</div>
 		  </div>
 	</div>
 </section>
@@ -119,9 +119,11 @@ background-color:#0F0F0F !important;
 				<div id="test"></div>
 			</div>
 			<div class="col-md-8 aboutRight pr-3">
-				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Việt Nam luôn bảo đảm sự đa dạng, hòa hợp và bình đẳng tôn giáo"</h2>
+				<h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" >"Tôn giáo Nhật Bản là sự uyển chuyển linh hoạt"</h2>
 				<div style="text-align: justify;" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" >
-					<p>Việt Nam là quốc gia đa tín ngưỡng, đa tôn giáo. Theo thống kê chưa đầy đủ cho thấy Việt Nam có khoảng 95% dân số có đời sống tín ngưỡng, tôn giáo (trong hàng nghìn tín ngưỡng thì tín ngưỡng phổ biến là thờ cúng ông bà tổ tiên và tín ngưỡng thờ Mẫu).Tính đến nay, cả nước có khoảng 45.000 cơ sở tín ngưỡng, trong đó có hơn 2.900 di tích gắn với cơ sở tín ngưỡng, tôn giáo, một số di tích được UNESCO công nhận là di sản thế giới.</p><p> Hàng năm, Việt Nam có gần 13.000 lễ hội, gồm 5 loại: lễ hội dân gian, lễ hội lịch sử cách mạng, lễ hội tôn giáo, lễ hội du nhập từ nước ngoài, lễ hội văn hóa - thể thao và ngành nghề. Riêng trong lĩnh vực tôn giáo, Việt Nam có khoảng hơn 26,5 triệu tín đồ (chiếm 27% dân số), 43 tổ chức thuộc 16 tôn giáo được nhà nước công nhận hoặc cấp chứng nhận đăng ký hoạt động. Cả nước hiện có hơn 57,4 ngàn chức sắc, trên 147 ngàn chức việc, hơn 29,6 ngàn cơ sở thờ tự. Số lượng tín đồ theo các tôn giáo hiện nay khoảng: Phật giáo: 15,1 triệu; Công giáo: 7,1 triệu; Cao đài: 1,1 triệu; Tin lành: 1 triệu; Hồi giáo: 80.000; Phật giáo Hòa hảo: 1,3 triệu, còn lại là các tôn giáo khác (Tịnh độ Cư sỹ Phật hội, Tứ ân Hiếu nghĩa, Bà La môn, Bửu Sơn Kỳ Hương, Minh sư đạo, Minh lý đạo…).</p></div>
+					<p>Thần đạo (神道 ( しんとう) là một tôn giáo đa thần, có nguồn gốc từ những tín ngưỡng thời cổ xưa ở Nhật Bản. Người ta thờ cúng các sự vật, hiện tượng được coi là có năng lực linh thiêng trong tự nhiên và xã hội, như đỉnh núi, con sông, biển, mặt trời, mưa, dông bão, các vị anh hùng và tổ tiên để mong được sự phù hộ, chở che trong cuộc sống hiện tại. Những truyền thuyết về nguồn gốc thần linh của Hoàng tộc đã trở thành một phần quan trong của giáo lý Thần đạo.</p>
+					<p> Từ Thần đạo (神道 ( しんとう) chỉ những nghi lễ tế thần và đền thờ được thấy xuất hiện rất sớm, nhưng phải đến tận cuối thế kỷ thứ XII thuật ngữ này mới mang ý nghĩa chỉ một loại giáo lý tôn giáo nhất định. Thần đạo có một quá trình kết hợp lâu dài với Phật giáo dưới dạng tín ngưỡng Thần Phật tập hợp.</p>
+				<p></p></div>
 			</div>
 		</div>
 	</div>
@@ -130,26 +132,28 @@ background-color:#0F0F0F !important;
 <!-----------EndAbout---------->
 <section id="content">
     <div class="ad-banner">
-        <img width="80%" class="img-fluid" src="/img/nhathodb.jpg" alt="">
+        <img width="80%" class="img-fluid" src="/img/jpton4.jpg" alt="">
     </div>
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center aodai-left">
-                <img data-aos="zoom-in-right" width="80%" class="img-fluid" src="/img/vh6.jpg" alt="">
+                <img data-aos="zoom-in-right" width="80%" class="img-fluid" src="/img/jpton2.jpg" alt="">
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aodai-right">
                 
-                <p>ベトナムは多くの種類の信念と宗教を持つ国です。 ベトナムは東南アジアに位置し、3つの側面が海に面しているため、世界中の国々との交流に非常に便利であり、世界の文化の流れ、宗教、宗教に非常に浸透しやすい場所でもあります。 信念や宗教の多様性により、人々はしばしばベトナムを世界の宗教博物館と比較しています。 文化の面では、信念や宗教の多様性がベトナムの文化を豊かでユニークなものにすることに貢献しています。<br><br>ベトナムには、キリスト教、仏教、ヒンドゥー教など、さまざまな宗教が存在します。そのため、ここで文化を探索すると、無数の作品が見つかります。宗教は同じではなく、その多くが何千人もの観光客を魅了する観光名所になっています。毎年訪れて探索してください。たとえば、一柱寺（ハノイ）、文廟（ハノイ）、ノートルダム大聖堂（ホーチミン市）、マリアマンヒンドゥー寺院。</p>
+                <p>Đầu thế kỷ XIX một phong trào Thần đạo phục cổ đã nổi lên và dần chiếm ưu thế, Phật giáo bị tách ra khỏi Thần đạo vì bị coi là một tôn giáo ngoại lai. Sau cải cách Minh Trị và đặc biệt trong Chiến tranh Thế giới thứ II, Thần đạo được các nhà chức trách đưa lên thành quốc giáo.<br><br>Kết thúc Chiến tranh Thế giới thứ II quân Đồng Minh đã chiếm đóng Nhật Bản, giải thể Thần đạo Nhà nước- một tổ chức Thần đạo được coi là có liên quan đến việc cổ súy tư tưởng dân tộc cực đoan và chủ nghĩa quân phiệt. Theo Hiến pháp Nhật Bản sau chiến tranh, Thần đạo không còn được hưởng bất kỳ một đặc quyền nào và tồn tại bình đẳng như các tôn giáo khác. Ngày nay trong ý thức dân chúng Thần đạo tồn tại song song và đôi khi hoà trộn với Phật giáo. Nhiều người Nhật kết hôn theo nghi thức Thần đạo và được mai táng theo nghi thức Phật giáo.</p>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center ad-1">
-                <img data-aos="zoom-in-right" width="80%" class="img-fluid" src="/img/vh1.jpg" alt="">
-                <p>また、祖先を崇拝する習慣もベトナム文化を語る上で欠かすことのできない美しさのひとつです。 崇拝は、水を飲む行為を表現し、水源を思い出し、生まれ育ったことのメリットを思い出すようなものです。 彼が前に行った父親のうち。 したがって、ほとんどすべてのベトナムの家族は、家族の祖先を崇拝するために少なくとも1つの祭壇を持っています。 ベトナムの人々は、主要な記念日に加えて、テトの休日、月の初日と満月の日、清明タオ氏、タンミンなどの他の特別な日を記念してお香を燃やすことがよくあります。
-                    祖先崇拝は古くから確立されてきた文化活動であり、これまでのところ、この活動は故人への敬意を表すために受け継がれています。
+                <img data-aos="zoom-in-right" width="80%" class="img-fluid" src="/img/jpton5.jpg" alt="">
+                <p>Theo thống kê, Nhật Bản là quốc gia Phật giáo, với hơn 85% dân số theo Đạo Phật. Hiện ở Nhật Bản có 75.000 chùa với gần 200.000 sư. Phật giáo được truyền vào Nhật Bản khoảng năm 552 sau công nguyên từ vương quốc Bách Tế (nay thuộc Triều Tiên). Lúc bấy giờ quốc vương Bách Tế đã cử một sứ đoàn mang đến biếu Thiên hoàng Nhật Bản một pho tượng Phật quý và một số sách kinh điển nhà Phật.<br>
+<br>
+                    Đến thời Hei-an (794- 1185) đã xuất hiện và phát triển hai tông phái lớn là Chân Ngôn tông và Thiên Thai tông. Bước vào thời Kamakura (1185-1333) Phật giáo trên quần đảo này phát triển rực rỡ với sự truyền bá của hàng loạt các tông phái mới khác từ Trung Quốc như Thiền tông (Zen), Tào Động tông, Tịnh Thổ tông… đem lại hy vọng được giải thoát cho đông đảo các tầng lớp dân chúng.
+					<br><br>Có thể nói đặc điểm cơ bản cuả tôn giáo Nhật Bản là sự uyển chuyển linh hoạt. Tất cả đã được Nhật Bản hoá để cho phù hợp với điều kiện đặc biệt của xứ sở hoa anh đào.
                 </p>
             </div>
             <div data-aos="zoom-in-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center ad-2">
-                <img width="80%" class="img-fluid" src="/img/vh9.jpg" alt="">
-                <img width="80%" class="img-fluid mrt" src="/img/vh13.jpg" alt="">
+                <img width="80%" class="img-fluid" src="/img/jpton3.jpg" alt="">
+                <img width="80%" class="img-fluid mrt" src="/img/jpton2.jpg" alt="">
             </div>
 
 

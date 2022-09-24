@@ -99,7 +99,7 @@ background-color:#0F0F0F !important;
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
-<section id="slider">
+<section id="slider" style=" background: url('/img/771820.jpg') rgba(64, 64, 64, 0.65);background-size: cover; background-blend-mode: multiply;">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Tín ngưỡng và Tôn giáo</h1></div>
@@ -139,12 +139,11 @@ background-color:#0F0F0F !important;
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 aodai-right">
                 
-                <p>ベトナムは多くの種類の信念と宗教を持つ国です。 ベトナムは東南アジアに位置し、3つの側面が海に面しているため、世界中の国々との交流に非常に便利であり、世界の文化の流れ、宗教、宗教に非常に浸透しやすい場所でもあります。 信念や宗教の多様性により、人々はしばしばベトナムを世界の宗教博物館と比較しています。 文化の面では、信念や宗教の多様性がベトナムの文化を豊かでユニークなものにすることに貢献しています。<br><br>ベトナムには、キリスト教、仏教、ヒンドゥー教など、さまざまな宗教が存在します。そのため、ここで文化を探索すると、無数の作品が見つかります。宗教は同じではなく、その多くが何千人もの観光客を魅了する観光名所になっています。毎年訪れて探索してください。たとえば、一柱寺（ハノイ）、文廟（ハノイ）、ノートルダム大聖堂（ホーチミン市）、マリアマンヒンドゥー寺院。</p>
+                <p>Việt Nam là một quốc gia có nhiều loại hình tín ngưỡng và tôn giáo. Việt Nam nằm trong khu vực Đông Nam Á, ba mặt giáp biển nên rất thuận lợi cho việc giao lưu với các nước trên thế giới, đồng thời cũng là nơi rất dễ tiếp thu các dòng chảy của các nền văn hóa, tín ngưỡng, tôn giáo thế giới mà mình có. . Do sự đa dạng về tín ngưỡng, tôn giáo nên người ta thường so sánh Việt Nam với các bảo tàng tôn giáo của thế giới. Về văn hóa, sự đa dạng về tín ngưỡng, tôn giáo góp phần tạo nên sự phong phú và độc đáo của văn hóa Việt Nam.<br><br>Có nhiều tôn giáo khác nhau ở Việt Nam, bao gồm Thiên chúa giáo, Phật giáo và Ấn Độ giáo. Vì vậy, nếu khám phá văn hóa nơi đây, bạn sẽ tìm thấy vô số tác phẩm. Các tôn giáo không giống nhau, nhiều nơi đã trở thành điểm du lịch thu hút hàng nghìn du khách. Ghé thăm và khám phá mỗi năm. Chẳng hạn như chùa Một Cột (Hà Nội), Văn Miếu (Hà Nội), Nhà thờ Đức Bà (TP. Hồ Chí Minh), đền thờ Bà Mariamman.</p>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center ad-1">
                 <img data-aos="zoom-in-right" width="80%" class="img-fluid" src="/img/vh1.jpg" alt="">
-                <p>また、祖先を崇拝する習慣もベトナム文化を語る上で欠かすことのできない美しさのひとつです。 崇拝は、水を飲む行為を表現し、水源を思い出し、生まれ育ったことのメリットを思い出すようなものです。 彼が前に行った父親のうち。 したがって、ほとんどすべてのベトナムの家族は、家族の祖先を崇拝するために少なくとも1つの祭壇を持っています。 ベトナムの人々は、主要な記念日に加えて、テトの休日、月の初日と満月の日、清明タオ氏、タンミンなどの他の特別な日を記念してお香を燃やすことがよくあります。
-                    祖先崇拝は古くから確立されてきた文化活動であり、これまでのところ、この活動は故人への敬意を表すために受け継がれています。
+                <p>Cũng vậy, phong tục thờ cúng gia tiên là một trong những nét đẹp không thể bỏ qua khi nói về văn hóa của người Việt. Việc thờ cúng cũng giống như thể hiện hành động uống nước nhớ nguồn, ghi nhớ công ơn sinh thành, dưỡng dục. Của cha anh ấy, anh ấy đã đi trước. Vì vậy, hầu hết tất cả các gia đình Việt Nam đều có ít nhất một bàn thờ gia tiên. Ngoài những ngày kỷ niệm lớn, người Việt thường thắp hương tưởng nhớ những ngày đặc biệt khác như Tết Nguyên tiêu, ngày rằm tháng Giêng, Thanh minh, Táo quân, Thần minh. Thờ cúng tổ tiên là một nét sinh hoạt văn hóa lâu đời và cho đến nay, hoạt động này vẫn được lưu truyền nhằm tỏ lòng thành kính đối với những người đã khuất.
                 </p>
             </div>
             <div data-aos="zoom-in-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center ad-2">

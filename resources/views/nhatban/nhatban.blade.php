@@ -216,16 +216,19 @@
 				<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Văn hoá</a>
+				<a class="nav-link" href="#mienbac">Văn hoá</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Vùng miền</a>
+				<a class="nav-link" href="#areaMap">Vùng miền</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Địa danh</a>
+				<a class="nav-link" href="#famousArea">Địa danh</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Sự kiện</a>
+				<a class="nav-link" href="#nonthEvent">Sự kiện</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
 			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
