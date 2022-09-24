@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Việt Nam</title>
+	<link href="/css/loader.css" rel="stylesheet">
     <link rel="stylesheet" href="css/vietnam.css">
 	<script src="https://kit.fontawesome.com/f99152938e.js" crossorigin="anonymous"></script>
 	<!-----fonts----->
@@ -170,7 +171,7 @@
 	</script>
 </head>
 <body>
-
+    <div id="preloader"></div>
 
 <!------------------------nav bar----------------------------------------------->
 <style>
@@ -820,5 +821,6 @@
 	AOS.init();
 
 </script>
+<script src="/assets/dist/js/loader.js"></script>
 </body>
 </html>

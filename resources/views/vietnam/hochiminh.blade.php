@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Thành phố Hồ Chí MinhTokyo</title>
+    <title>Thành phố Hồ Chí Minh</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style1.css" />
     <link rel="stylesheet" href="/css/tokyo.css">
     <link rel="stylesheet" href="/css/HCM.css">
-    
+    <link href="/css/loader.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="CultureTravel.png"/> 
     <!-----fonts----->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +20,9 @@
    
   </head>
   <body>
+    <div id="preloader"></div>
     <header>
-      <a href="#" class="logo"><img src="CultureTravel.png" style="width:80px;height:auto;">Thành phố Hồ Chí Minh</a>
+      <a href="#" class="logo"><img src="/img/CultureTravel.png" style="width:80px;height:auto;">Thành phố Hồ Chí Minh</a>
       <div class="menuToggle"></div>
     </header>
     <ul class="navigation">
@@ -214,7 +215,7 @@
       <div class="postColumn">
         <div class="postBox">
           <div class="imgBx">
-            <img src="https://dulichnhatban.net/static/uploads/tinymce/2016/08/01/15/160172d251947de6d200142d93b1ccdf.jpg" class="cover" />
+            <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/08/bao-tang-chung-tich-chien-tranh.jpg" class="cover" />
           </div>
           <div class="textBx">
             <h3>
@@ -230,7 +231,7 @@
         <div class="postColumn">
           <div class="postBox">
             <div class="imgBx">
-              <img src="https://wallpaperaccess.com/full/19076.jpg" class="cover" />
+              <img src="http://hanoimoi.com.vn/Uploads/images/anhthu/2019/07/06/Ben_NhaRong-(01).jpg" class="cover" />
             </div>
             <div class="textBx">
               <h3>
@@ -245,7 +246,7 @@
         <div class="postColumn">
           <div class="postBox">
             <div class="imgBx">
-              <img src="https://media.gody.vn/images/tokyo/cong-vien-giai-tri-tokyo-disneyland/12-2016/20161207092003-tokyo-disneyland-gody-(8).jpg" class="cover" />
+              <img src="https://thanhlamhotspring.com/wp-content/uploads/2015/02/Dia-Dao-Cu-Chi-003.jpg" class="cover" />
             </div>
             <div class="textBx">
               <h3>
@@ -461,5 +462,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"charset="utf-8"></script>
     <script src="https://kit.fontawesome.com/f99152938e.js" crossorigin="anonymous"></script>
+    <script src="/assets/dist/js/loader.js"></script>
   </body>
 </html>

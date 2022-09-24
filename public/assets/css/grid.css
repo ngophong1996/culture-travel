@@ -523,3 +523,8 @@
         margin-left: 91.66667%;
     }
 }
+.form-control{
+    width: 90%;
+    line-height: 20px;
+    margin-bottom: 15px;
+}

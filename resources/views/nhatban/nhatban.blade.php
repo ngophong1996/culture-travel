@@ -174,10 +174,11 @@
 }
 
 	</script>
+	<link href="/css/loader.css" rel="stylesheet">
 </head>
 <body>
 
-
+	<div id="preloader"></div>
 <!------------------------nav bar----------------------------------------------->
 <style>
     .navbar-brand {
@@ -696,7 +697,7 @@ $(document).ready(function () {
 				  <h2><span>Tokyo</span></h2>
 				  <p>Thủ đô Tokyo không chỉ là trung tâm kinh tế của nước Nhật mà còn có sự giao thoa hài hòa về văn hóa giữa nét hiện đại và truyền thống tạo nên vẻ đẹp đặc biệt của nó trong mắt du khách quốc tế</p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/106"></a>
 			  </figure></div>
 			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			  <figure class="snip1084 blue"><img src="/img/hokkaido.jpg" alt="sample51" />
@@ -704,7 +705,7 @@ $(document).ready(function () {
 				  <h2><span>Hokkaido</span></h2>
 				  <p>Cảnh sắc thiên nhiên ở Hokkaido đẹp tựa như một bức tranh khiến cho những ai khi nhìn thấy đều không khỏi ngẩn ngơ.</p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/78"></a>
 			  </figure></div>
 			  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 			  <figure class="snip1084 yellow"><img src="/img/kyoto.jpg" alt="sample49" />
@@ -712,7 +713,7 @@ $(document).ready(function () {
 				  <h2><span>Kyoto</span></h2>
 				  <p>Kyoto là thành phố vẫn còn lưu lại các công trình kiến trúc và văn hoá từ xa xưa của Nhật Bản. </p>
 				</figcaption>
-				<a href="#"></a>
+				<a href="/88"></a>
 			  </figure></div>
 		<div class="col-4" data-aos="zoom-in-up" data-aos-offset="300">
 	<figure class="snip1084 red">
@@ -721,7 +722,7 @@ $(document).ready(function () {
 		  <h2><span>Nara</span></h2>
 		  <p>tỉnh Nara có những dãy núi rợp bóng cây, những đền chùa được công nhận là Di sản thế giới, quang cảnh thiên nhiên tuyệt diệu khi nhìn từ trên cao, những khu phố cổ kính không dành cho xe hơi và nhiều điều hấp dẫn khác.</p>
 		</figcaption>
-		<a href="#"></a>
+		<a href="/94"></a>
 	  </figure></div>
 	  <div class="col-4 " data-aos="zoom-in-up" data-aos-offset="300">
 	  <figure class="snip1084 blue"><img src="/img/osaka.jpg" alt="sample51" />
@@ -729,7 +730,7 @@ $(document).ready(function () {
 		  <h2><span>Osaka</span></h2>
 		  <p>Osaka là một thành phố sôi động, người dân cực kỳ thân thiện vui vẻ, là một địa điểm du lịch không thể bỏ qua khi bạn tới Nhậ</p>
 		</figcaption>
-		<a href="#"></a>
+		<a href="/97"></a>
 	  </figure></div>
 	  <div class="col-4" data-aos="zoom-in-up" data-aos-offset="300"> 
 	  <figure class="snip1084 yellow"><img src="/img/okinawa.jpg" alt="sample49" />
@@ -737,7 +738,7 @@ $(document).ready(function () {
 		  <h2><span>Okinawa</span></h2>
 		  <p>Nước biển màu xanh ngọc hòa lẫn với những dải cát trắng biến nơi đây thành thiên đường nghỉ mát của không chỉ người Nhật mà còn của nhiều du khách nước ngoài khi đến Nhật Bản.</p>
 		</figcaption>
-		<a href="#"></a>
+		<a href="/96"></a>
 	  </figure></div>
 	</div>
 	</div>
@@ -890,5 +891,6 @@ $(document).ready(function () {
 	AOS.init();
 
 </script>
+<script src="/assets/dist/js/loader.js"></script>
 </body>
 </html>

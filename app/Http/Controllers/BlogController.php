@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Post;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests;
+use Illuminate\Contracts\Support\Renderable;
 class BlogController extends Controller
 {
     /**
@@ -12,8 +14,11 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('blog.index');
+    {   
+        $posts = Post::all();
+        return view('blog.index',[
+            'posts' => $posts,
+        ]);
     }
 
     /**
@@ -23,7 +28,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.newblog');
     }
 
     /**
@@ -34,7 +39,26 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        
+        $filename = $request->image->getClientOriginalName();
+        $request->image->storeAs('images',$filename,'public');
+        $post = new Post();
+        $post->user= Auth::user()->name;
+        $post->area = $request->input('area');
+        $post->title = $request->input('title');
+        $post->image = $filename;
+        $post->content = $request->input('content');
+        $post->save();
+           
+        // $post = new Post();
+        // $post->user_id= Auth::user()->id;
+        // $post->area = $request->input('area');
+        // $post->title = $request->input('title');
+        // $post->content = $request->input('content');
+        // $post->image = $request->input('image');
+        // $post->save();
+        return redirect('/blog');
     }
 
     /**

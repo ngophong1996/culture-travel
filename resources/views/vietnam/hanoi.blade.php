@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Thành phố Hồ Chí MinhTokyo</title>
+    <title>Hà Nội</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style1.css" />
     <link rel="stylesheet" href="/css/tokyo.css">
     <link rel="stylesheet" href="/css/HaNoi.css">
-    
+    <link href="/css/loader.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/img/CultureTravel.png"/> 
     <!-----fonts----->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,7 @@
    
   </head>
   <body>
+    <div id="preloader"></div>
     <header>
       <a href="#" class="logo"><img src="/img/CultureTravel.png" style="width:80px;height:auto;">Hà Nội</a>
       <div class="menuToggle"></div>
@@ -471,5 +472,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"charset="utf-8"></script>
     <script src="https://kit.fontawesome.com/f99152938e.js" crossorigin="anonymous"></script>
+    <script src="/assets/dist/js/loader.js"></script>
   </body>
 </html>

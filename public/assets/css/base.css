@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 @font-face {
     font-family: 'Beyond';
-    src: url(../font/beyond_the_mountains.otf) format('truetype'), url(../font/beyond_the_mountains.ttf) format('opentype')
+    src: url(/assets/font/beyond_the_mountains.otf) format('truetype'), url(/assets/font/beyond_the_mountains.ttf) format('opentype')
 }
 
  :root {
@@ -134,8 +134,8 @@ body {
 
 .header__nav__container {
     text-transform: uppercase;
-    padding: 40px 0;
-    padding-top: 60px;
+    padding: 23px 0;
+    /* padding-top: 60px; */
 }
 
 .header__nav__container .row {
@@ -270,7 +270,7 @@ body {
     top: 0;
     width: 320px;
     height: 100%;
-    background: linear-gradient(-300deg, #fa9e1b, #8d4fff);
+    background: linear-gradient(-300deg, #140d05, #1d1a23);
     z-index: 100;
     transition: all .7s ease-in-out;
 }

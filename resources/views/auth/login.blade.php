@@ -51,15 +51,11 @@
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
+              
               <a href="#" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+              
             </div>
           </form>
           <form method="POST" action="{{ route('register') }}" class="sign-up-form">
@@ -87,21 +83,8 @@
                                 name="password_confirmation" required placeholder="Confirm Password" />
             </div>
             <input type="submit" class="btn" value="Đăng kí" />
-            <p class="social-text">Hoặc đăng kí bằng tài khoản mạng xã hội</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+         
+            
           </form>
         </div>
       </div>

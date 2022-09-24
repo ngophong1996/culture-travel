@@ -22,10 +22,10 @@
     <link href="/css/pic.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/img/CultureTravel.png"/> 
     
-    
+    <link href="/css/loader.css" rel="stylesheet">
   </head>
 <body>
-            
+  <div id="preloader"></div> 
   <style>
     .navbar-brand {
   transform: translateX(-50%);
@@ -40,8 +40,7 @@
 .navbar {
 	
 	background-color:#0F0F0F !important;
-  padding-top: 27px;
-  padding-bottom: 27px;;
+height: 100px;
 }
 .nav-link {
 	padding: 0;
@@ -72,25 +71,34 @@
 			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					@if(Auth::user()->image)
-                        <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
-                    @endif
-					{{ Auth::user()->name }}
-				</a>
-				<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="{{ url('/profile') }}">Cài dặt tài khoản</a></li>
-				<li><form method="POST" action="{{ route('logout') }}">
-					@csrf
-					<a href="route('logout')"
-						onclick="event.preventDefault();
-									this.closest('form').submit();">
-						{{ __('Đăng xuất') }}
-					</a>
-					</form></li>
-				</ul>
-		  		</li>
+      @if (Route::has('login'))
+                          
+                    @auth
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          @if(Auth::user()->image)
+                                        <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
+                                    @endif
+                          {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ url('/profile') }}">Cài dặt tài khoản</a></li>
+                        <li><form method="POST" action="{{ route('logout') }}">
+                          @csrf
+                          <a href="route('logout')"
+                            onclick="event.preventDefault();
+                                  this.closest('form').submit();">
+                            {{ __('Đăng xuất') }}
+                          </a>
+                          </form></li>
+                        </ul>
+                          </li>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Đăng nhập</a>
+                    @endauth
+                </div>
+            @endif
+		
 		</ul>
 	  </div>
 	<div>
@@ -242,12 +250,12 @@
   <hr class="featurette-divider">
 
   <div class="row featurette">
-      <div class="col-md-7 order-md-2">
+      <div class="col-md-7">
         <h2 class="featurette-heading fw-normal lh-1">VIETNAM: <span class="text-muted"><a href="https://vietnamnet.vn/nghin-nguoi-du-le-hoi-o-chinh-dien-dat-vang-lon-nhat-thanh-hoa-2061105.html">Nghìn người dự lễ hội tại chính điện bằng gỗ dát vàng lớn nhất Thanh Hoá.</a></span></h2>
         <p class="lead">Sáng ngày 17/9/2022, tại Khu di tích Quốc gia đặc biệt Lam Kinh, huyện Thọ Xuân (Thanh Hóa) đã tổ chức Lễ hội Lam Kinh 2022, và kỷ niệm 10 năm được công nhận là di tích quốc gia đặc biệt.
 Theo Ban tổ chức, Lễ hội Lam Kinh 2022 nhằm kỷ niệm 604 năm Khởi nghĩa Lam Sơn, 594 năm Vua Lê đăng quang, 589 năm ngày mất của Anh hùng dân tộc Lê Lợi và kỷ niệm 10 năm được công nhận là di tích quốc gia đặc biệt (2012-2022).</p>
       </div>
-      <div class="col-md-5 order-md-1">
+      <div class="col-md-5">
         <nav class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><a href="https://vietnamnet.vn/nghin-nguoi-du-le-hoi-o-chinh-dien-dat-vang-lon-nhat-thanh-hoa-2061105.html"><img width="auto" height="300px" src="https://static-images.vnncdn.net/files/publish/2022/9/17/9dang-chu-y-565.jpg"></a></nav>
 
       </div>
@@ -338,7 +346,7 @@ Theo Ban tổ chức, Lễ hội Lam Kinh 2022 nhằm kỷ niệm 604 năm Khở
     </div>
   </div>
 </footer>
-  
+<script src="/assets/dist/js/loader.js"></script>
   <script src="/assets/dist/js/cover.js" ></script>
   </body>
 </html>

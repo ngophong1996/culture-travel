@@ -59,19 +59,13 @@
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-left">
 			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#">Tổng quan</a>
+				<a class="nav-link" href="{{ route('vietnam.index') }}">Việt Nam</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#mienbac">Văn hoá</a>
+				<a class="nav-link" href="{{ route('nhatban.index') }}">Nhật Bản</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#areaMap">Vùng miền</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#famousArea">Địa danh</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#nonthEvent">Sự kiện</a>
+				<a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
 			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
@@ -105,24 +99,25 @@
 <section id="slider">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
-			<div class="p-2"><h1>Việt Nam</h1></div>
-			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span>Việt Nam</span></div>
+			<div class="p-2"><h1>Tài khoản<h1></div>
+			<div class="p-2 m-2"><span class="yellowInRight"><a href="{{ url('/home') }}">Trang chủ</a></span><span>Tài khoản</span></div>
 		  </div>
 	</div>
 </section>
 <!-----------StartAbout------->
 <section id="profile">
 
-
-<div class="card-body">
+<div class="container">
+<div class="card-body d-flex slider_center align-items-center justify-content-center flex-column text-center" style="margin: 20px;">
     </form>
     <form enctype="multipart/form-data" action="/profile" method="POST">
         @csrf
-        <label>Update Profile Image</label>
-        <input type="file" name="image">
-        <input type="submit" value="Upload">
+        <label style="font-size: 36px;margin-top: 20px;margin-bottom: 10px;font-weight: 500;
+		line-height: 1.1;">Tải lên ảnh đại diện</label>
+        <div><input type="file" name="image"></div>
+        <div><input type="submit" value="Tải lên"></div>
     </form>
-</div>
+</div></div>
 </section>
 <!--------Event----------------->
 	<footer>
