@@ -256,7 +256,7 @@
 	</div>
   </nav>
 <!--------------------slider-------------------------------------------------------------------------------->
-<section id="slider">
+<section id="slider"  style=" background: url('/img/mount5.jpg') rgba(64, 64, 64, 0.65);background-size: cover; background-blend-mode: multiply;">
 	<div class="slider container-fluid">
 		<div class="d-flex slider_center align-items-center justify-content-center flex-column">
 			<div class="p-2"><h1>Nhật Bản</h1></div>
@@ -623,7 +623,7 @@
 							<button type="button" class="btn btn-danger deleteRecord" data-id="{{ $nhatban->id  }}" >Xoá điểm đến</button>
 							<p>{{ $nhatban->title }}</p>
 							<div class="title-mb">
-								<a href="vanhoavn.html" class="">Xem thêm</a>
+								<a href="/{{ $nhatban->id }}" class="">Xem thêm</a>
 							</div>
 							</li>
 						@endif

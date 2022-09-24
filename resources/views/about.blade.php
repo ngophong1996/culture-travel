@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>About Us</title>
+    <title>Về chúng tôi</title>
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -27,6 +27,7 @@
     
 </head>
 <body>
+	<div id="preloader"></div>
   <style>
     .navbar-brand {
   transform: translateX(-50%);
@@ -71,16 +72,17 @@
 	</div>
 	</div>
   </nav>
-    <div class="name">
+    <div class="name text-center">
       <h2>CUL: <h1>CULTURE TRAVEL AT HOME</h1></h2>
     </div>
+
 
     <!-------INTRODUCE------>
     <div class="section-fluid-main">
 		<div class="section-row">
 			<div class="section-col">
 				<div class="section">
-					<div class="section-in">
+					<div class="section-in" data-bs-toggle="modal" data-bs-target="#modal1">
 						<img src="/img/Thuy.jpg" alt="">
 					</div>
 				</div>
@@ -90,8 +92,8 @@
 			</div>
 			<div class="section-col">
 				<div class="section">
-					<div class="section-in">
-						<img src="/img/Tuan.JPG" alt="">
+					<div class="section-in" data-bs-toggle="modal" data-bs-target="#modal2">
+						<img src="/img/IMG_1517.jpeg" alt="">
 					</div>
 				</div>
 			</div>
@@ -100,7 +102,7 @@
 			</div>
 			<div class="section-col">
 				<div class="section">
-					<div class="section-in">
+					<div class="section-in" data-bs-toggle="modal" data-bs-target="#modal3">
 						<img src="/img/Phong.JPG" alt="">
 					</div>
 				</div>
@@ -110,7 +112,7 @@
 			</div>
 			<div class="section-col">
 				<div class="section">
-					<div class="section-in">
+					<div class="section-in" data-bs-toggle="modal" data-bs-target="#modal4">
 						<img src="/img/Truc.JPEG" alt="">
 					</div>
 				</div>
@@ -120,7 +122,7 @@
 			</div>
 			<div class="section-col">
 				<div class="section">
-					<div class="section-in">
+					<div class="section-in" data-bs-toggle="modal" data-bs-target="#modal5">
 						<img src="/img/Khanh.JPG" alt="">
 					</div>
 				</div>
@@ -130,7 +132,7 @@
 			</div>
 			<div class="section-col">
 				<div class="section">
-					<div class="section-in">
+					<div class="section-in" data-bs-toggle="modal" data-bs-target="#modal6">
 						<img src="https://assets.codepen.io/1462889/sl6.jpg" alt="">
 					</div>
 				</div>
@@ -143,148 +145,158 @@
 
   <!--------------information------------>
  
-      <div class="section full-height">
-          <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
-          <label for="modal-btn">Thuy <i class="uil uil-expand-arrows"></i></label> 		
-          <div class="modal">		
-            <div class="modal-wrap">	
-          <img src="/img/Thuy.jpg" alt="">	
-              <p class="infor">Leader</p>	          		
-            </div>			          		
-          </div>	
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-0">Nguyễn Diệu Thúy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="/img/Thuy.jpg" alt="" class="w-100">	
+          <p class="infor p-4">Leader <br>Birthday: 26/09/1993 <br> Nickname: Mi chan <br> Email: dieuthuynguyen1189@gmail.com <br> Favorite quotes: "Nếu trên đời thực sự có kỳ tích, thì đó nhất định là một tên gọi khác của nỗ lực!"</p>	          		
+        </div>
       </div>
-      <div class="section2 full-heigh2">
-          <input class="modal-btn2" type="checkbox2" id="modal-btn2" name="modal-btn2"/>
-          <label for="modal-btn2">Tuan<i class="uil2 uil-expand-arrows2"></i></label> 		
-          <div class="modal2">		
-            <div class="modal-wrap2">	
-          <img src="/img/Tuan.JPG" alt="">	
-              <p class="infor2">Project Manager</p>	          		
-            </div>			          		
-          </div>	
-      </div>
-      <div class="section3 full-height3">
-           <input class="modal-btn3" type="checkbox3" id="modal-btn3" name="modal-btn3"/>
-          <label for="modal-btn3">Phong <i class="uil uil-expand-arrows3"></i></label> 		
-          <div class="modal3">		
-            <div class="modal-wrap3">	
-          <img src="/img/Phong.JPG" alt="">	
-              <p class="infor3">Main Developer</p>	          		
-            </div>			          		
-          </div>	
-      </div>
-      <div class="section full-height4">
-           <input class="modal-btn4" type="checkbox4" id="modal-btn4" name="modal-btn4"/>
-          <label for="modal-btn4">Truc <i class="uil4 uil-expand-arrows4"></i></label> 		
-          <div class="modal4">		
-            <div class="modal-wrap4">	
-          <img src="/img/Truc.JPEG" alt="">	
-              <p class="infor4">Developer</p>	          		
-            </div>			          		
-          </div>	
-      </div>
-      <div class="section5 full-height5">
-           <input class="modal-btn5" type="checkbox5" id="modal-btn5" name="modal-btn5"/>
-          <label for="modal-btn5">Khanh <i class="uil5 uil-expand-arrows5"></i></label> 		
-          <div class="modal5">		
-            <div class="modal-wrap5">	
-          <img src="/img/Khanh.JPG" alt="">	
-              <p class="infor5">Developer</p>	          		
-            </div>			          		
-          </div>	
-      </div>
-      <div class="section6 full-height6">
-           <input class="modal-btn6" type="checkbox6" id="modal-btn6" name="modal-btn6"/>
-          <label for="modal-btn6">Mentor <i class="uil6 uil-expand-arrows6"></i></label> 		
-          <div class="modal6">		
-            <div class="modal-wrap6">	
-          <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
-              <p class="infor6">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
-            </div>			          		
-          </div>	
-      </div>
-	  <div class="section full-height">
-		<input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
-		<label for="modal-btn">Open Modal <i class="uil uil-expand-arrows"></i></label> 		
-		<div class="modal">		
-			<div class="modal-wrap">	
-			  <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
-				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
-			</div>			          		
-		</div>	
+    </div>
   </div>
 
-<div class="section full-height">
-		<input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
-		<label for="modal-btn">Open Modal <i class="uil uil-expand-arrows"></i></label> 		
-		<div class="modal">		
-			<div class="modal-wrap">	
-			  <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">	
-				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>	          		
-			</div>			          		
-		</div>	
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-0">Nguyễn Văn Tuấn</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="/img/IMG_1517.jpeg" alt="" class="w-100">	
+          <p class="infor p-4">Project Manager <br> Birthday: 19/11/2000 <br>Email: tuan547266@gmail.com <br> </p>
+        </div>
+      </div>
+    </div>
   </div>
- 
+
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-0">Ngô Xuân Phong</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="/img/Phong.JPG" alt="" class="w-100">	
+          <p class="infor p-4">Main Developer <br>Birthday: 13/11/1996 <br> Email: ngophong1996@gmail.com  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-0">Đỗ Thanh Thu Trúc</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="/img/Truc.JPEG" alt="" class="w-100">	
+          <p class="infor p-4">Developer <br> Birthday: 22/11/2001 <br> Nickname: Panda <br> Email: pandagau2211@gmail.com <br> Favorite quotes: “Hãy hạnh phúc vì bạn có cuộc sống tuyệt vời này, hãy sống như vậy để mọi người nhớ đến bạn khi bạn không có mặt ở đó.” </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-0">Lê Duy Khánh</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="/img/Khanh.JPG" alt="" class="w-100">	
+          <p class="infor p-4">Developer <br> Birthday: 26/05/2000 <br> Email: chulsoon2605@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title m-0">Mentor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="https://assets.codepen.io/1462889/sl6.jpg" alt="" class="w-100">	
+          <p class="infor p-4">Đẹp trai xinh gái nhất vũ trụ</p>
+        </div>
+      </div>
+    </div>
+  </div> 
 
   <!-------fotter------->
   <footer>
-		<div id="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<h3 class="section-title">Giới thiệu</h3>
-            <p>CultureTravel là một Website về thông tin vắn hoá của nhiều nước trên thế giới được vận hành và phát triển từ năm 2022. Các bài viết được tổng hợp đa phần từ nội dung tham khảo trên Google.</p>
-
-            <h3 class="section-title">Cơ Hội hợp tác với CultureTravel</h3>
-            <p>Cùng với mục tiêu phát triển của CultureTravel là muốn đưa thông tin nhiều hơn về văn hoá đến với độc giả. Song song đó là lượng nội dung bổ ích và chính xác về văn hoá phải được cập nhật thường xuyên.</p>
-
-            <p>Hiện tại,CultureTravel muốn hợp tác với các bên phát triển dịch vụ du lịch và cá nhân đam mê du lịch.</p></div>
-					<div class="col-md-4">
-						<h3 class="section-title">Liên lạc</h3>
-							<ul class="contact-info">
-								<li><i class="fa-regular fa-map"></i>98 West 21th Street, Suite 721 New York NY 10016</li>
-								<li><i class="fa-solid fa-phone-flip"></i>+ 1235 2355 98</li>
-								<li><i class="fa-regular fa-envelope"></i><a href="#">info@yoursite.com</a></li>
-								<li><i class="fa-solid fa-globe"></i><a href="#">www.yoursite.com</a></li>
-							</ul>
-					</div>
-						<div class="col-md-4">
-							<h3 class="section-title">Phản hồi</h3>
-							<form class="contact-form">
-								<div class="form-group">
-									<label for="name" class="sr-only">Tên</label>
-									<input type="name" class="form-control" id="name" placeholder="Tên">
-								</div>
-								<div class="form-group">
-									<label for="email" class="sr-only">Email</label>
-									<input type="email" class="form-control" id="email" placeholder="Email">
-								</div>
-								<div class="form-group">
-									<label for="message" class="sr-only">Nội dung tin nhắn</label>
-									<textarea class="form-control" id="message" rows="7" placeholder="Nội dung tin nhắn"></textarea>
-								</div>
-								<div class="form-group">
-									<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Gửi">
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="row copy-right justify-content-md-center">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p>THEO DÕI CHÚNG TÔI</p>
-							<p class="fh5co-social-icons">
-								<a href="#"><i class="fa-brands fa-twitter"></i></a>
-								<a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-								<a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-								<a href="#"><i class="fa-brands fa-dribbble"></i></a>
-								<a href="#"><i class="fa-brands fa-youtube"></i></a>
-							</p>
-							<p>&copy; 2022 <a href="#">Culture Travel</a> at Home. All Rights Reserved. </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+         <div class="col-md-4">
+              <h3 class="section-title">Giới thiệu</h3>
+              <p>CultureTravel là một Website về thông tin vắn hoá của nhiều nước trên thế giới được vận hành và phát triển từ năm 2022. Các bài viết được tổng hợp đa phần từ nội dung tham khảo trên Google.</p>
+  
+              <h3 class="section-title">Cơ Hội hợp tác với CultureTravel</h3>
+              <p>Cùng với mục tiêu phát triển của CultureTravel là muốn đưa thông tin nhiều hơn về văn hoá đến với độc giả. Song song đó là lượng nội dung bổ ích và chính xác về văn hoá phải được cập nhật thường xuyên.</p>
+  
+              <p>Hiện tại,CultureTravel muốn hợp tác với các bên phát triển dịch vụ du lịch và cá nhân đam mê du lịch.</p>
+            </div>
+        
+  
+          <div class="col-md-4">
+            <h3 class="section-title">Liên lạc</h3>
+            <ul class="contact-info">
+              <li><i class="fa-regular fa-map"></i>Chiyoda-ku, Tokyo, Japan</li>
+              <li><i class="fa-solid fa-phone-flip"></i>+ 1235 2355 98</li>
+              <li><i class="fa-regular fa-envelope"></i><a href="#">internship@nal.vn</a></li>
+              <li><i class="fa-solid fa-globe"></i><a href="#">https://nal.co.jp/</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 class="section-title">Phản hồi</h3>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name" class="sr-only">Họ và Tên</label>
+                <input type="name" class="form-control" id="name" placeholder="Họ và Tên">
+              </div>
+              <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="message" class="sr-only">Nội dung tin nhắn</label>
+                <textarea class="form-control" id="message" rows="7" placeholder="Nội dung tin nhắn"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row copy-right justify-content-md-center">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <p>CONNECT WITH US</p>
+            <p class="fh5co-social-icons">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </p>
+            <p>&copy; 2022 <a href="#">Culture Travel</a> at Home. All Rights Reserved. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
     
 </body>
 </html>

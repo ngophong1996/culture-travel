@@ -25,7 +25,7 @@
     <link href="/css/loader.css" rel="stylesheet">
   </head>
 <body>
-  <div id="preloader"></div> 
+
   <style>
     .navbar-brand {
   transform: translateX(-50%);
@@ -40,7 +40,8 @@
 .navbar {
 	
 	background-color:#0F0F0F !important;
-height: 100px;
+padding-top: 31px;
+padding-bottom: 30px;
 }
 .nav-link {
 	padding: 0;
