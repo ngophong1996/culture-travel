@@ -75,7 +75,7 @@ background-color:#0F0F0F !important;
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle user-profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					@if(Auth::user()->image)
-                        <img class="image rounded-circle" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="profile_image">
+                        <img class="image rounded-circle" src="{{'/img/'.Auth::user()->image}}" alt="profile_image">
                     @endif
 					{{ Auth::user()->name }}
 				</a>
