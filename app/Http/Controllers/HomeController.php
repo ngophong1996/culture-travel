@@ -34,10 +34,15 @@ class HomeController extends Controller
     public function upload(Request $request)
     {
         if($request->hasFile('image')){
-            $filename = $request->image->getClientOriginalName();
-            $request->image->storeAs('images',$filename,'public');
+            $file = $request->file('image') ;
+            $fileName = $file->getClientOriginalName() ;
+            $destinationPath = public_path().'/img' ;
+            $file->move($destinationPath,$fileName);
+
+            
+            
             $user = Auth::user();
-    		$user->image = $filename;
+    		$user->image = $fileName;
     		$user->save();
            
         }
