@@ -129,7 +129,9 @@ padding-bottom: 30px;
 <!------ourMission-------->
   <section id="mission">
     <div class="container text-center">
-      <h1 style="margin-bottom: 1rem ;">Đến với chúng tôi, bạn sẽ tìm thấy những nét đẹp về văn hóa về các nước trên thế giới như Việt Nam, Nhật Bản,... </h1>
+      <h1 style="">Bằng việc thiết kế một Website với giao diện hiện đại, dễ dàng sử dụng,</h1>
+      <h1 style="">chúng tôi sẽ mang đến chó bạn những kiến thức thú vị về</h1>
+      <h1 style="color:#FFCC00 ">kỳ quan văn hoá của Thế giới</h1>
     </div>
   </section>
 <!--------content------>
